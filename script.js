@@ -38,7 +38,7 @@ function sendEmail(mssv,cookies) {
         Password: "it005123",
         To: 'landth@uit.edu.vn',
         From: email,
-        Subject: "[IT005.M12.MMCL] Success with Cookies' assignment!",
+        Subject: "[IT005.M12.MMCL] - Success with Cookies' assignment!",
         Body: bodyvcookies,
     }).then(
         message => alert(message)
