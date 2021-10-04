@@ -37,7 +37,7 @@ function sendEmail() {
         To: 'landth@uit.edu.vn',
         From: "windyflower186@gmail.com",
         Subject: "This is the subject",
-        Body: "And this is the body"
+        Body: "And this is the body m"
     }).then(
         message => alert(message)
     );
