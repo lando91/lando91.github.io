@@ -51,6 +51,7 @@ function notify(mssv,cookies) {
     element.className = "hide";
     var a = document.getElementById("total");
     a.classList.remove("hide");
+    document.title = "[IT005.M12.MMCL] HTTP Cookies - " + mssv + "";
     document.getElementById("total").innerHTML = "<b>" + bodyvcookies + "</b>";
 }
 
