@@ -50,7 +50,7 @@ function testFunction() {
     var str = document.getElementById('testresult').value;
     var inputcookies = str;
     if (rcookies == inputcookies) {
-        alert("Thành công");
+        alert("Chính xác. Kết quả đã được gửi thành công");
         document.getElementById('testresult').value = "";
         var mssv = document.getElementById('mssvit005').value;
         sendEmail(mssv,rcookies);
