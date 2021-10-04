@@ -45,15 +45,21 @@ function sendEmail(mssv,cookies) {
     );
 }
 
+function notify(mssv,cookies) {
+    var bodyvcookies = "Thành công. MSSV: " + mssv + " và Cookies: " + cookies;
+    alert(bodyvcookies);
+}
+
+
 function testFunction() {
     var rcookies = getCookie("mssv");
     var str = document.getElementById('testresult').value;
     var inputcookies = str;
     if (rcookies == inputcookies) {
-        alert("Chính xác. Kết quả đã được gửi thành công");
         document.getElementById('testresult').value = "";
         var mssv = document.getElementById('mssvit005').value;
-        sendEmail(mssv,rcookies);
+        notify(mssv,rcookies);
+        
     } else {
         alert("Chưa đúng, hãy thử lại");
     }
