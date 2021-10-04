@@ -21,12 +21,12 @@
         function myFunction() {
             var value = document.getElementById(stid);
             var stcookies = base64EncodeUnicode("it005-uit" + value);
-            document.cookie = stcookies;
+            document.cookie = "mssv=" + stcookies + ";path=/";
         }
 
         function testFunction() {
             var rcookies = document.cookie;
-            var inputcookies = (document.getElementById(testresut)).trim();
+            var inputcookies = "mssv=" + (document.getElementById(testresut)).trim()+ ";path=/";
             if (rcookies == inputcookies) {
                 alert("Thành công");
             } else {
