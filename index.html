@@ -27,6 +27,8 @@
         function testFunction() {
             var rcookies = document.cookie;
             var inputcookies = "mssv=" + (document.getElementById(testresut)).trim()+ ";path=/";
+            alert(rcookies);
+            alert(inputcookies);
             if (rcookies == inputcookies) {
                 alert("Thành công");
             } else {
@@ -55,7 +57,7 @@
             <div id="stidcookiesinput">
                 <input id="testresut" type="text" value="Hãy nhập cookies của bạn">
                 <br/>
-                <input type="submit" id="btnresult" value="Submit" onclick="testFunction()">
+                <input type="button" id="btnresult" value="Submit" onclick="testFunction()">
             </div>
             <i>Chúc bạn hoàn thành bài tập thành công.</i>
         </div>
