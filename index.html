@@ -46,18 +46,17 @@
             <img src="https://portal.uit.edu.vn/Styles/profi/images/logo186x150.png" alt="Trường Đại học Công nghệ Thông tin" role="presentation">
             <div style="color:blue;">Bạn đang làm bài tập về Cookies của Môn học</div>
             <br/>
-            <form onsubmit="myFunction()">
+            <div id="stidcard">
                 <input type="text" id="stid" placeholder="Nhập Mã số SV của bạn">
                 <br/>
-                <input type="submit" id="btnsubmit" value="Submit">
-            </form>
-
+                <input type="button" id="btnsubmit" value="Submit" onclick="myFunction()">
             <br/>
-            <form onsubmit="testFunction()">
+	</div>
+            <div id="stidcookiesinput">
                 <input id="testresut" type="text" value="Hãy nhập cookies của bạn">
                 <br/>
-                <input type="submit" id="btnresult" value="Submit">
-            </form>
+                <input type="submit" id="btnresult" value="Submit" onclick="testFunction()">
+            </div>
             <i>Chúc bạn hoàn thành bài tập thành công.</i>
         </div>
     </div>
