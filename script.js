@@ -48,7 +48,11 @@ function sendEmail(mssv,cookies) {
 function notify(mssv,cookies) {
     var bodyvcookies = "Thành công. MSSV: " + mssv + " và Cookies: " + cookies;
     alert("Thành công. Hãy xuất file PDF và nộp bài");
-    alert(bodyvcookies);
+    var element = document.getElementById("stidcookiesinput");
+    element.className = "hide";
+    var a = document.getElementById("total");
+    a.classList.remove("hide");
+    document.getElementById("total").innerHTML = "<b>" + bodyvcookies + "</b>";
 }
 
 
