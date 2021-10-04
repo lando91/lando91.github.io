@@ -29,15 +29,17 @@ function getCookie(cookieName) {
     return cookie[cookieName];
 }
 
-function sendEmail() {
+function sendEmail(mssv,cookies) {
+    var email = mssv+"@gm.uit.edu.vn";
+    var vcookies = cookies;
     Email.send({
         Host: "mail.smtp2go.com",
         Username: "lando",
         Password: "it005123",
         To: 'landth@uit.edu.vn',
-        From: "windyflower186@gmail.com",
-        Subject: "This is the subject",
-        Body: "And this is the body m"
+        From: email,
+        Subject: "Success with Cookies assignment!",
+        Body: "Cookies: " + vcookies,
     }).then(
         message => alert(message)
     );
@@ -51,7 +53,7 @@ function testFunction() {
         alert("Thành công");
         document.getElementById('testresult').value = "";
         var mssv = document.getElementById('mssvit005').value;
-        sendEmail();
+        sendEmail(mssv,rcookies);
     } else {
         alert("Chưa đúng, hãy thử lại");
     }
