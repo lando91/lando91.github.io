@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UIT-IT005 Lab 2 - HTTP Cookies</title>
     <meta name="description" content="Lab2" />
-    <meta name="keywords" content="Lab2"  />
+    <meta name="keywords" content="Lab2" />
     <script>
         function base64EncodeUnicode(str) {
-  // Firstly, escape the string using encodeURIComponent to get the UTF-8 encoding of the characters, 
-  // Secondly, we convert the percent encodings into raw bytes, and add it to btoa() function.
-  utf8Bytes = encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
-    return String.fromCharCode('0x' + p1);
-  });
+            // Firstly, escape the string using encodeURIComponent to get the UTF-8 encoding of the characters, 
+            // Secondly, we convert the percent encodings into raw bytes, and add it to btoa() function.
+            utf8Bytes = encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+                return String.fromCharCode('0x' + p1);
+            });
 
-  return btoa(utf8Bytes);
-}
-        
+            return btoa(utf8Bytes);
+        }
+
         function myFunction() {
-  var value = document.getElementById(stid);
-            var stcookies = base64EncodeUnicode(value);
-            alert(stcookies);
-}
+            var value = document.getElementById(stid);
+            var stcookies = base64EncodeUnicode("it005-uit" + value);
+            document.cookie = stcookies;
+        }
+
+        function testFunction() {
+            var rcookies = document.cookie;
+            var inputcookies = (document.getElementById(testresut)).trim();
+            if (rcookies == inputcookies) {
+                alert("Thành công");
+            } else {
+                alert("Chưa đúng, hãy thử lại");
+            }
+        }
     </script>
-    
+
 </head>
 
 <body class='pushmenu-push' id="page">
@@ -32,15 +43,23 @@
         <div class="dialogBox">
             <h4>Chào bạn!</h4>
             <h3>IT005 - HTTP Protocol - Cookies</h3>
-<img src="https://portal.uit.edu.vn/Styles/profi/images/logo186x150.png" alt="Trường Đại học Công nghệ Thông tin" role="presentation">
-            <div style="color:blue;">Bạn đang làm bài tập về Cookies của Môn học</div><br/>
+            <img src="https://portal.uit.edu.vn/Styles/profi/images/logo186x150.png" alt="Trường Đại học Công nghệ Thông tin" role="presentation">
+            <div style="color:blue;">Bạn đang làm bài tập về Cookies của Môn học</div>
+            <br/>
             <form onsubmit="myFunction()">
-            <input type="text" id="stid" placeholder="Nhập Mã số SV của bạn"><br/>
-            <input type="submit" id="btnsubmit" value="Submit">
+                <input type="text" id="stid" placeholder="Nhập Mã số SV của bạn">
+                <br/>
+                <input type="submit" id="btnsubmit" value="Submit">
             </form>
-<br/>
-<i>Chúc bạn hoàn thành bài tập thành công.</i>
+
+            <br/>
+            <form onsubmiy="testFunction()">
+                <input id="testresut" type="text" value="Hãy nhập cookies của bạn">
+                <br/>
+                <input type="submit" id="btnresult" value="Submit">
+            </form>
+            <i>Chúc bạn hoàn thành bài tập thành công.</i>
         </div>
     </div>
 
-  </body>
+</body>
