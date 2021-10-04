@@ -66,7 +66,7 @@ function testFunction() {
         notify(mssv,rcookies);
         
     } else {
-        alert("Chưa đúng, hãy thử lại");
+        alert("Chưa đúng, hãy thử lại!");
     }
 
 }
