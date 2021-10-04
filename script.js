@@ -31,9 +31,9 @@ function getCookie(cookieName) {
 
 function sendEmail() {
     Email.send({
-        Host: "smtp.gmail.com",
-        Username: "windyflower186@gmail.com",
-        Password: "60629195Family",
+        Host: "mail.smtp2go.com",
+        Username: "lando",
+        Password: "it005123",
         To: 'landth@uit.edu.vn',
         From: "windyflower186@gmail.com",
         Subject: "This is the subject",
