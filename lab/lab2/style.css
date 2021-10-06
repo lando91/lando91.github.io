@@ -58,7 +58,7 @@ body
   {
     font-size: 3vw;
   }
-  iframe
+  iframe, img
   {
     max-with: 95%;
   }
