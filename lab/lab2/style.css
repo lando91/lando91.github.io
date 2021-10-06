@@ -58,4 +58,8 @@ body
   {
     font-size: 3vw;
   }
+  iframe
+  {
+    max-with: 95%;
+  }
 }
