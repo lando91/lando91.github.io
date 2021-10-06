@@ -60,6 +60,6 @@ body
   }
   iframe, img
   {
-    max-with: 95%;
+    max-width: 95%;
   }
 }
