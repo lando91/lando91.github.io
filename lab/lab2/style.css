@@ -4,4 +4,6 @@ body
   background-image: url(bg.png) !important;
     background-size: cover !important;
     background-position: center top !important;
+  width: 100%;
+  height: auto;
 }
