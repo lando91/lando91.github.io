@@ -2,8 +2,10 @@ body
 {
   font-family: 'Open Sans',sans-serif;
   background-image: url(bg.png) !important;
-    background-size: cover !important;
-    background-position: center top !important;
+  background-position: center top !important;
+  background-repeat: no-repeat;
   width: 100%;
   height: auto;
+  background-size: 100%;
+  padding-top: 7%;
 }
