@@ -62,4 +62,9 @@ body
   {
     max-width: 95%;
   }
+  .tablinks
+  {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
