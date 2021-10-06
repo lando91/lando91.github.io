@@ -47,3 +47,14 @@ body
   border: 1px solid #ccc;
   border-top: none;
 }
+@media only screen and (max-width: 600px)
+{
+  .dialog
+  {
+    width: 95%;
+  }
+  .dialog h1, .dialog h2, .dialog h3
+  {
+    font-size: 2vw;
+  }
+}
