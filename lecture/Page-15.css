@@ -1,0 +1,175 @@
+.u-section-1 {
+  background-image: url("images/rdsette-min.jpg");
+  background-position: 50% 50%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 549px;
+}
+
+.u-section-1 .u-layout-wrap-1 {
+  width: 570px;
+  margin: 60px 0 60px auto;
+}
+
+.u-section-1 .u-layout-cell-1 {
+  min-height: 338px;
+  background-image: none;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding: 30px 0 30px 30px;
+}
+
+.u-section-1 .u-image-1 {
+  width: 134px;
+  height: 134px;
+  background-image: url("images/DoThiHuongLan_3x4_2018.png");
+  background-position: 50% 50%;
+  margin: 0 auto 0 17px;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  background-image: none;
+  animation-duration: 1000ms;
+  margin: 16px 34px 0 28px;
+}
+
+.u-section-1 .u-social-icons-1 {
+  white-space: nowrap;
+  height: 32px;
+  min-height: 16px;
+  width: 156px;
+  min-width: 108px;
+  margin: 42px auto 0 17px;
+}
+
+.u-section-1 .u-icon-1 {
+  height: 100%;
+  color: rgb(17, 17, 17) !important;
+}
+
+.u-section-1 .u-icon-2 {
+  height: 100%;
+  color: rgb(17, 17, 17) !important;
+}
+
+.u-section-1 .u-icon-3 {
+  height: 100%;
+  color: rgb(17, 17, 17) !important;
+}
+
+.u-section-1 .u-layout-cell-2 {
+  min-height: 338px;
+  background-image: none;
+}
+
+.u-section-1 .u-container-layout-2 {
+  padding: 30px;
+}
+
+.u-section-1 .u-text-2 {
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+.u-section-1 .u-btn-1 {
+  border-style: solid;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 21px auto 0;
+  padding: 11px 83px 11px 82px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 605px;
+  }
+
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 329px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-left: 19px;
+    margin-right: 25px;
+  }
+
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 329px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    padding-right: 32px;
+    padding-left: 31px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 100px;
+  }
+
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 {
+    background-position: 40.03% 50%;
+  }
+
+  .u-section-1 .u-sheet-1 {
+    min-height: 770px;
+  }
+
+  .u-section-1 .u-layout-wrap-1 {
+    width: 345px;
+  }
+
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 315px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-right: 30px;
+  }
+
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 285px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 254px;
+  }
+
+  .u-section-1 .u-layout-wrap-1 {
+    width: 297px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 335px;
+  }
+
+  .u-section-1 .u-container-layout-2 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
