@@ -6,6 +6,46 @@
         <meta name="description" content="IT005" />
         <meta name="keywords" content="IT005" />
         <link rel="stylesheet" href="style.css">
+        <style>
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #8da8ea;
+  background-color: #8da8ea;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #fff;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #1F3864;;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #1F3864;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
     </head>
 
     <body class="pushmenu-push" id="page">
@@ -35,23 +75,57 @@
                 </ul>
             </div>
             <h2 style="color: #d8593a;text-align: left;">B. Thực hành</h2>
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'tab1')">Cấu hình Localhost Website với IIS</button>
+                <button class="tablinks" onclick="openTab(event, 'tab2')">HTTP có điều kiện</button>
+                <button class="tablinks" onclick="openTab(event, 'tab3')">Truy cập các trang HTTP dài</button>
+                <button class="tablinks" onclick="openTab(event, 'tab4')">Chứng thực HTTP</button>
+             </div>
             <div class="dialogBox" style="text-align: left;line-height:1.5; padding-left:15px;">
-                 <h3 style="color:#1F3864;">1.	Tạo 1 website đơn giản trên localhost</h3>
-                <p>Xem hướng dẫn tại Video dưới đây</p>
-                <br/>
-                <div style="text-align: center;">
-                    <iframe width="560" height="315" style="text-align: center;" align=middle src="https://www.youtube.com/embed/_qVCuJgpqLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div id="tab1" class="tabcontent">
+                    <h3 style="color:#1F3864;">1.	Tạo 1 website đơn giản trên localhost</h3>
+                    <p>Xem hướng dẫn tại Video dưới đây</p>
+                    <br/>
+                    <div style="text-align: center;">
+                        <iframe width="560" height="315" style="text-align: center;" align=middle src="https://www.youtube.com/embed/_qVCuJgpqLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <br/>
                 </div>
-                <br/>
-                 <h3 style="color:#1F3864;">2.	HTTP GET/response có điều kiện</h3>
-                <p>HTTP và Cơ chế Cache</p>
-                <br/>
-                <div style="text-align: center;">
-                <img src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching/http_cache_type.png" style="width:70%; margin:0 auto;">
+                
+                <div id="tab2" class="tabcontent">
+                    <h3 style="color:#1F3864;">2.	HTTP GET/response có điều kiện</h3>
+                    <p>HTTP và Cơ chế Cache</p>
+                    <br/>
+                    <div style="text-align: center;">
+                        <img src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching/http_cache_type.png" style="width:70%; margin:0 auto;">
+                    </div>
+                    </br/>
+                    <p style="text-align: center;font-style:italic;">Các loại cache</p> 
                 </div>
-                </br/>
-                <p style="text-align: center;font-style:italic;">Các loại cache</p>
-            </div>
+        
+                <div id="tab3" class="tabcontent">
+                    <h3 style="color:#1F3864;">3.	Truy cập trang HTML dài</h3>
+                </div>
+        
+                <div id="tab4" class="tabcontent">
+                    <h3 style="color:#1F3864;">4.	Chứng thực HTTP</h3>
+                </div>
+              </div>
         </div>
+<script>
+function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
     </body>
 </html>
