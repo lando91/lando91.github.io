@@ -128,6 +128,19 @@
             </li>
             <i>(Gợi ý: Xác định tính chất của việc truy cập Web, bên nào yêu cầu, bên nào phản hồi)</i>
           </ol>
+          <p style="color: #d8593a;">File MSSV-Bai2.pcapng (Lần capture thứ 2)
+          </p>
+        <ol start="9" style="line-height:2;">
+          <li>Tổng thời gian bắt gói tin và tổng số gói tin bắt được là bao nhiêu?</li>
+          <li>Liệt kê ít nhất 3 giao thức khác nhau xuất hiện trong cột giao thức (Protocol). Tìm hiểu trên Internet và mô tả ngắn gọn chức năng chính của các giao thức đó</li>
+          <li>Tìm cách để xác định địa chỉ IP của trang web đã chọn ở Bước 8. Địa chỉ IP trang web đã chọn là gì</li>
+          <li>Số lượng gói tin và khối lượng dữ liệu được gửi (trao đổi) giữa Địa chỉ trang web ở trên (Câu 11) và máy tính đang sử dụng</li>
+          <i>Gợi ý: </i>
+          -	<b>Cách 1</b> – Gõ vào packet-display filter theo mẫu như sau: <br/>
+ip.addr==<span style="color:red;">128.63.123.142</span> && ip.addr==<span style="color:green;">192.168.1.5</span> <br/>
+(2 địa chỉ màu đỏ và màu xanh là địa chỉ IP của trang web và máy tính sử dụng)<br/>
+          -	<b>Cách 2</b>  – <i>Statistics  > Conversations > IPv4 > Tìm dòng thông tin trao đổi giữa 2 địa chỉ IP</i>
+        </ol>
         </div>
       </div>
       <h2 style="color: #d8593a;text-align: left;">C. Yêu cầu và Đánh giá
