@@ -108,58 +108,78 @@
             </li>
             <li>Liệt kê ít nhất 3 giao thức khác nhau xuất hiện trong cột giao thức (Protocol). Tìm hiểu trên Internet và mô tả ngắn gọn chức năng chính của các giao thức đó
             </li>
-            <b>Gõ “http” vào packet-display filter sau đó chọn Apply để Wireshark chỉ hiển thị các thông điệp HTTP trong packet-listing window. <br/>Sau đó trả lời các câu hỏi sau:
+            <b>Gõ “http” vào packet-display filter sau đó chọn Apply để Wireshark chỉ hiển thị các thông điệp HTTP trong packet-listing window. 
+              <br/>Sau đó trả lời các câu hỏi sau:
             </b>
             <li>Có bao nhiêu gói tin HTTP? Tỉ lệ % số gói tin HTTP/Tổng số gói tin?
             </li>
             <li>Có bao nhiêu gói tin HTTP GET?
             </li>
-            (Gợi ý: Quan sát cột Thông tin - Info)</i>
-            <li>Tìm và xác định gói tin HTTP GET đầu tiên được gửi đến web server gaia.cs.umass.edu?
-            </li>
-            <i>(Gợi ý: Quan sát cửa sổ Packet Details – Chi tiết gói tin và trường host)</i>
-            <li>Xác định gói tin phản hồi cho gói HTTP GET ở trên (Câu 5)?
-            </li>
-          <i>(Gợi ý: Xác định gói tin phản hồi thông qua giá trị Response in Frame)</i>
-            <li>Mất bao lâu từ lúc gửi gói tin HTTP GET (Câu 5) đến khi nhận được gói tin phản hồi (Câu 6)?
-            </li>
-            <i>(Gợi ý: Quan sát Cửa sổ chi tiết gói tin)</i>
-            <li>Dự đoán địa chỉ IP của gaia.cs.umass.edu là gì? Địa chỉ IP của máy tính đang sử dụng là gì? Tại sao?
-            </li>
-            <i>(Gợi ý: Xác định tính chất của việc truy cập Web, bên nào yêu cầu, bên nào phản hồi)</i>
+            (Gợi ý: Quan sát cột Thông tin - Info)
+            </i>
+          <li>Tìm và xác định gói tin HTTP GET đầu tiên được gửi đến web server gaia.cs.umass.edu?
+          </li>
+          <i>(Gợi ý: Quan sát cửa sổ Packet Details – Chi tiết gói tin và trường host)
+          </i>
+          <li>Xác định gói tin phản hồi cho gói HTTP GET ở trên (Câu 5)?
+          </li>
+          <i>(Gợi ý: Xác định gói tin phản hồi thông qua giá trị Response in Frame)
+          </i>
+          <li>Mất bao lâu từ lúc gửi gói tin HTTP GET (Câu 5) đến khi nhận được gói tin phản hồi (Câu 6)?
+          </li>
+          <i>(Gợi ý: Quan sát Cửa sổ chi tiết gói tin)
+          </i>
+          <li>Dự đoán địa chỉ IP của gaia.cs.umass.edu là gì? Địa chỉ IP của máy tính đang sử dụng là gì? Tại sao?
+          </li>
+          <i>(Gợi ý: Xác định tính chất của việc truy cập Web, bên nào yêu cầu, bên nào phản hồi)
+          </i>
           </ol>
-          <p style="color: #d8593a;">File MSSV-Bai2.pcapng (Lần capture thứ 2)
-          </p>
+        <p style="color: #d8593a;">File MSSV-Bai2.pcapng (Lần capture thứ 2)
+        </p>
         <ol start="9" style="line-height:2;">
-          <li>Tổng thời gian bắt gói tin và tổng số gói tin bắt được là bao nhiêu?</li>
-          <li>Liệt kê ít nhất 3 giao thức khác nhau xuất hiện trong cột giao thức (Protocol). Tìm hiểu trên Internet và mô tả ngắn gọn chức năng chính của các giao thức đó</li>
-          <li>Tìm cách để xác định địa chỉ IP của trang web đã chọn ở Bước 8. Địa chỉ IP trang web đã chọn là gì</li>
-          <li>Số lượng gói tin và khối lượng dữ liệu được gửi (trao đổi) giữa Địa chỉ trang web ở trên (Câu 11) và máy tính đang sử dụng</li>
-          <i>Gợi ý: </i>
-          -	<b>Cách 1</b> – Gõ vào packet-display filter theo mẫu như sau: <br/>
-ip.addr==<span style="color:red;">128.63.123.142</span> && ip.addr==<span style="color:green;">192.168.1.5</span> <br/>
-(2 địa chỉ màu đỏ và màu xanh là địa chỉ IP của trang web và máy tính sử dụng)<br/>
-          -	<b>Cách 2</b>  – <i>Statistics  > Conversations > IPv4 > Tìm dòng thông tin trao đổi giữa 2 địa chỉ IP</i>
+          <li>Tổng thời gian bắt gói tin và tổng số gói tin bắt được là bao nhiêu?
+          </li>
+          <li>Liệt kê ít nhất 3 giao thức khác nhau xuất hiện trong cột giao thức (Protocol). Tìm hiểu trên Internet và mô tả ngắn gọn chức năng chính của các giao thức đó
+          </li>
+          <li>Tìm cách để xác định địa chỉ IP của trang web đã chọn ở Bước 8. Địa chỉ IP trang web đã chọn là gì
+          </li>
+          <li>Số lượng gói tin và khối lượng dữ liệu được gửi (trao đổi) giữa Địa chỉ trang web ở trên (Câu 11) và máy tính đang sử dụng
+          </li>
+          <i>Gợi ý: 
+          </i>
+          -	
+          <b>Cách 1
+          </b> – Gõ vào packet-display filter theo mẫu như sau: 
+          <br/>
+          ip.addr==<span style="color:red;">128.63.123.142</span> && ip.addr==<span style="color:green;">192.168.1.5</span> 
+          <br/>
+          (2 địa chỉ màu đỏ và màu xanh là địa chỉ IP của trang web và máy tính sử dụng)
+          <br/>
+          -	
+          <b>Cách 2
+          </b>  – 
+          <i>Statistics  > Conversations > IPv4 > Tìm dòng thông tin trao đổi giữa 2 địa chỉ IP
+          </i>
         </ol>
-        </div>
       </div>
-      <h2 style="color: #d8593a;text-align: left;">C. Yêu cầu và Đánh giá
-      </h2>
     </div>
-    <script>
-      function openTab(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
+    <h2 style="color: #d8593a;text-align: left;">C. Yêu cầu và Đánh giá
+    </h2>
+    </div>
+  <script>
+    function openTab(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
       }
-    </script>
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
   </body>
 </html>
