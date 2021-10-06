@@ -52,7 +52,7 @@ body
 {
   .dialog
   {
-    width: 95%;
+    min-width: 90%;
   }
   .dialog h1, .dialog h2, .dialog h3
   {
