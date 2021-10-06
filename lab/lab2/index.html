@@ -95,10 +95,48 @@
         
                 <div id="tab3" class="tabcontent">
                     <h3 style="color:#1F3864;">3.	Truy cập trang HTML dài</h3>
+                     <div style="border:1px solid #538135; padding: 10px 15px; color:green;font-weight:bold;">
+                        Sinh viên thử nghiệm với những trang HTML dài (kích thước lớn) để tìm hiểu quá trình chia phân đoạn (segment) của HTTP
+                    </div>
+                    <div style="line-height:2; border:1px solid #538135; padding: 10px 15px;">
+                        <b><u>Thực hiện các bước sau:</u></b><br/>
+                            &#8195;• <b>Bước 1:</b>	Khởi động trình duyệt và cần đảm bảo cache của trình duyệt đã được xóa<br/>
+                            &#8195;• <b>Bước 2:</b>	Khởi động Wireshark và bắt đầu bắt gói tin<br/>
+                            &#8195;• <b>Bước 3:</b>	Từ trình duyệt, truy cập đến địa chỉ sau: <a href="http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html">http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html</a><br/>
+                            &#8195;• <b>Bước 4:</b>	Dừng bắt gói tin và lưu lại dưới định dạng MSSV-Bai2.pcapng<br/>
+                     </div>
+                      <p><b>Mở file và nhập “http” vào cửa sổ display-filter để hiển thị các thông điệp HTTP. Chọn 1 gói tin, chọn chuột phải, chọn <i>Follow > TCP Stream</i></b></p>
+                      <p style="color: #d8593a;font-weight:bold;">Trả lời các câu hỏi sau kèm theo hình ảnh minh chứng kết quả từ Wireshark:</p>
+                      <ol style="line-height:2;" start="10">
+                        <li>Trình duyệt đã gửi bao nhiêu HTTP GET?</li>
+                        <li>Cần bao nhiêu TCP segments để chứa hết HTTP response và nội dung của The Bill of Rights? </li>
+                        <li>Dòng chữ “THE BILL OF RIGHTS” được chứa trong gói tin phản hồi thứ mấy?</li>
+                    </ol>
                 </div>
         
                 <div id="tab4" class="tabcontent">
                     <h3 style="color:#1F3864;">4.	Chứng thực HTTP</h3>
+                     <div style="border:1px solid #538135; padding: 10px 15px; color:green;font-weight:bold;">
+                        Sinh viên truy cập vào một website được bảo vệ bởi password và quan sát chuỗi thông điệp HTTP trao đổi giữa trình duyệt và website đó
+                    </div>
+                    <p>Website với địa chỉ sau:<br/>
+                        <a href="http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html">http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html</a> 
+                        được bảo vệ bởi password với username là <b>“wireshark-students”</b> (không có ngoặc kép), và password là <b>“network”</b> (không có ngoặc kép). 
+                    </p>
+                    <div style="line-height:2; border:1px solid #538135; padding: 10px 15px;">
+                        <b><u>Thực hiện các bước sau:</u></b><br/>
+                            &#8195;• <b>Bước 1:</b>	Khởi động trình duyệt và cần đảm bảo cache của trình duyệt đã được xóa<br/>
+                            &#8195;• <b>Bước 2:</b>	Khởi động Wireshark và bắt đầu bắt gói tin<br/>
+                            &#8195;• <b>Bước 3:</b>	Từ trình duyệt, truy cập đến địa chỉ sau: <a href="http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html">http://gaia.cs.umass.edu/wireshark-labs/protected_pages/HTTP-wireshark-file5.html</a><br/>
+                            &#8195;• <b>Bước 4:</b>	Nhập username và password<br/>
+                            &#8195;• <b>Bước 5:</b>	Dừng bắt gói tin và lưu lại dưới định dạng MSSV-Bai3.pcapng<br/>
+                     </div>
+                     <p><b>Mở file và nhập “http” vào cửa sổ display-filter để hiển thị các thông điệp HTTP</b></p>
+                    <p style="color: #d8593a;font-weight:bold;">Trả lời các câu hỏi sau kèm theo hình ảnh minh chứng kết quả từ Wireshark:</p>
+                      <ol style="line-height:2;" start="13">
+                        <li>Mã trạng thái và ý nghĩa nó trong HTTP response tương ứng với HTTP GET đầu tiên là gì?</li>
+                        <li>Khi trình duyệt gửi HTTP GET lần thứ 2, trường dữ liệu nào mới nào xuất hiện trong HTTP GET?</li>
+                    </ol>
                 </div>
               </div>
              <h2 style="color: #d8593a;text-align: left;">C. Yêu cầu và Đánh giá</h2>
