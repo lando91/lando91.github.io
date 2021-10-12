@@ -1,0 +1,100 @@
+body
+{
+  font-family: 'Open Sans',sans-serif;
+  background-image: url(bg.png) !important;
+  background-position: center top !important;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  background-size: 100%;
+  padding-top: 7%;
+  font-size: 16px;
+  margin:0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 6%;
+    width: 88%;
+    height: 88%;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #8da8ea;
+  background-color: #8da8ea;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #fff;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #1F3864;;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #1F3864;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 15px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+@media only screen and (max-width: 768px)
+{
+  .dialog
+  {
+    min-width: 90%;
+  }
+  .dialog h1, .dialog h2, .dialog h3
+  {
+    font-size: 3vw;
+  }
+  iframe, img
+  {
+    max-width: 95%;
+  }
+  .tablinks
+  {
+    width: 50%;
+    box-sizing: border-box;
+    text-align:left;
+  }
+}
+
+@media only screen and (max-width: 600px)
+{
+  .tablinks
+  {
+    width: 100%;
+    box-sizing: border-box;
+    text-align:left;
+  }
+  
+  .dialog h1, .dialog h2, .dialog h3, h1, h2, h3
+  {
+    font-size: 6vw;
+  }
+}
