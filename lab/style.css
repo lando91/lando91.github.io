@@ -26,7 +26,7 @@ body
     box-shadow: 1px 6px 10px 0px rgb(136 136 136 / 24%);
 }
 
-.lab-img.ratio4-3 {
+.ratio4-3 {
     width: 100%;
     position: relative;
     padding-top: 60%;
