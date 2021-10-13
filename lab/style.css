@@ -83,16 +83,6 @@ body
   {
     font-size: 3vw;
   }
-  iframe, img
-  {
-    max-width: 95%;
-  }
-  .tablinks
-  {
-    width: 50%;
-    box-sizing: border-box;
-    text-align:left;
-  }
 }
 
 @media only screen and (max-width: 600px)
