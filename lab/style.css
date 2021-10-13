@@ -12,6 +12,17 @@ body
   margin:0;
 }
 
+.dialog h2
+{
+  font-size: 1.5em;
+  font-weight:bold;
+}
+
+.dialog h1
+{ 
+  font-size: 2em;
+  font-weight: bold;
+}
 .container {
     position: relative;
     width: 100%;
