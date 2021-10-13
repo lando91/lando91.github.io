@@ -60,6 +60,12 @@ body
     color:#d8593a;
 }
 
+.ratio4-3 a:hover
+{
+  opacity: 0.8;
+  transition:opacity 1s;
+}
+
 @media only screen and (max-width: 768px)
 {
   .dialog
