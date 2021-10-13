@@ -55,9 +55,16 @@ body
     text-align: left;
 }
 
-.lab-caption h3
+.lab-caption h5
 {
     color:#d8593a;
+}
+
+.lab-caption h4 a
+{
+  color:#3a6db5;
+  font-weight: bold;
+  text-decoration:none;
 }
 
 .ratio4-3 a:hover
