@@ -28,7 +28,7 @@ function base64EncodeUnicode(str) {
             var time = parseInt(sessionStorage.getItem("time"));
             if (cs == stcs)
             {
-               $('#status').html("MSSV: " + mssv +"<br/> Chúc mừng bạn đã giải đúng. Số lần thử là: " + time + " lần. Hãy xuất file PDF và nộp bài");
+               $('#status').html("MSSV: " + mssv +"<br/>Chúc mừng bạn đã giải đúng. Số lần thử là: " + time + " lần.<br/> Hãy xuất file PDF và nộp bài");
             }
             else
             {
