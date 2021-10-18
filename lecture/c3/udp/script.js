@@ -25,6 +25,7 @@ function base64EncodeUnicode(str) {
             var cs = sessionStorage.getItem("checksum");
             var stcs = base64EncodeUnicode($('#csvalue').val());
             var mssv = $('#mssv').val();
+            $("#mssvid").text("MSSV: "+mssv+"");
             var time = parseInt(sessionStorage.getItem("time"));
             if (cs == stcs)
             {
