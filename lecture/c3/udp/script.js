@@ -17,8 +17,7 @@ function base64EncodeUnicode(str) {
                   if (window.sessionStorage) {
                      sessionStorage.setItem("checksum", base64EncodeUnicode(jd.checksum));
                      sessionStorage.setItem("time",1);
-                  }
-                  
+                  }                
                });
             });
      
