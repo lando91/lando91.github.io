@@ -24,7 +24,7 @@ function base64EncodeUnicode(str) {
      $("#check").click(function(){
             var cs = sessionStorage.getItem("checksum");
             var stcs = base64EncodeUnicode($('#csvalue').val());
-            var time = sessionStorage.getItem("time");
+            var time = parseInt(sessionStorage.getItem("time"));
             alert(stcs);
             alert(cs);
             if (cs == stcs)
