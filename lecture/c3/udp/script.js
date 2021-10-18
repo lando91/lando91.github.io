@@ -1,5 +1,5 @@
  $(document).ready(function() {
-         $("#driver").click(function(event){
+     $("#driver").click(function(event){
                $.getJSON('json-data.json', function(data) {
                   var n = Math.floor(Math.random() * 10);
                   var jd = data.bt[n];
