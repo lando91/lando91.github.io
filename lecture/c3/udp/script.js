@@ -6,7 +6,7 @@
                   $('#n1').text(jd.number1);
                   $('#n2').text(jd.number2);
                   if (window.sessionStorage) {
-                   sessionStorage.setItem("checksum", jd.checksum);
+                     sessionStorage.setItem("checksum", jd.checksum);
                   }
                });
             });  
