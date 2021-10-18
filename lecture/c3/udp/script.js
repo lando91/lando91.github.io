@@ -20,6 +20,7 @@ function base64EncodeUnicode(str) {
                   }
                });
             });
+     
      $("#driver").click(function(){
             var cs = sessionStorage.getItem("checksum");
             var stcs = base64EncodeUnicode($('#csvalue').val());
