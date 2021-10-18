@@ -16,18 +16,26 @@ function base64EncodeUnicode(str) {
                   $('#n2').text(jd.number2);
                   if (window.sessionStorage) {
                      sessionStorage.setItem("checksum", base64EncodeUnicode(jd.checksum));
+                     sessionStorage.setItem("time",1);
                   }
+                  
                });
             });
      
      $("#check").click(function(){
             var cs = sessionStorage.getItem("checksum");
             var stcs = base64EncodeUnicode($('#csvalue').val());
+            var time = sessionStorage.getItem("time");
             alert(stcs);
             alert(cs);
             if (cs == stcs)
             {
-               alert("True");
+               $('#status').html("Bạn đã giải đúng. Số lần thử là: " + time + " lần. Hãy xuất file PDF và nộp bài");
+            }
+            else
+            {
+                sessionStorage.setItem("time",time + 1);
+                $('#status').html("Chưa đúng. Số lần thử hiện tại là: " + time + " lần.");
             }
      });
 }); 
