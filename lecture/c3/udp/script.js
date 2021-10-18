@@ -18,8 +18,7 @@ function base64EncodeUnicode(str) {
                      sessionStorage.setItem("time",1);
                   }                
                });
-            });
-     
+            }); 
      $("#check").click(function(){
             var cs = sessionStorage.getItem("checksum");
             var stcs = base64EncodeUnicode($('#csvalue').val());
@@ -37,4 +36,3 @@ function base64EncodeUnicode(str) {
             }
      });
 }); 
-
