@@ -21,6 +21,11 @@ function base64EncodeUnicode(str) {
                });
             });
      $("#driver").click(function(){
-  alert("The paragraph was clicked.");
+            var cs = sessionStorage.getItem("checksum");
+            var stcs = base64EncodeUnicode($('#csvalue').val());
+            if (cs == stcs)
+            {
+               alert("True");
+            }
+     });
 });
-         });
