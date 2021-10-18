@@ -6,7 +6,6 @@ function base64EncodeUnicode(str) {
     });
     return btoa(utf8Bytes);
 }
-
  $(document).ready(function() {
     $(window).on('load', function () {
                $.getJSON('json-data.json', function(data) {
