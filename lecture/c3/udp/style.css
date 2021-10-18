@@ -89,15 +89,15 @@ body
 }
  
 :-moz-placeholder { /* Firefox 18-4 */
-   color:  #d1d1d1;  
+   color: #d1d1d1;  
 }
  
 ::-moz-placeholder {  /* Firefox 19+ */
-   color:  #d1d1d1;  
+   color: #d1d1d1;  
 }
  
 :-ms-input-placeholder {  /*  IE10+  */
-   color:  #d1d1d1;  
+   color: #d1d1d1;  
 }
 
 @media only screen and (max-width: 768px)
