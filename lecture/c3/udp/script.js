@@ -10,7 +10,6 @@ function base64EncodeUnicode(str) {
     $(window).on('load', function () {
                $.getJSON('json-data.json', function(data) {
                   var n = Math.floor(Math.random() * 12);
-                  alert(n); 
                   var jd = data.bt[n];
                   $('#n1').text(jd.number1);
                   $('#n2').text(jd.number2);
