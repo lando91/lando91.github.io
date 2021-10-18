@@ -1,5 +1,3 @@
-
-
 function base64EncodeUnicode(str) {
     // Firstly, escape the string using encodeURIComponent to get the UTF-8 encoding of the characters,
     // Secondly, we convert the percent encodings into raw bytes, and add it to btoa() function.
@@ -21,5 +19,8 @@ function base64EncodeUnicode(str) {
                      sessionStorage.setItem("checksum", base64EncodeUnicode(jd.checksum));
                   }
                });
-            });  
+            });
+     $("#driver").click(function(){
+  alert("The paragraph was clicked.");
+});
          });
