@@ -31,4 +31,4 @@ function base64EncodeUnicode(str) {
                alert("True");
             }
      });
-});
+}); 
