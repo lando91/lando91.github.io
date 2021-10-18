@@ -26,8 +26,6 @@ function base64EncodeUnicode(str) {
             var cs = sessionStorage.getItem("checksum");
             var stcs = base64EncodeUnicode($('#csvalue').val());
             var time = parseInt(sessionStorage.getItem("time"));
-            alert(stcs);
-            alert(cs);
             if (cs == stcs)
             {
                $('#status').html("Bạn đã giải đúng. Số lần thử là: " + time + " lần. Hãy xuất file PDF và nộp bài");
