@@ -33,7 +33,7 @@ function base64EncodeUnicode(str) {
             else
             {
                 sessionStorage.setItem("time",time + 1);
-                $('#status').html("MSSV: " + mssv +"<br/>Chưa đúng. Số lần thử hiện tại là: " + time + " lần.");
+                $('#status').html("MSSV: " + mssv +"<br/>Chưa đúng. Số lần thử hiện tại là: " + time + " lần.<br/> Hãy thử lại!");
             }
      });
 }); 
