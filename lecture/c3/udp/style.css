@@ -61,6 +61,26 @@ body
   border: 1px solid #ccc;
   border-top: none;
 }
+#stage span {
+    font-weight: bold;
+    width: 150px;
+    float: left;
+}
+
+#stage span.numbber
+{
+    font-weight:500;
+    color:red;
+    padding-left:6px;
+}
+
+#stage input
+{
+    padding: 10px 5px;
+    font-size:25px;
+    background:#f7f7f7;
+    border:1px solid #d1d1d1;
+}
 
 @media only screen and (max-width: 768px)
 {
