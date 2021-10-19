@@ -3,10 +3,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Nhập môn Mạng máy tính - Lab 3 - Phân tích gói tin UDP và TCP</title>
-        <link rel="icon" type="image/png" href="https://nc.uit.edu.vn/wp-content/uploads/2014/12/logo_mmt-nth.png">
+        <link rel="icon" type="image/png" href="https://nc.uit.edu.vn/wp-content/uploads/2014/12/logo_mmt-nth.png" />
         <meta name="description" content="Nhập môn Mạng máy tính - Lab 3 - Giao thức UDP và TCP" />
         <meta name="keywords" content="UIT, IT005, Lab3" />
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css" />
     </head>
 
     <body class="pushmenu-push" id="page">
@@ -14,194 +14,229 @@
             <h2 style="color: #d8593a;">Môn học: Nhập môn Mạng máy tính - IT005</h2>
             <h1 style="color: #3a6db5;">Lab 3 - Phân tích giao thức UDP và TCP</h1>
             <h2>(UDP & TCP Protocol)</h2>
-		<h3>GVHD: ThS. Đỗ Thị Hương Lan</h3>
-            <h2 style="color: #d8593a;text-align: left;">A. Tổng quan</h2>
-            <div class="dialogBox" style="text-align: left;line-height:1.5; padding-left:15px;">
-              <h3 style="color:#1F3864;">1.	Mục tiêu</h3>
+            <h3>GVHD: ThS. Đỗ Thị Hương Lan</h3>
+            <h2 style="color: #d8593a; text-align: left;">A. Tổng quan</h2>
+            <div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
+                <h3 style="color: #1f3864;">1. Mục tiêu</h3>
                 <ul>
                     <li><p>Bắt và phân tích các đặc điểm của các gói tin của giao thức UDP thông qua các gói tin DNS</p></li>
                     <li><p>Bắt và phân tích các đặc điểm của các gói tin của giao thức TCP</p></li>
                     <li><p>Tìm hiểu việc TCP sử dụng sequence number và acknowledgement number để có thể truyền dữ liệu tin cậy</p></li>
-                 </ul>
-              <h3 style="color:#1F3864;">2.	Kiến thức nền tảng</h3>
-              <ul>
-                  <li><p>Kiến thức về giao thức UDP và TCP của chương Tầng vận chuyển (Transport)</p></li>
                 </ul>
-              <h3 style="color:#1F3864;">3.	Môi trường & công cụ</h3>
-               <ul>
-                  <li><p>Một máy tính có kết nối Internet sử dụng hệ điều hành Windows/Linux.</p></li>
-                  <li><p>Phần mềm Wireshark được cài đặt tại máy tính trên </p></li>
+                <h3 style="color: #1f3864;">2. Kiến thức nền tảng</h3>
+                <ul>
+                    <li><p>Kiến thức về giao thức UDP và TCP của chương Tầng vận chuyển (Transport)</p></li>
+                </ul>
+                <h3 style="color: #1f3864;">3. Môi trường & công cụ</h3>
+                <ul>
+                    <li><p>Một máy tính có kết nối Internet sử dụng hệ điều hành Windows/Linux.</p></li>
+                    <li><p>Phần mềm Wireshark được cài đặt tại máy tính trên</p></li>
                 </ul>
             </div>
-            <h2 style="color: #d8593a;text-align: left;">B. Thực hành</h2>
+            <h2 style="color: #d8593a; text-align: left;">B. Thực hành</h2>
             <div class="tab">
                 <button class="tablinks active" onclick="openTab(event, 'tab1')">1. Truy vấn DNS</button>
                 <button class="tablinks" onclick="openTab(event, 'tab2')">2. Phân tích các gói tin UDP</button>
                 <button class="tablinks" onclick="openTab(event, 'tab3')">3. Upload file với Browser</button>
                 <button class="tablinks" onclick="openTab(event, 'tab4')">4. Phân tích các gói tin TCP</button>
-             </div>
-            <div class="dialogBox" style="text-align: left;line-height:1.5;">
+            </div>
+            <div class="dialogBox" style="text-align: left; line-height: 1.5;">
                 <div id="tab1" class="tabcontent" style="display: block;">
-                    <h3 style="color:#1F3864;">1.	Bắt các gói tin truy vấn và phản hồi của DNS</h3>
-                    <div style="border:1px solid #538135; padding: 10px 15px; color:green;font-weight:bold;">
+                    <h3 style="color: #1f3864;">1. Bắt các gói tin truy vấn và phản hồi của DNS</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
                         Sinh viên thực hiện truy vấn DNS và dùng Wireshark để bắt các gói tin
                     </div>
-                  <p><b>UDP (User Datagram Protocol)</b> là loại giao thức phi kết nối, không đảm bảo tính tin cậy khi truyền dữ liệu và không có cơ chế phục hồi dữ liệu</p>
-                  <p><b>DNS</b> là một trong những giao thức tầng ứng dụng sử dụng UDP làm dịch vụ ở Tầng Vận chuyển (Transport)</p>
-                  <p>Sinh viên hãy thực hiện các nhiệm vụ sau đây để bắt và phân tích đặc trưng của các gói tin UDP</p>
-                  <h4 style="color: #d8593a;font-weight:bold;"><b>1.1 Ghi lại thông tin cấu hình IP của PC</b></h4>
-                  <p>Sử dụng lệnh ipconfig / all trong giao diện Command line của bạn để tìm và ghi lại các thông tin sau vào bảng bên dưới:</p>
-                   <ul style="line-height:2;">
-                     <li><p><b>Địa chỉ MAC và IP</b> của card mạng mà sinh viên sử dụng để giao tiếp qua mạng (NIC)</p></li>
-                     <li><p><b>Địa chỉ IP của cổng mặc định</b> được chỉ định (Default gateway)</p>
-                     <li><p><b>Địa chỉ IP máy chủ DNS</b> được chỉ định cho PC</p></li>
-		  </ul>
-		  <div style="max-width:70%;margin:10px auto;">
-                     <table>
-                       <tr>
-                         <td style="max-width:50%;">IP address</td>
-                         <td></td>
-                       </tr>
-                       <tr>
-                         <td>MAC address</td>
-                         <td></td>
-                       </tr>
-                       <tr>
-                         <td>Default gateway IP address</td>
-                         <td></td>
-                       </tr>
-                       <tr>
-                         <td>DNS Server IP address</td>
-                         <td></td>
-                       </tr>
-                     </table>
-		</div>
-                     <h4 style="color: #d8593a;font-weight:bold;"><b>1.2 Sử dụng Wireshark, bắt các gói tin truy vấn và phản hồi của DNS</b></h4>
-                  <div style="line-height:2; border:1px solid #538135; padding: 10px 15px;">
-                        <b><u>Thực hiện các bước sau:</u></b><br/>
-                            &#8195;• <b>Bước 1:</b>	Khởi động phần mềm Wireshark<br/>
-                            &#8195;• <b>Bước 2:</b>	Chọn capture từ <b>Interface</b> đã ghi lại trong phần 1<br/>
-			    &#8195;• <b>Bước 3:</b>	Từ Command Line, gõ  <b style="color:red;">nslookup google.com</b> (hoặc 1 domain nào khác).<br/>
-                            &#8195;• <b>Bước 4:</b>	Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-UDP.pcapng</b><br/>
+                    <p><b>UDP (User Datagram Protocol)</b> là loại giao thức phi kết nối, không đảm bảo tính tin cậy khi truyền dữ liệu và không có cơ chế phục hồi dữ liệu</p>
+                    <p><b>DNS</b> là một trong những giao thức tầng ứng dụng sử dụng UDP làm dịch vụ ở Tầng Vận chuyển (Transport)</p>
+                    <p>Sinh viên hãy thực hiện các nhiệm vụ sau đây để bắt và phân tích đặc trưng của các gói tin UDP</p>
+                    <h4 style="color: #d8593a; font-weight: bold;"><b>1.1 Ghi lại thông tin cấu hình IP của PC</b></h4>
+                    <p>Sử dụng lệnh ipconfig / all trong giao diện Command line của bạn để tìm và ghi lại các thông tin sau vào bảng bên dưới:</p>
+                    <ul style="line-height: 2;">
+                        <li>
+                            <p><b>Địa chỉ MAC và IP</b> của card mạng mà sinh viên sử dụng để giao tiếp qua mạng (NIC)</p>
+                        </li>
+                        <li>
+                            <p><b>Địa chỉ IP của cổng mặc định</b> được chỉ định (Default gateway)</p>
+                        </li>
+                        <li>
+                            <p><b>Địa chỉ IP máy chủ DNS</b> được chỉ định cho PC</p>
+                        </li>
+                    </ul>
+                    <div style="max-width: 70%; margin: 10px auto;">
+                        <table>
+                            <tr>
+                                <td style="max-width: 50%;">IP address</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>MAC address</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Default gateway IP address</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>DNS Server IP address</td>
+                                <td></td>
+                            </tr>
+                        </table>
                     </div>
-		<br/>
+                    <h4 style="color: #d8593a; font-weight: bold;"><b>1.2 Sử dụng Wireshark, bắt các gói tin truy vấn và phản hồi của DNS</b></h4>
+                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;">
+                        <b><u>Thực hiện các bước sau:</u></b><br />
+                        &#8195;• <b>Bước 1:</b> Khởi động phần mềm Wireshark<br />
+                        &#8195;• <b>Bước 2:</b> Chọn capture từ <b>Interface</b> đã ghi lại trong phần 1<br />
+                        &#8195;• <b>Bước 3:</b> Từ Command Line, gõ <b style="color: red;">nslookup google.com</b> (hoặc 1 domain nào khác).<br />
+                        &#8195;• <b>Bước 4:</b> Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-UDP.pcapng</b><br />
+                    </div>
+                    <br />
                 </div>
-                
+
                 <div id="tab2" class="tabcontent">
-                    <h3 style="color:#1F3864;">2.	Phân tích các gói tin UDP</h3>
-                    <div style="border:1px solid #538135; padding: 10px 15px; color:green;font-weight:bold;">
+                    <h3 style="color: #1f3864;">2. Phân tích các gói tin UDP</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
                         Sinh viên sẽ quan sát các gói tin UDP được tạo ra khi giao tiếp với 1 DNS Server để truy vấn địa chỉ IP cho 1 domain
                     </div>
                     <p>Mở file <b>MSSV-UDP.pcapng</b> và nhập "dns" vào cửa sổ display-filter để hiển thị các thông điệp cần theo dõi</p>
-                     <p style="color: #d8593a;font-weight:bold;">Trả lời các câu hỏi sau kèm theo hình ảnh minh chứng kết quả từ Wireshark:</p>
-                        
-                    <ol style="line-height:2;">
-                        <li>Tại danh sách các gói tin bắt được, định vị gói tin truy vấn domain <b>google.com</b> (hoặc domain tự chọn).
-                          <br/><i>Gợi ý: chứa “standard query” và “A www.google.com”</i></li>
+                    <p style="color: #d8593a; font-weight: bold;">Trả lời các câu hỏi sau kèm theo hình ảnh minh chứng kết quả từ Wireshark:</p>
+
+                    <ol style="line-height: 2;">
+                        <li>
+                            Tại danh sách các gói tin bắt được, định vị gói tin truy vấn domain <b>google.com</b> (hoặc domain tự chọn). <br />
+                            <i>Gợi ý: chứa “standard query” và “A www.google.com”</i>
+                        </li>
                         <li>Xác định gói tin phản hồi của truy vấn trên? Từ thông điệp phản hồi, ghi lại <b>địa chỉ IP của domain google.com</b></li>
-                        <li>Chọn một gói tin DNS, xác định các trường (field) có trong UDP header và giải thích ý nghĩa của mỗi trường đó? 
-                          <br/><i>Gợi ý: Xem tại phần User Datagram Protocol</i></li>
-                        <li>Qua thông tin hiển thị của Wireshark, xác định độ dài <b><i>(tính theo byte)</i></b> của mỗi trường trong UDP header?</li>
-                        <li>Giá trị của trường <b>Length</b> trong UDP header là độ dài của gì? Chứng minh nhận định này bằng thông tin hiển thị của Wireshark?
-                          <br/><i>Gợi ý: Quan sát kích thước <b>payload</b> (DNS Data) và kích thước <b>UDP Header</b></i></li>
-                        <li>Giá trị lớn nhất có thể có của port nguồn <b>(Source port)</b>?
-                        <br/><i>Gợi ý: Dựa vào kích thước (bytes) của trường Source port</i></li>
-                        <li>Số bytes lớn nhất mà payload (phần chứa dữ liệu gốc, không tính UDP header và IP header) của UDP có thể chứa?
-                          <br/><i>Gợi ý: Dựa vào kích thước của trường <b>Length</b> trong UDP header và giá trị lớn nhất có thể thể hiện?</i></li>
-                        <li>Quan sát 2 gói tin tìm được ở Câu 1 và 2, mô tả mối quan hệ giữa các địa chỉ IP và các port của 2 gói tin này. 
-                          <br/><i>Gợi ý: Quan sát <b>Source (IP, Port)</b> và <b>Destination (IP, Port)</b> của 2 gói tin trên</i></li>
+                        <li>
+                            Chọn một gói tin DNS, xác định các trường (field) có trong UDP header và giải thích ý nghĩa của mỗi trường đó? <br />
+                            <i>Gợi ý: Xem tại phần User Datagram Protocol</i>
+                        </li>
+                        <li>
+                            Qua thông tin hiển thị của Wireshark, xác định độ dài <b><i>(tính theo byte)</i></b> của mỗi trường trong UDP header?
+                        </li>
+                        <li>
+                            Giá trị của trường <b>Length</b> trong UDP header là độ dài của gì? Chứng minh nhận định này bằng thông tin hiển thị của Wireshark? <br />
+                            <i>Gợi ý: Quan sát kích thước <b>payload</b> (DNS Data) và kích thước <b>UDP Header</b></i>
+                        </li>
+                        <li>
+                            Giá trị lớn nhất có thể có của port nguồn <b>(Source port)</b>? <br />
+                            <i>Gợi ý: Dựa vào kích thước (bytes) của trường Source port</i>
+                        </li>
+                        <li>
+                            Số bytes lớn nhất mà payload (phần chứa dữ liệu gốc, không tính UDP header và IP header) của UDP có thể chứa? <br />
+                            <i>Gợi ý: Dựa vào kích thước của trường <b>Length</b> trong UDP header và giá trị lớn nhất có thể thể hiện?</i>
+                        </li>
+                        <li>
+                            Quan sát 2 gói tin tìm được ở Câu 1 và 2, mô tả mối quan hệ giữa các địa chỉ IP và các port của 2 gói tin này. <br />
+                            <i>Gợi ý: Quan sát <b>Source (IP, Port)</b> và <b>Destination (IP, Port)</b> của 2 gói tin trên</i>
+                        </li>
                     </ol>
-                  <div style="text-align: center;">
-                   <img src="dns.png" style="max-width:80%; margin:0 auto;"/>
-                  </div>
-                  <p style="text-align: center;font-style:italic;">Ví dụ về phân tích gói tin truy vấn DNS</p>
-			<br/>
+                    <div style="text-align: center;">
+                        <img src="dns.png" style="max-width: 80%; margin: 0 auto;" />
+                    </div>
+                    <p style="text-align: center; font-style: italic;">Ví dụ về phân tích gói tin truy vấn DNS</p>
+                    <br />
                 </div>
-        
+
                 <div id="tab3" class="tabcontent">
-                    <h3 style="color:#1F3864;">3.	Upload file thông qua Web Browser (HTTP) và bắt các gói tin TCP</h3>
-                     <div style="border:1px solid #538135; padding: 10px 15px; color:green;font-weight:bold;">
+                    <h3 style="color: #1f3864;">3. Upload file thông qua Web Browser (HTTP) và bắt các gói tin TCP</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
                         Sinh viên thử nghiệm upload file thông qua Trình duyêt để bắt các gói tin HTTP (TCP)
                     </div>
-                    <p>Website với địa chỉ sau:
-                        <a href="http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html">http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html</a> 
+                    <p>
+                        Website với địa chỉ sau:
+                        <a href="http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html">http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html</a>
                         cho phép người dùng tải lên (upload) nội dung. Chúng ta sẽ xem xét điều gì xảy ra khi upload một file dữ liệu.
                     </p>
-                    <div style="line-height:2; border:1px solid #538135; padding: 10px 15px;">
-                        <b><u>Thực hiện các bước sau:</u></b><br/>
-                            &#8195;• <b>Bước 1:</b>	Truy cập <a href="http://gaia.cs.umass.edu/wireshark-labs/alice.txt">http://gaia.cs.umass.edu/wireshark-labs/alice.txt</a> và lấy bản sao ASCII của Alice in Wonderland. Lưu trữ tệp này trên máy tính của bạn<br/>
-                            &#8195;• <b>Bước 2:</b>	Khởi động Wireshark và bắt đầu bắt gói tin<br/>
-                            &#8195;• <b>Bước 3:</b>	Từ trình duyệt, truy cập đến địa chỉ sau: <a href="http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html">http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html</a><br/>
-                            &#8195;• <b>Bước 4:</b> Sử dụng nút <b>Browse/Choose File</b> trong trang web để chọn file alice.txt vừa download<br/>
-                            &#8195;• <b>Bước 5:</b>	Nhấn nút Upload alice.txt file để upload file lên server. Khi file đã được upload, một tin nhắn chúc mừng sẽ xuất hiện trên trình duyệt<br/>
-                            &#8195;• <b>Bước 6:</b>	Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-TCP.pcapng</b><br/>
-                     </div>
-			<br/>
+                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;">
+                        <b><u>Thực hiện các bước sau:</u></b><br />
+                        &#8195;• <b>Bước 1:</b> Truy cập <a href="http://gaia.cs.umass.edu/wireshark-labs/alice.txt">http://gaia.cs.umass.edu/wireshark-labs/alice.txt</a> và lấy bản sao ASCII của Alice in Wonderland. Lưu trữ tệp này trên
+                        máy tính của bạn<br />
+                        &#8195;• <b>Bước 2:</b> Khởi động Wireshark và bắt đầu bắt gói tin<br />
+                        &#8195;• <b>Bước 3:</b> Từ trình duyệt, truy cập đến địa chỉ sau: <a href="http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html">http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html</a><br />
+                        &#8195;• <b>Bước 4:</b> Sử dụng nút <b>Browse/Choose File</b> trong trang web để chọn file alice.txt vừa download<br />
+                        &#8195;• <b>Bước 5:</b> Nhấn nút Upload alice.txt file để upload file lên server. Khi file đã được upload, một tin nhắn chúc mừng sẽ xuất hiện trên trình duyệt<br />
+                        &#8195;• <b>Bước 6:</b> Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-TCP.pcapng</b><br />
+                    </div>
+                    <br />
                 </div>
-        
+
                 <div id="tab4" class="tabcontent">
-                    <h3 style="color:#1F3864;">4.	Phân tích các gói tin TCP</h3>
-                     <div style="border:1px solid #538135; padding: 10px 15px; color:green;font-weight:bold;">
+                    <h3 style="color: #1f3864;">4. Phân tích các gói tin TCP</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
                         Sinh viên sẽ quan sát các gói tin TCP được tạo ra khi giao tiếp với HTTP Server để upload một nội dung
                     </div>
-                    <p><b>Mở file và nhập “http” vào cửa sổ display-filter để hiển thị các thông điệp HTTP.<br>
-		                  Chọn 1 gói tin, chọn chuột phải, chọn <i style="color:green;">Follow &gt; TCP Stream</i></b></p>
-                      <ol style="line-height:2;" start="9">
-                        <li>Xác định Địa chỉ và cổng nguồn (Source Port) mà client sử dụng để chuyển tệp sang gaia.cs.umass.edu là gì? 
-                          <br/><i>Gợi ý: Chọn một thông điệp HTTP từ Client gửi lên Server và khám phá các chi tiết của gói tin TCP được sử dụng để mang thông điệp HTTP này</i></li>
+                    <p>
+                        <b>
+                            Mở file và nhập “http” vào cửa sổ display-filter để hiển thị các thông điệp HTTP.<br />
+                            Chọn 1 gói tin, chọn chuột phải, chọn <i style="color: green;">Follow &gt; TCP Stream</i>
+                        </b>
+                    </p>
+                    <ol style="line-height: 2;" start="9">
+                        <li>
+                            Xác định Địa chỉ và cổng nguồn (Source Port) mà client sử dụng để chuyển tệp sang gaia.cs.umass.edu là gì? <br />
+                            <i>Gợi ý: Chọn một thông điệp HTTP từ Client gửi lên Server và khám phá các chi tiết của gói tin TCP được sử dụng để mang thông điệp HTTP này</i>
+                        </li>
                         <li>Địa chỉ IP của gaia.cs.umass.edu là gì? Trên số cổng nào nó nhận các dữ liệu của tệp alice.txt</li>
-                        <li>Định vị TCP SYN segment (gói tin TCP có cờ SYN) khởi tạo kết nối TCP giữa client và server? Thành phần nào trong segment cho ta biết segment đó là TCP SYN segment?
-                          <br><i>Gợi ý: Quan sát trường Flags</i></li>
+                        <li>
+                            Định vị TCP SYN segment (gói tin TCP có cờ SYN) khởi tạo kết nối TCP giữa client và server? Thành phần nào trong segment cho ta biết segment đó là TCP SYN segment? <br />
+                            <i>Gợi ý: Quan sát trường Flags</i>
+                        </li>
                         <li>TCP SYN segment ở trên có sequence number là bao nhiêu?</li>
-                        <li>Tìm <b>sequence number</b> của gói tin <b>SYN/ACK</b> segment được gửi bởi server đến client để trả lời cho SYN segment ở trên? </li>
-                        <li>Tìm giá trị của <b>Acknowledgement</b> trong <b>SYN/ACK</b> segment?<br/>
-                           Làm sao server có thể xác định giá trị đó? <br/>
-                          Thành phần nào trong segment cho ta biết segment đó là <b>SYN/ACK</b> segment?
+                        <li>Tìm <b>sequence number</b> của gói tin <b>SYN/ACK</b> segment được gửi bởi server đến client để trả lời cho SYN segment ở trên?</li>
+                        <li>
+                            Tìm giá trị của <b>Acknowledgement</b> trong <b>SYN/ACK</b> segment?<br />
+                            Làm sao server có thể xác định giá trị đó? <br />
+                            Thành phần nào trong segment cho ta biết segment đó là <b>SYN/ACK</b> segment?
                         </li>
                     </ol>
                 </div>
-		    <br/>
-              </div>
-             <h2 style="color: #d8593a;text-align: left;">C. Yêu cầu và Đánh giá</h2>
-	     <div class="dialogBox" style="text-align: left;line-height:1.5; padding-left:15px;">
-              <h3 style="color:#1F3864;">1.	Yêu cầu</h3>
-                <ul style="line-height:2;">
+                <br />
+            </div>
+            <h2 style="color: #d8593a; text-align: left;">C. Yêu cầu và Đánh giá</h2>
+            <div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
+                <h3 style="color: #1f3864;">1. Yêu cầu</h3>
+                <ul style="line-height: 2;">
                     <li><p>Sinh viên tìm hiểu và thực hành theo hướng dẫn. Thực hiện báo cáo cá nhân và nộp bài tại Website môn học</p></li>
-                    <li><p>Sinh viên báo cáo kết quả thực hiện và nộp bài gồm:</p>
-			          <ul>
-				<li>Báo cáo chi tiết (<i>lưu ý xuất thành file <b style="background:yellow;">.PDF</b></i>), trình bày cụ thể các yêu cầu trong bài thực hành (có ảnh minh họa) 
-					và giải thích các vấn đề kèm theo</li>
-				<li>2 file <i><b>MSSV-UDP.pcapng, MSSV-TCP.pcapng</b></i> thu được từ việc bắt gói tin bằng Wireshark theo yêu cầu của bài thực hành</li>
-				<li>Nếu có nhiều file, tạo <b>thư mục cùng tên với cùng tên</b> file báo cáo, và đưa tất cả các file ở trên vào Thư mục</li>
-			</ul>
-		    </li>
-                 </ul>
-	      <div style="width: 430px; margin:15px auto;border:1.5px solid red; line-height:1; padding: 15px 15px;text-align:center; background:#ffff91;">
-				Đặt tên file báo cáo/thư mục theo định dạng như mẫu: <br/>
-		                <p style="font-size:20px;"><b>MSSV_HoTen_LabX</b></p>
-				<i style="font-size:18px;">Ví dụ: 18521007_NguyenVanA_Lab3</i><br/>
-				</div>
-              <h3 style="color:#1F3864;">2.	Đánh giá</h3>
-              <p>Sinh viên tìm hiểu và tự thực hiện được bài thực hành, trả lời đầy đủ các yêu cầu đặt ra, trình bày báo cáo chi tiết, rõ ràng theo mẫu báo cáo đã được cung cấp</p>
+                    <li>
+                        <p>Sinh viên báo cáo kết quả thực hiện và nộp bài gồm:</p>
+                        <ul>
+                            <li>
+                                Báo cáo chi tiết (<i>lưu ý xuất thành file <b style="background: yellow;">.PDF</b></i>), trình bày cụ thể các yêu cầu trong bài thực hành (có ảnh minh họa) và giải thích các vấn đề kèm theo
+                            </li>
+                            <li>
+                                2 file <i><b>MSSV-UDP.pcapng, MSSV-TCP.pcapng</b></i> thu được từ việc bắt gói tin bằng Wireshark theo yêu cầu của bài thực hành
+                            </li>
+                            <li>Nếu có nhiều file, tạo <b>thư mục cùng tên với cùng tên</b> file báo cáo, và đưa tất cả các file ở trên vào Thư mục</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div style="width: 430px; margin: 15px auto; border: 1.5px solid red; line-height: 1; padding: 15px 15px; text-align: center; background: #ffff91;">
+                    Đặt tên file báo cáo/thư mục theo định dạng như mẫu: <br />
+                    <p style="font-size: 20px;"><b>MSSV_HoTen_LabX</b></p>
+                    <i style="font-size: 18px;">Ví dụ: 18521007_NguyenVanA_Lab3</i><br />
+                </div>
+                <h3 style="color: #1f3864;">2. Đánh giá</h3>
+                <p>Sinh viên tìm hiểu và tự thực hiện được bài thực hành, trả lời đầy đủ các yêu cầu đặt ra, trình bày báo cáo chi tiết, rõ ràng theo mẫu báo cáo đã được cung cấp</p>
             </div>
         </div>
- <div style="text-align:center; width:100%;">
-	    <img src=".././footer.png"/>
-	  </div>
-<script>
-function openTab(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
+        <div style="text-align: center; width: 100%;">
+            <img src=".././footer.png" />
+        </div>
+        <script>
+            function openTab(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
     </body>
 </html>
