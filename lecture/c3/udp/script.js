@@ -21,9 +21,9 @@ function base64EncodeUnicode(str) {
                         sessionStorage.setItem("time",time);
                      }
                       else
-                      {
+                     {
                           sessionStorage.setItem("time",1);
-                      }
+                     }
                   }                
                });
             }); 
