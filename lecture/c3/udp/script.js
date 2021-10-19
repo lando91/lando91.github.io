@@ -16,7 +16,7 @@ function base64EncodeUnicode(str) {
                   if (window.sessionStorage) {
                      sessionStorage.setItem("checksum", base64EncodeUnicode(jd.checksum));
                      var time = sessionStorage.getItem("time");
-                      alert(time);
+                     alert(time);
                      if (time != -1)
                      {
                         var c = parseInt(sessionStorage.getItem("time"));
