@@ -17,7 +17,7 @@ function base64EncodeUnicode(str) {
                      sessionStorage.setItem("checksum", base64EncodeUnicode(jd.checksum));
                      var time = sessionStorage.getItem("time");
                      alert(time);
-                     if (time != -1)
+                     if (!isNaN(time))
                      {
                         var c = parseInt(sessionStorage.getItem("time"));
                         sessionStorage.setItem("time",time);
