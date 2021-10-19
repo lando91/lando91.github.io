@@ -15,9 +15,11 @@ function base64EncodeUnicode(str) {
                   $('#n2').text(jd.number2);
                   if (window.sessionStorage) {
                      sessionStorage.setItem("checksum", base64EncodeUnicode(jd.checksum));
-                     var time = parseInt(sessionStorage.getItem("time"));
+                     var time = sessionStorage.getItem("time");
+                      alert(time);
                      if (time != -1)
                      {
+                        var c = parseInt(sessionStorage.getItem("time"));
                         sessionStorage.setItem("time",time);
                      }
                       else
