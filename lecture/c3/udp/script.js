@@ -17,14 +17,14 @@ function base64EncodeUnicode(str) {
                      sessionStorage.setItem("checksum", base64EncodeUnicode(jd.checksum));
                      var time = sessionStorage.getItem("time");
                      alert(time); 
-                     if (!isNaN(time))
+                     if (isNaN(time)||(time === null))
                      {
-                        var c = parseInt(sessionStorage.getItem("time"));
-                        sessionStorage.setItem("time",time);
+                        sessionStorage.setItem("time",1);
                      }
                       else
                      {
-                          sessionStorage.setItem("time",1);
+                        var c = parseInt(sessionStorage.getItem("time"));
+                        sessionStorage.setItem("time",time);
                      }
                   }                
                });
