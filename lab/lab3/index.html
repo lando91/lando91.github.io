@@ -50,22 +50,22 @@
                     <p><b>DNS</b> là một trong những giao thức tầng ứng dụng sử dụng UDP làm dịch vụ ở Tầng Vận chuyển (Transport)</p>
                     <p>Sinh viên hãy thực hiện các nhiệm vụ sau đây để bắt và phân tích đặc trưng của các gói tin UDP</p>
                     <h4 style="color: #d8593a; font-weight: bold;"><b>1.1 Ghi lại thông tin cấu hình IP của PC</b></h4>
-                    <p>Sử dụng lệnh ipconfig / all trong giao diện Command line của bạn để tìm và ghi lại các thông tin sau vào bảng bên dưới:</p>
+                    <p>Sử dụng lệnh ipconfig / all trong giao diện Command Prompt để tìm và ghi lại các thông tin sau vào bảng bên dưới:</p>
                     <ul style="line-height: 2;">
                         <li>
-                            <p><b>Địa chỉ MAC và IP</b> của card mạng mà sinh viên sử dụng để giao tiếp qua mạng (NIC)</p>
+                            <p><b>Địa chỉ MAC (Physical Address) và IP (IPv4 và Link-local IPv6 Address)</b> của card mạng mà sinh viên sử dụng để giao tiếp qua mạng (NIC)</p>
                         </li>
                         <li>
-                            <p><b>Địa chỉ IP của cổng mặc định</b> được chỉ định (Default gateway)</p>
+                            <p><b>Địa chỉ IP của các cổng mặc định</b> được chỉ định (Default gateway)</p>
                         </li>
                         <li>
-                            <p><b>Địa chỉ IP máy chủ DNS</b> được chỉ định cho PC</p>
+                            <p><b>Địa chỉ IP của các máy chủ DNS</b> được chỉ định cho PC</p>
                         </li>
                     </ul>
                     <div style="max-width: 60%; margin: 10px auto;">
                         <table>
                             <tr>
-                                <td style="width: 50%;">IP address</td>
+                                <td style="width: 50%;">IPv4, Link-local IPv6 address</td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -73,11 +73,11 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>Default gateway IP address</td>
+                                <td>Default gateway</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>DNS Server IP address</td>
+                                <td>DNS Servers</td>
                                 <td></td>
                             </tr>
                         </table>
@@ -85,10 +85,11 @@
                     <h4 style="color: #d8593a; font-weight: bold;"><b>1.2 Sử dụng Wireshark, bắt các gói tin truy vấn và phản hồi của DNS</b></h4>
                     <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;">
                         <b><u>Thực hiện các bước sau:</u></b><br />
-                        &#8195;• <b>Bước 1:</b> Khởi động phần mềm Wireshark<br />
-                        &#8195;• <b>Bước 2:</b> Chọn capture từ <b>Interface</b> đã ghi lại trong phần 1<br />
-                        &#8195;• <b>Bước 3:</b> Từ Command Line, gõ <b style="color: red;">nslookup google.com</b> (hoặc 1 domain nào khác).<br />
-                        &#8195;• <b>Bước 4:</b> Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-UDP.pcapng</b><br />
+                        &#8195;• <b>Bước 1:</b> Đảm bảo xóa DNS Cache bằng cách gõ lệnh <b style="color: red;">ipconfig /flushdns</b><br />
+                        &#8195;• <b>Bước 2:</b> Khởi động phần mềm Wireshark<br />
+                        &#8195;• <b>Bước 3:</b> Chọn capture từ <b>Interface</b> đã ghi lại trong phần 1<br />
+                        &#8195;• <b>Bước 4:</b> Từ Command Line, gõ <b style="color: red;">nslookup type=A uit.edu.vn</b> (hoặc 1 domain nào khác).<br />
+                        &#8195;• <b>Bước 5:</b> Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-UDP.pcapng</b><br />
                     </div>
                     <br />
                 </div>
@@ -103,10 +104,10 @@
 
                     <ol style="line-height: 2;">
                         <li>
-                            Tại danh sách các gói tin bắt được, định vị gói tin truy vấn domain <b>google.com</b> (hoặc domain tự chọn). <br />
-                            <i>Gợi ý: chứa “standard query” và “A www.google.com”</i>
+                            Tại danh sách các gói tin bắt được, định vị gói tin truy vấn domain <b>uit.edu.vn</b> (hoặc domain tự chọn). <br />
+                            <i>Gợi ý: chứa “standard query” và “A uit.edu.vn”</i>
                         </li>
-                        <li>Xác định gói tin phản hồi của truy vấn trên? Từ thông điệp phản hồi, ghi lại <b>địa chỉ IP của domain google.com</b></li>
+                        <li>Xác định gói tin phản hồi của truy vấn trên? Từ thông điệp phản hồi, ghi lại <b>địa chỉ IP của domain uit.edu.vn</b></li>
                         <li>
                             Chọn một gói tin DNS, xác định các trường (field) có trong UDP header và giải thích ý nghĩa của mỗi trường đó? <br />
                             <i>Gợi ý: Xem tại phần User Datagram Protocol</i>
