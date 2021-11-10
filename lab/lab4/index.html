@@ -141,10 +141,14 @@
                     </div>
                     <p style="line-height: 2;">
                        <b>Địa chỉ IP</b> là địa chỉ logic được sử dụng trong giao thức IP của lớp Internet/Network <br/>
-                        Địa chỉ IPv4 gồm <b style="color: red;">32 bit nhị phân</b>, chia làm 4 octet<br/>
+                        Địa chỉ IPv4 gồm <b style="color: red;">32 bit nhị phân</b>, chia làm 4 octet. Địa chỉ IPv4 được chia làm 5 lớp A,B,C,D,E có sự khác nhau về số octet đóng vai trò làm NetID và HostID<br/>
                         <u>Một số cách thể hiện thường thấy:</u> <br/>
                         - Dạng thập phân: 172.16.30.56<br/>
-                        - Dạng nhị phân: 10101100 00010000 00011110 00111000
+                        - Dạng nhị phân: 10101100 00010000 00011110 00111000<br/>
+                        <b>Subnet mask</b> gồm 32 bit nhị phân, thể hiện mặt nạ mạng, đi kèm một địa chỉ IP. 
+                        Một số Subnet mask chuẩn: <br/>
+                        - 255.0.0.0 (Lớp A)<br/>
+                        - 255.255.255.0 (Lớp C)<br/>
                     </p>
                     <div style="text-align: center;">
                         <img src="ip.png" style="max-width: 80%; margin: 0 auto;">
