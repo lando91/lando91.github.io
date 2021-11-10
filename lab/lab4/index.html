@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Nhập môn Mạng máy tính - Lab 4 - IP và Subnet</title>
         <link rel="icon" type="image/png" href="https://nc.uit.edu.vn/wp-content/uploads/2014/12/logo_mmt-nth.png" />
-        <meta name="description" content="Nhập môn Mạng máy tính - Lab 4 - Tầng Network, Địa chỉ IP và Chia Subnet " />
+        <meta name="description" content="Nhập môn Mạng máy tính - Lab 4 - Tầng Network, Địa chỉ IP" />
         <meta name="keywords" content="UIT, IT005, Lab4, IP" />
         <link rel="stylesheet" href="style.css" />
     </head>
@@ -13,8 +13,8 @@
     <body class="pushmenu-push" id="page">
         <div class="dialog" style="width: 78%; margin: 5% auto; text-align: center;">
             <h2 style="color: #d8593a;">Môn học: Nhập môn Mạng máy tính - IT005</h2>
-            <h1 style="color: #3a6db5;">Lab 4 - Tầng Network, Địa chỉ IP và Chia Subnet</h1>
-            <h2>(Network Layer, IP Address and Subnet)</h2>
+            <h1 style="color: #3a6db5;">Lab 4 - Các giao thức tầng Network, Địa chỉ IP</h1>
+            <h2>(Network Layer's Protocols and IP Address)</h2>
             <h3>GVHD: ThS. Đỗ Thị Hương Lan</h3>
             <h2 style="color: #d8593a; text-align: left;">A. Tổng quan</h2>
             <div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
@@ -23,7 +23,7 @@
                     <li><p>Tìm hiểu về các giao thức thuộc tầng Mạng: IP, ICMP ...</p></li>
                     <li><p>Tìm hiểu cách sử dụng cơ bản công cụ ping, tracert, ipconfig và tìm hiểu hành vi của các công cụ này</p></li>
                     <li><p>Sử dụng Wireshark để bắt gói tin và phân tích các đặc điểm của gói tin IP</p></li>
-                    <li><p>Tìm hiểu về Địa chỉ IP (IP Address) và cách chia mạng con (kỹ thuật subnetting)</p></li>
+                    <li><p>Tìm hiểu về Địa chỉ IP (IP Address)</p></li>
                 </ul>
                 <h3 style="color: #1f3864;">2. Kiến thức nền tảng</h3>
                 <ul>
@@ -39,9 +39,8 @@
             <h2 style="color: #d8593a; text-align: left;">B. Thực hành</h2>
             <div class="tab">
                 <button class="tablinks active" onclick="openTab(event, 'tab1')">1. Bắt và phân tích các gói tin từ quá trình Tracert</button>
-                <button class="tablinks" onclick="openTab(event, 'tab2')">2. Bắt và phân tích các gói tin từ Ping</button>
+                <button class="tablinks" onclick="openTab(event, 'tab2')">2. Bắt và phân tích các gói tin từ quá trình Ping</button>
                 <button class="tablinks" onclick="openTab(event, 'tab3')">3. Địa chỉ IP</button>
-                <button class="tablinks" onclick="openTab(event, 'tab4')">4. Kỹ thuật chia mạng con</button>
             </div>
             <div class="dialogBox" style="text-align: left; line-height: 1.5;">
                 <div id="tab1" class="tabcontent" style="display: block;">
@@ -140,10 +139,19 @@
                         Sinh viên tìm hiểu về Địa chỉ IP và sử dụng các công cụ để quan sát về địa chỉ IP
                     </div>
                     <p>
-                        Website với địa chỉ sau:
-                        <a href="http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html">http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html</a>
-                        cho phép người dùng tải lên (upload) nội dung. Chúng ta sẽ xem xét điều gì xảy ra khi upload một file dữ liệu.
+                       <b>Địa chỉ IP</b> là địa chỉ logic được sử dụng trong giao thức IP của lớp Internet/Network <br/>
+                        Địa chỉ IPv4 gồm <b style="color: red;">32 bit nhị phân</b>, chia làm 4 octet<br/>
+                        <u>Một số cách thể hiện thường thấy:</u> <br/>
+                        - Dạng thập phân: 172.16.30.56<br/>
+                        - Dạng nhị phân: 10101100 00010000 00011110 00111000
                     </p>
+                    <div style="text-align: center;">
+                        <img src="ip.png" style="max-width: 80%; margin: 0 auto;">
+                    </div>
+                    <br/>
+                    <div style="text-align: center;">
+                        <img src="class.png" style="max-width: 80%; margin: 0 auto;">
+                    </div>
                      <ol style="line-height: 2;" start="11">
                         <li>
                             Xác định Địa chỉ IP (Local) máy bạn là gì? Subnet mask là gì? <br />
@@ -155,11 +163,6 @@
                         </li>
                         <li>Địa chỉ IP của các host ở các Phần 1 và 2 là gì? Theo bạn địa chỉ IP này là Public hay Local? Vì sao?</li>
                         <li>Xác định các địa chỉ IP ở Phần 1 và 2 thuộc Class nào??</li>
-                        <li>
-                            Tìm giá trị của <b>Acknowledgement</b> trong <b>SYN/ACK</b> segment?<br />
-                            Làm sao server có thể xác định giá trị đó? <br />
-                            Thành phần nào trong segment cho ta biết segment đó là <b>SYN/ACK</b> segment?
-                        </li>
                         <li>
                            Cho các địa chỉ sau đây: Hãy xác định Class và cho biết có thể sử dụng làm địa chỉ để giao tiếp trên Internet hay không?
                             <ul>
@@ -173,63 +176,6 @@
                         </li>
                     </ol>
                    
-                </div>
-
-                <div id="tab4" class="tabcontent">
-                    <h3 style="color: #1f3864;">4. Phân tích các gói tin TCP</h3>
-                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
-                        Sinh viên sẽ quan sát các gói tin TCP được tạo ra khi giao tiếp với HTTP Server để upload một nội dung
-                    </div>
-                    <p>
-                        <b>
-                            Mở file và nhập “http” vào cửa sổ display-filter để hiển thị các thông điệp HTTP.<br />
-                            Chọn 1 gói tin, chọn chuột phải, chọn <i style="color: green;">Follow &gt; TCP Stream</i>
-                        </b>
-                    </p>
-                    <ol style="line-height: 2;" start="9">
-                        <li>
-                            Xác định <b>Địa chỉ và cổng nguồn (Source Port)</b> mà client sử dụng để chuyển tệp sang <b>gaia.cs.umass.edu</b> là gì? <br />
-                            <i>Gợi ý: Chọn một thông điệp HTTP từ Client gửi lên Server và khám phá các chi tiết của gói tin TCP được sử dụng để mang thông điệp HTTP này</i>
-                        </li>
-                        <li>Địa chỉ IP của gaia.cs.umass.edu là gì? Trên <b>số cổng</b> nào nó nhận các dữ liệu của tệp alice.txt</li>
-                        <li>
-                            Định vị <b>TCP SYN</b> segment (gói tin TCP có cờ SYN) khởi tạo kết nối TCP giữa client và server? Thành phần nào trong segment cho ta biết segment đó là TCP SYN segment? <br />
-                            <i>Gợi ý: Quan sát trường Flags</i>
-                        </li>
-                        <li><b>TCP SYN</b> segment ở trên có <b>sequence number</b> là bao nhiêu?</li>
-                        <li>Tìm <b>sequence number</b> của gói tin <b>SYN/ACK</b> segment được gửi bởi server đến client để trả lời cho SYN segment ở trên?</li>
-                        <li>
-                            Tìm giá trị của <b>Acknowledgement</b> trong <b>SYN/ACK</b> segment?<br />
-                            Làm sao server có thể xác định giá trị đó? <br />
-                            Thành phần nào trong segment cho ta biết segment đó là <b>SYN/ACK</b> segment?
-                        </li>
-                        <li>
-                           Chỉ ra 6 segment đầu tiên mà server gửi cho Client (dựa vào Số thứ tự gói – No) và liệt kê vào bảng dưới đây
-                            <ul>
-                                <li>Tìm sequence number của 6 segments đầu tiên đó?</li>
-                                <li>Xác định thời gian mà mỗi segment được gửi, thời gian ACK cho mỗi segment được nhận? </li>
-                                <li>Tính RTT (Round Trip Time) cho 6 segments này. 
-                                    <br/>Biết <b>RTT</b> là khoảng thời gian tính từ lúc máy tính bắt đầu gửi segment cho đến khi nó nhận được ACK trả về tương ứng</li>
-                            </ul>
-                        </li>
-                    </ol>
-                    
-                    <div style="max-width:80%; margin: 10px auto;">
-                    <table>
-                      <tr style="font-weight:bold;">
-                        <td>STT</td>
-                        <td>Mốc thời gian gửi</td>
-                        <td>Mốc thời gian nhận ACK</td>
-                        <td>RTT (Round Trip Time)</td>
-                        </tr>
-                    <tr style="height:30px;background:#f8f8f8;"><td>1</td><td>0.3s</td><td>0.5s</td><td>0.2s</td></tr>
-                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
-                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
-                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
-                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
-                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
-                    </table>
-                </div>
                 </div>
                 <br />
             </div>
@@ -245,7 +191,7 @@
                                 Báo cáo chi tiết (<i>lưu ý xuất thành file <b style="background: yellow;">.PDF</b></i>), trình bày cụ thể các yêu cầu trong bài thực hành (có ảnh minh họa) và giải thích các vấn đề kèm theo
                             </li>
                             <li>
-                                2 file <i><b>MSSV-UDP.pcapng, MSSV-TCP.pcapng</b></i> thu được từ việc bắt gói tin bằng Wireshark theo yêu cầu của bài thực hành
+                                2 file <i><b>MSSV-Tracert.pcapng, MSSV-Ping.pcapng</b></i> thu được từ việc bắt gói tin bằng Wireshark theo yêu cầu của bài thực hành
                             </li>
                             <li>Nếu có nhiều file, tạo <b>thư mục cùng tên với tên</b> file báo cáo, và đưa tất cả các file ở trên vào Thư mục</li>
                         </ul>
@@ -254,7 +200,7 @@
                 <div style="width: 430px; margin: 15px auto; border: 1.5px solid red; line-height: 1; padding: 15px 15px; text-align: center; background: #ffff91;">
                     Đặt tên file báo cáo/thư mục theo định dạng như mẫu: <br />
                     <p style="font-size: 20px;"><b>MSSV_HoTen_LabX</b></p>
-                    <i style="font-size: 18px;">Ví dụ: 18521007_NguyenVanA_Lab3</i><br />
+                    <i style="font-size: 18px;">Ví dụ: 18521007_NguyenVanA_Lab4</i><br />
                 </div>
                 <h3 style="color: #1f3864;">2. Đánh giá</h3>
                 <p>Sinh viên tìm hiểu và tự thực hiện được bài thực hành, trả lời đầy đủ các yêu cầu đặt ra, trình bày báo cáo chi tiết, rõ ràng theo mẫu báo cáo đã được cung cấp</p>
