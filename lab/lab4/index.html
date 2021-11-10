@@ -102,16 +102,18 @@
                         <b><u>Thực hiện các bước sau:</u></b><br />
                         &#8195;• <b>Bước 1:</b> Mở chương trình Command Prompt (CMD) trong Windows<br />
                         &#8195;• <b>Bước 2:</b> Mở phần mềm Wireshark và bắt đầu bắt gói tin trên card mạng đang sử dụng kết nối Internet<br />
-                        &#8195;• <b>Bước 3:</b> Trong Command Prompt, thực hiện lệnh với cú pháp như sau: <b>ping </b> <b style="color: red;">hostname</b><br/>
+                        &#8195;• <b>Bước 3:</b> Trong Command Prompt, thực hiện lệnh với cú pháp như sau: <b>ping </b> <b style="color: red;">hostname</b>
                         <p style="text-align:center;">Vd: <b>ping</b> <b style="color: red;"> gaia.cs.umass.edu</b></p>
                         &#8195;• <b>Bước 4:</b>Thay đổi kích thước thành 2000
                         <p style="text-align:center;">Vd: <b>ping</b> <b style="color: red;">-l 2000 gaia.cs.umass.edu</b></p>
-                        <p>Lưu ý: dùng tham số <b>-l</b> để thay đổi kích thước. Nếu không dùng, kích thước mặc định là 32 bytes</p>
+                        &#8195;&#8195;<p>Lưu ý: dùng tham số <b>-l</b> để thay đổi kích thước. Nếu không dùng, kích thước mặc định là 32 bytes</p>
                         &#8195;• <b>Bước 5:</b>Kết thúc quá trình Ping<br />
                         &#8195;• <b>Bước 6:</b> Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-Ping.pcapng</b><br />
-                        &#8195;• <b>Bước 7:</b> Chụp lại màn hình kết quả Ping và chèn vào báo clo<br />
+                        &#8195;• <b>Bước 7:</b> Chụp lại màn hình kết quả Ping và chèn vào báo<br />
                     </div>
                     <br />
+                    <p>Mở file <b>MSSV-Ping.pcapng</b> và nhập "icmp" vào cửa sổ display-filter để hiển thị các thông điệp cần theo dõi</p>
+                    <p style="color: #d8593a; font-weight: bold;">Trả lời các câu hỏi sau kèm theo hình ảnh minh chứng kết quả từ Wireshark:</p>
 
                     <ol style="line-height: 2;" start="7">
                         <li>
