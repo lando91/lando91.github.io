@@ -119,6 +119,9 @@
 
                     <ol style="line-height: 2;" start="7">
                         <li>
+                            Địa chỉ IP máy bạn là gì? Địa chỉ IP của Host đích là gì?
+                        </li>
+                        <li>
                           Chọn gói tin ICMP Echo Request đầu tiên gửi đi. IP datagram này có phân mảnh không?  <br />
                             <i>Gợi ý: Xem tại phần Internet Protocol</i>
                         </li>
@@ -143,40 +146,35 @@
                         <a href="http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html">http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html</a>
                         cho phép người dùng tải lên (upload) nội dung. Chúng ta sẽ xem xét điều gì xảy ra khi upload một file dữ liệu.
                     </p>
-                     <ol style="line-height: 2;" start="9">
+                     <ol style="line-height: 2;" start="11">
                         <li>
-                            Xác định <b>Địa chỉ và cổng nguồn (Source Port)</b> mà client sử dụng để chuyển tệp sang <b>gaia.cs.umass.edu</b> là gì? <br />
-                            <i>Gợi ý: Chọn một thông điệp HTTP từ Client gửi lên Server và khám phá các chi tiết của gói tin TCP được sử dụng để mang thông điệp HTTP này</i>
+                            Xác định Địa chỉ IP (Local) máy bạn là gì? Subnet mask là gì? <br />
+                            <i>Gợi ý: Gõ lệnh ipconfig và chọn interface đang dùng để truy cập Internet</i>
                         </li>
-                        <li>Địa chỉ IP của gaia.cs.umass.edu là gì? Trên <b>số cổng</b> nào nó nhận các dữ liệu của tệp alice.txt</li>
+                        <li>Địa chỉ IP Local máy bạn thuộc Class nào?</li>
                         <li>
-                            Định vị <b>TCP SYN</b> segment (gói tin TCP có cờ SYN) khởi tạo kết nối TCP giữa client và server? Thành phần nào trong segment cho ta biết segment đó là TCP SYN segment? <br />
-                            <i>Gợi ý: Quan sát trường Flags</i>
+                           Địa chỉ IP Public máy bạn là gì? Cho biết cách tìm địa chỉ IP Public?<br />
                         </li>
-                        <li><b>TCP SYN</b> segment ở trên có <b>sequence number</b> là bao nhiêu?</li>
-                        <li>Tìm <b>sequence number</b> của gói tin <b>SYN/ACK</b> segment được gửi bởi server đến client để trả lời cho SYN segment ở trên?</li>
+                        <li>Địa chỉ IP của các host ở các Phần 1 và 2 là gì? Theo bạn địa chỉ IP này là Public hay Local? Vì sao?</li>
+                        <li>Xác định các địa chỉ IP ở Phần 1 và 2 thuộc Class nào??</li>
                         <li>
                             Tìm giá trị của <b>Acknowledgement</b> trong <b>SYN/ACK</b> segment?<br />
                             Làm sao server có thể xác định giá trị đó? <br />
                             Thành phần nào trong segment cho ta biết segment đó là <b>SYN/ACK</b> segment?
                         </li>
                         <li>
-                           Chỉ ra 6 segment đầu tiên mà server gửi cho Client (dựa vào Số thứ tự gói – No) và liệt kê vào bảng dưới đây
+                           Cho các địa chỉ sau đây: Hãy xác định Class và cho biết có thể sử dụng làm địa chỉ để giao tiếp trên Internet hay không?
                             <ul>
-                                <li>Tìm sequence number của 6 segments đầu tiên đó?</li>
-                                <li>Xác định thời gian mà mỗi segment được gửi, thời gian ACK cho mỗi segment được nhận? </li>
-                                <li>Tính RTT (Round Trip Time) cho 6 segments này. 
-                                    <br/>Biết <b>RTT</b> là khoảng thời gian tính từ lúc máy tính bắt đầu gửi segment cho đến khi nó nhận được ACK trả về tương ứng</li>
+                                <li>192.168.1.1</li>
+                                <li>172.15.1.20</li>
+                                <li>224.255.255.2</li>
+                                <li>127.0.0.1</li>
+                                <li>188.258.221.176</li>
+                                <li>10.0.0.1</li>
                             </ul>
                         </li>
                     </ol>
-                    
-                    <br />
-                    <div style="text-align: center;">
-                        <img src="tcp.png" style="max-width: 80%; margin: 0 auto;" />
-                    </div>
-                    <p style="text-align: center; font-style: italic;">Giao diện Upload file (sử dụng TCP)</p>
-                    <br />
+                   
                 </div>
 
                 <div id="tab4" class="tabcontent">
