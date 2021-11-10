@@ -1,1 +1,287 @@
 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Nhập môn Mạng máy tính - Lab 4 - IP và DHCP</title>
+        <link rel="icon" type="image/png" href="https://nc.uit.edu.vn/wp-content/uploads/2014/12/logo_mmt-nth.png" />
+        <meta name="description" content="Nhập môn Mạng máy tính - Lab 4 - Tầng Network, Địa chỉ IP và Chia Subnet " />
+        <meta name="keywords" content="UIT, IT005, Lab4" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    
+    <body class="pushmenu-push" id="page">
+        <div class="dialog" style="width: 78%; margin: 5% auto; text-align: center;">
+            <h2 style="color: #d8593a;">Môn học: Nhập môn Mạng máy tính - IT005</h2>
+            <h1 style="color: #3a6db5;">Lab 4 - Tầng Network, Địa chỉ IP và Chia Subnet</h1>
+            <h2>(Network Layer, IP Address and Subnet)</h2>
+            <h3>GVHD: ThS. Đỗ Thị Hương Lan</h3>
+            <h2 style="color: #d8593a; text-align: left;">A. Tổng quan</h2>
+            <div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
+                <h3 style="color: #1f3864;">1. Mục tiêu</h3>
+                <ul>
+                    <li><p>Tìm hiểu về các giao thức thuộc tầng Mạng: IP, ICMP ...</p></li>
+                    <li><p>Tìm hiểu cách sử dụng cơ bản công cụ tracert, ipconfig và tìm hiểu hành vi của các công cụ này</p></li>
+                    <li><p>Sử dụng Wireshark để bắt gói tin và phân tích các đặc điểm của gói tin IP</p></li>
+                    <li><p>Tìm hiểu về Địa chỉ IP (IP Address) và cách chia mạng con (kỹ thuật subnetting)</p></li>
+                </ul>
+                <h3 style="color: #1f3864;">2. Kiến thức nền tảng</h3>
+                <ul>
+                    <li><p>Kiến thức về giao thức IP và các giao thức khắc của chương Tầng Mạng (Network)</p></li>
+                </ul>
+                <h3 style="color: #1f3864;">3. Môi trường & công cụ</h3>
+                <ul>
+                    <li><p>Một máy tính có kết nối Internet sử dụng hệ điều hành Windows/Linux.</p></li>
+                    
+                    <li><p>Phần mềm Wireshark được cài đặt tại máy tính trên</p></li>
+                </ul>
+            </div>
+            <h2 style="color: #d8593a; text-align: left;">B. Thực hành</h2>
+            <div class="tab">
+                <button class="tablinks active" onclick="openTab(event, 'tab1')">1. Bắt và phân tích các gói tin từ quá trình Tracert</button>
+                <button class="tablinks" onclick="openTab(event, 'tab2')">2. Bắt và phân tích các gói tin từ Ping</button>
+                <button class="tablinks" onclick="openTab(event, 'tab3')">3. Địa chỉ IP</button>
+                <button class="tablinks" onclick="openTab(event, 'tab4')">4. Kỹ thuật chia mạng con</button>
+            </div>
+            <div class="dialogBox" style="text-align: left; line-height: 1.5;">
+                <div id="tab1" class="tabcontent" style="display: block;">
+                    <h3 style="color: #1f3864;">1. Bắt và phân tích các gói tin từ quá trình Tracert</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
+                        Sinh viên quá trình Tracert và dùng Wireshark để bắt các gói tin
+                    </div>
+                    <p><b>Traceroute</b>  (hay còn gọi là Tracert trên Windows) là chương trình được dùng để truy vết/hiển thị đường đi của một gói tin từ nguồn đến đích</p>
+                    <p><b>Traceroute</b> được hiện thực theo nhiều cách khác nhau trong Linux/MacOS và trong Windows. Trong Unix/Linux, Host nguồn gửi một chuỗi các gói tin UDP tới địa chỉ đích sử dụng số cổng đích (destination port number)</p>
+                    <p>Sinh viên hãy thực hiện các nhiệm vụ sau đây để bắt và phân tích đặc trưng của các gói tin IP</p>
+                  
+                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;">
+                        <b><u>Thực hiện các bước sau:</u></b><br />
+                        &#8195;• <b>Bước 1:</b> Mở chương trình Command Prompt (CMD) trong Windows<br />
+                        &#8195;• <b>Bước 2:</b> Mở phần mềm Wireshark và bắt đầu bắt gói tin trên card mạng đang sử dụng kết nối Internet<br />
+                        &#8195;• <b>Bước 3:</b> Trong Command Prompt, thực hiện lệnh với cú pháp như sau: <br/>
+                        <p style="text-align:center;"><b>tracert</b> <b style="color: red;">hostname</b></p><br />
+                        <p style="text-align:center;">Vd: <b>tracert</b> <b style="color: red;">uit.ed.vn</b></p><br />
+                        &#8195;• <b>Bước 4:</b>Kết thúc quá trình Tracertk<br />
+                        &#8195;• <b>Bước 5:</b> Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-Tracert.pcapng</b><br />
+                        &#8195;• <b>Bước 6:</b> Chụp lại màn hình kết quả Tracert và chèn vào báo cáo<br />
+                    </div>
+                    <br />
+                    <p>Mở file <b>MSSV-Tracert.pcapng</b> và nhập "icmp" vào cửa sổ display-filter để hiển thị các thông điệp cần theo dõi</p>
+                    <p style="color: #d8593a; font-weight: bold;">Trả lời các câu hỏi sau kèm theo hình ảnh minh chứng kết quả từ Wireshark:</p>
+
+                    <ol style="line-height: 2;">
+                        <li>
+                           Chọn gói tin ICMP đầu tiên được máy tính của bạn gửi đi thông qua lệnh tracert. Địa chỉ IP của máy tính bạn là bao nhiêu? <br />
+                            <i>Gợi ý: Xem tại phần Internet Protocol </i>
+                        </li>
+                        <li>
+                           Quan sát gói tin ICMP đầu tiên được gửi đi, cho biết độ dài (bytes) của IP Header?<br />
+                          <i>Gợi ý: Xem tại phần Internet Protocol </i>
+                        </li>
+                        <li>
+                           Qua thông tin hiển thị của Wireshark, xác định giá trị của trường Protocol trong IP header là gì??
+                        </li>
+                        <li>
+                           Payload của IP datagram có độ dài bao nhiêu? Giải thích vì sao bạn xác định được giá trị này?<br />
+                            <i>Gợi ý: Quan sát IP.Length và IP.Header Length</i>
+                        </li>
+                        <li>
+                            Địa chỉ IP của Host đích là gì?
+                        </li>
+                        <li>
+                           Liệt kê danh sách IP của các router trên đường từ nguồn đến đích thông qua lệnh tracert<br />
+                        </li>
+                    </ol>
+                </div>
+
+                <div id="tab2" class="tabcontent">
+                    <h3 style="color: #1f3864;">2. Bắt và phân tích các gói tin từ Ping</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
+                        Sinh viên sẽ quan sát các gói tin ICMP được tạo ra khi thực hiện lệnh Ping 
+                    </div>
+                   <p><b>ping (Packet InterNet Groper)</b> là 1 chương trình chạy trên dòng lệnh dùng để kiểm tra 2 thiết bị trong mạng có thể kết nối với nhau hay không. Ping còn được dùng để đo thời gian trễ của gói tin trong mạng</p>
+                   <p>Chương trình ping ở Host nguồn gửi một gói tin ICMP Echo Request tới địa chỉ IP đích. Nếu Host đích còn hoạt động và có kể kết nối đến thì Host đích sẽ trả lời bằng cách gửi một gói tin ICMP Echo Reply trở lại Host nguồn. Cả 2 loại gói tin được dùng 
+                     trong quá trình Ping này đều là các gói tin dùng <b>giao thức ICMP</b></p>
+                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;">
+                        <b><u>Thực hiện các bước sau:</u></b><br />
+                        &#8195;• <b>Bước 1:</b> Mở chương trình Command Prompt (CMD) trong Windows<br />
+                        &#8195;• <b>Bước 2:</b> Mở phần mềm Wireshark và bắt đầu bắt gói tin trên card mạng đang sử dụng kết nối Internet<br />
+                        &#8195;• <b>Bước 3:</b> Trong Command Prompt, thực hiện lệnh với cú pháp như sau: <br/>
+                        <p style="text-align:center;"><b>ping </b> <b style="color: red;">hostname</b></p><br />
+                        <p style="text-align:center;">Vd: <b>ping</b> <b style="color: red;"> uit.ed.vn</b></p><br />
+                        &#8195;• <b>Bước 4:</b>Thay đổi kích thước thành 2000<br />
+                        <p style="text-align:center;">Vd: <b>ping</b> <b style="color: red;">-l 2000 uit.ed.vn</b></p><br />
+                        <p>Lưu ý: dùng tham số <b>-l</b> để thay đổi kích thước. Nếu không dùng, kích thước mặc định là 32 bytes</p>
+                        &#8195;• <b>Bước 5:</b>Kết thúc quá trình Ping<br />
+                        &#8195;• <b>Bước 6:</b> Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-Ping.pcapng</b><br />
+                        &#8195;• <b>Bước 7:</b> Chụp lại màn hình kết quả Ping và chèn vào báo clo<br />
+                    </div>
+                    <br />
+
+                    <ol style="line-height: 2;" start="7">
+                        <li>
+                          Chọn gói tin ICMP Echo Request đầu tiên gửi đi. IP datagram này có phân mảnh không?  <br />
+                            <i>Gợi ý: Xem tại phần Internet Protocol</i>
+                        </li>
+                        <li>
+                          Chọn gói tin ICMP Echo Request sau khi đã thay đổi kích thước gói tin thành 2000. IP datagram này có phân mảnh không?  <br />
+                            <i>Gợi ý: Xem tại phần Internet Protocol</i>
+                        </li>
+                        <li>
+                          Có bao nhiêu fragment được tạo ra từ datagram gốc trên, định vị những fragment phân mảnh?<br />
+                          <i>Gợi ý: Xem tại phần Internet Protocol </i>
+                        </li>
+                    </ol>
+                </div>
+
+                <div id="tab3" class="tabcontent">
+                    <h3 style="color: #1f3864;">3. Tìm hiểu về địa chỉ IP</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
+                        Sinh viên tìm hiểu về Địa chỉ IP và sử dụng các công cụ để quan sát về địa chỉ IP
+                    </div>
+                    <p>
+                        Website với địa chỉ sau:
+                        <a href="http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html">http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html</a>
+                        cho phép người dùng tải lên (upload) nội dung. Chúng ta sẽ xem xét điều gì xảy ra khi upload một file dữ liệu.
+                    </p>
+                     <ol style="line-height: 2;" start="9">
+                        <li>
+                            Xác định <b>Địa chỉ và cổng nguồn (Source Port)</b> mà client sử dụng để chuyển tệp sang <b>gaia.cs.umass.edu</b> là gì? <br />
+                            <i>Gợi ý: Chọn một thông điệp HTTP từ Client gửi lên Server và khám phá các chi tiết của gói tin TCP được sử dụng để mang thông điệp HTTP này</i>
+                        </li>
+                        <li>Địa chỉ IP của gaia.cs.umass.edu là gì? Trên <b>số cổng</b> nào nó nhận các dữ liệu của tệp alice.txt</li>
+                        <li>
+                            Định vị <b>TCP SYN</b> segment (gói tin TCP có cờ SYN) khởi tạo kết nối TCP giữa client và server? Thành phần nào trong segment cho ta biết segment đó là TCP SYN segment? <br />
+                            <i>Gợi ý: Quan sát trường Flags</i>
+                        </li>
+                        <li><b>TCP SYN</b> segment ở trên có <b>sequence number</b> là bao nhiêu?</li>
+                        <li>Tìm <b>sequence number</b> của gói tin <b>SYN/ACK</b> segment được gửi bởi server đến client để trả lời cho SYN segment ở trên?</li>
+                        <li>
+                            Tìm giá trị của <b>Acknowledgement</b> trong <b>SYN/ACK</b> segment?<br />
+                            Làm sao server có thể xác định giá trị đó? <br />
+                            Thành phần nào trong segment cho ta biết segment đó là <b>SYN/ACK</b> segment?
+                        </li>
+                        <li>
+                           Chỉ ra 6 segment đầu tiên mà server gửi cho Client (dựa vào Số thứ tự gói – No) và liệt kê vào bảng dưới đây
+                            <ul>
+                                <li>Tìm sequence number của 6 segments đầu tiên đó?</li>
+                                <li>Xác định thời gian mà mỗi segment được gửi, thời gian ACK cho mỗi segment được nhận? </li>
+                                <li>Tính RTT (Round Trip Time) cho 6 segments này. 
+                                    <br/>Biết <b>RTT</b> là khoảng thời gian tính từ lúc máy tính bắt đầu gửi segment cho đến khi nó nhận được ACK trả về tương ứng</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <br />
+                    <div style="text-align: center;">
+                        <img src="tcp.png" style="max-width: 80%; margin: 0 auto;" />
+                    </div>
+                    <p style="text-align: center; font-style: italic;">Giao diện Upload file (sử dụng TCP)</p>
+                    <br />
+                </div>
+
+                <div id="tab4" class="tabcontent">
+                    <h3 style="color: #1f3864;">4. Phân tích các gói tin TCP</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
+                        Sinh viên sẽ quan sát các gói tin TCP được tạo ra khi giao tiếp với HTTP Server để upload một nội dung
+                    </div>
+                    <p>
+                        <b>
+                            Mở file và nhập “http” vào cửa sổ display-filter để hiển thị các thông điệp HTTP.<br />
+                            Chọn 1 gói tin, chọn chuột phải, chọn <i style="color: green;">Follow &gt; TCP Stream</i>
+                        </b>
+                    </p>
+                    <ol style="line-height: 2;" start="9">
+                        <li>
+                            Xác định <b>Địa chỉ và cổng nguồn (Source Port)</b> mà client sử dụng để chuyển tệp sang <b>gaia.cs.umass.edu</b> là gì? <br />
+                            <i>Gợi ý: Chọn một thông điệp HTTP từ Client gửi lên Server và khám phá các chi tiết của gói tin TCP được sử dụng để mang thông điệp HTTP này</i>
+                        </li>
+                        <li>Địa chỉ IP của gaia.cs.umass.edu là gì? Trên <b>số cổng</b> nào nó nhận các dữ liệu của tệp alice.txt</li>
+                        <li>
+                            Định vị <b>TCP SYN</b> segment (gói tin TCP có cờ SYN) khởi tạo kết nối TCP giữa client và server? Thành phần nào trong segment cho ta biết segment đó là TCP SYN segment? <br />
+                            <i>Gợi ý: Quan sát trường Flags</i>
+                        </li>
+                        <li><b>TCP SYN</b> segment ở trên có <b>sequence number</b> là bao nhiêu?</li>
+                        <li>Tìm <b>sequence number</b> của gói tin <b>SYN/ACK</b> segment được gửi bởi server đến client để trả lời cho SYN segment ở trên?</li>
+                        <li>
+                            Tìm giá trị của <b>Acknowledgement</b> trong <b>SYN/ACK</b> segment?<br />
+                            Làm sao server có thể xác định giá trị đó? <br />
+                            Thành phần nào trong segment cho ta biết segment đó là <b>SYN/ACK</b> segment?
+                        </li>
+                        <li>
+                           Chỉ ra 6 segment đầu tiên mà server gửi cho Client (dựa vào Số thứ tự gói – No) và liệt kê vào bảng dưới đây
+                            <ul>
+                                <li>Tìm sequence number của 6 segments đầu tiên đó?</li>
+                                <li>Xác định thời gian mà mỗi segment được gửi, thời gian ACK cho mỗi segment được nhận? </li>
+                                <li>Tính RTT (Round Trip Time) cho 6 segments này. 
+                                    <br/>Biết <b>RTT</b> là khoảng thời gian tính từ lúc máy tính bắt đầu gửi segment cho đến khi nó nhận được ACK trả về tương ứng</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <div style="max-width:80%; margin: 10px auto;">
+                    <table>
+                      <tr style="font-weight:bold;">
+                        <td>STT</td>
+                        <td>Mốc thời gian gửi</td>
+                        <td>Mốc thời gian nhận ACK</td>
+                        <td>RTT (Round Trip Time)</td>
+                        </tr>
+                    <tr style="height:30px;background:#f8f8f8;"><td>1</td><td>0.3s</td><td>0.5s</td><td>0.2s</td></tr>
+                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
+                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
+                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
+                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
+                    <tr style="height:30px;"><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                </div>
+                <br />
+            </div>
+            <h2 style="color: #d8593a; text-align: left;">C. Yêu cầu và Đánh giá</h2>
+            <div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
+                <h3 style="color: #1f3864;">1. Yêu cầu</h3>
+                <ul style="line-height: 2;">
+                    <li><p>Sinh viên tìm hiểu và thực hành theo hướng dẫn. Thực hiện báo cáo cá nhân và nộp bài tại Website môn học</p></li>
+                    <li>
+                        <p>Sinh viên báo cáo kết quả thực hiện và nộp bài gồm:</p>
+                        <ul>
+                            <li>
+                                Báo cáo chi tiết (<i>lưu ý xuất thành file <b style="background: yellow;">.PDF</b></i>), trình bày cụ thể các yêu cầu trong bài thực hành (có ảnh minh họa) và giải thích các vấn đề kèm theo
+                            </li>
+                            <li>
+                                2 file <i><b>MSSV-UDP.pcapng, MSSV-TCP.pcapng</b></i> thu được từ việc bắt gói tin bằng Wireshark theo yêu cầu của bài thực hành
+                            </li>
+                            <li>Nếu có nhiều file, tạo <b>thư mục cùng tên với tên</b> file báo cáo, và đưa tất cả các file ở trên vào Thư mục</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div style="width: 430px; margin: 15px auto; border: 1.5px solid red; line-height: 1; padding: 15px 15px; text-align: center; background: #ffff91;">
+                    Đặt tên file báo cáo/thư mục theo định dạng như mẫu: <br />
+                    <p style="font-size: 20px;"><b>MSSV_HoTen_LabX</b></p>
+                    <i style="font-size: 18px;">Ví dụ: 18521007_NguyenVanA_Lab3</i><br />
+                </div>
+                <h3 style="color: #1f3864;">2. Đánh giá</h3>
+                <p>Sinh viên tìm hiểu và tự thực hiện được bài thực hành, trả lời đầy đủ các yêu cầu đặt ra, trình bày báo cáo chi tiết, rõ ràng theo mẫu báo cáo đã được cung cấp</p>
+            </div>
+        </div>
+        <div style="text-align: center; width: 100%;">
+            <img src=".././footer.png" />
+        </div>
+        <script>
+            function openTab(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </body>
+    
+</html>
