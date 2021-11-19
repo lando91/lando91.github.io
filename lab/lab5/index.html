@@ -230,18 +230,18 @@
                         </p>
                      &#8195;- <b>Bước 5:</b> Gõ các lệnh sau để cấu hình địa chỉ cho interface gigabitethernet 0/0 (địa chỉ được cấu hình là địa chỉ đã được xác định trong bảng địa chỉ)
                         <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                           R1(config)# interface gigabitethernet 0/0<br/>
-                           R1(config-if)# ip address 192.168.10.1 255.255.255.0<br/>
-                           R1(config-if)# no shutdown
+                           R1(config)#interface gigabitethernet 0/0<br/>
+                           R1(config-if)#ip address 192.168.10.1 255.255.255.0<br/>
+                           R1(config-if)#no shutdown
                         </p>
                      &#8195;- <b>Bước 6:</b> Quan sát thông báo để biết đã cấu hình thành công Interface G0/0 hay chưa. Nếu đã thành công, gõ lệnh <b>exit</b> để thoát khỏi phần cấu hình của Interface G0/0
                         <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                           R1(config-if)# exit
+                           R1(config-if)#exit
                         </p>
                       &#8195;- <b>Bước 7:</b> Thực hiện lại Bước 5, 6 để cấu hình địa chỉ cho interface còn lại là G0/1 của R1 với các thông tin trong bảng địa chỉ<br/>
                       &#8195;- <b>Bước 8:</b> Sau khi cấu hình xong, lưu lại cấu hình với câu lệnh <b>copy run start</b>. <b>Lưu ý:</b> dùng lệnh exit để thoát và thực hiện lệnh ở mode R1#
                         <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                           R1# copy run start
+                           R1#copy run start
                         </p>
                       &#8195;- <b>Bước 9:</b> Thực hiện tương tự các bước ở trên để cấu hình cho các Interface G0/0, G0/1 của R2</b>
                     </div>
