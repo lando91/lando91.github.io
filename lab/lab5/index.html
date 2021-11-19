@@ -240,12 +240,26 @@
                         <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
                            R1(config-if)# exit
                         </p>
-                      &#8195;- <b>Bước 7:</b> Thực hiện lại Bước 5 để cấu hình địa chỉ cho các interface còn lại là G0/1 của R1, G0/0, G0/1 của R2 với các thông tin trong bảng địa chỉ
-                      &#8195;- <b>Bước 8:</b> Sau khi cấu hình xong, lưu lại cấu hình với câu lệnh <b>copy run start</b>
+                      &#8195;- <b>Bước 7:</b> Thực hiện lại Bước 5, 6 để cấu hình địa chỉ cho interface còn lại là G0/1 của R1 với các thông tin trong bảng địa chỉ<br/>
+                      &#8195;- <b>Bước 8:</b> Sau khi cấu hình xong, lưu lại cấu hình với câu lệnh <b>copy run start. Lưu ý: dùng lệnh exit để thoát và thực hiện lệnh ở mode R1#</b>
                         <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
                            R1# copy run start
                         </p>
+                      &#8195;- <b>Bước 9:</b> Thực hiện tương tự các bước ở trên để cấu hình cho các Interface G0/0, G0/1 của R2</b>
                     </div>
+                    <h4 style="color: #d8593a; font-weight: bold;"><b>2.2	Kiểm tra cấu hình</b></h4>
+                    <p>Kiểm tra kết nối bằng cách ping từ PC1 -> PC4, R2 ->PC2</p>
+                    <p>Sử dụng các câu lệnh show để xem các cấu hình của Router 1 và 2 (chụp hình nội dung các câu lệnh show sau), ví dụ</p>
+                    <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
+                      R1#show run
+                      R1#show ip interface brief
+                      R1#show ip route
+                    </p>
+                    <h4 style="color: #d8593a; font-weight: bold;"><b>2.3	Kiểm tra kết quả thực hành</b></h4>
+                    <p>Thực hiện tương tự phần 1.6</p>
+                   <div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;">
+                    <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5b_NhomXX.pka</b>
+                </div>
                 </div>
 
                 <div id="tab3" class="tabcontent">
