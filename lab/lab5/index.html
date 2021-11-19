@@ -41,7 +41,7 @@
             <h2 style="color: #d8593a; text-align: left;">B. Thực hành</h2>
             <div class="tab">
                 <button class="tablinks active" onclick="openTab(event, 'tab1')">1. Cấu hình thiết bị mạng không dây</button>
-                <button class="tablinks" onclick="openTab(event, 'tab2')">2. Cấu hình Router</button>
+                <button class="tablinks" onclick="openTab(event, 'tab2')">2. Cấu hình Router và PC</button>
                 <button class="tablinks" onclick="openTab(event, 'tab3')">3. Bài toán chia mạng và cấu hình mô hình</button>
             </div>
             <div class="dialogBox" style="text-align: left; line-height: 1.5;">
@@ -118,10 +118,96 @@
                 </div>
   
                 <div id="tab2" class="tabcontent">
-                    <h3 style="color: #1f3864;">2. Cấu hình Router</h3>
+                    <h3 style="color: #1f3864;">2. Cấu hình Router và PC</h3>
                     <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
-                        
+                         Sinh viên thực hiện việc cấu hình các thiết bị trong một mô hình mạng cho trước
                     </div>
+                    <p>Mô hình mạng dưới đây bao gồm các thiết bị định tuyến, các thiết bị chuyển mạch và các thiết bị đầu cuối (các PC)</p>
+                    <div style="text-align: center;">
+                        <img src="Network5B.png" style="max-width: 80%; margin: 0 auto;">
+                        <p style="text-align: center; font-style: italic;">Mô hình mạng thực hành Cấu hình địa chỉ IP trên router và PC</p>
+                    </div>
+                    <p><b></b>Bảng địa chỉ IP</p>
+                    <div style="max-width:100%; margin: 10px auto;">
+                    <table>
+                      <tr style="font-weight:bold;">
+                        <td>Device</td>
+                        <td>Interface</td>
+                        <td>IP Address</td>
+                        <td>Subnet Mask</td>
+                        <td>Default Gateway</td>
+                        </tr>
+                    <tr style="height:30px;">
+                        <td rowspan="3">R1</td>
+                        <td>G0/0</td>
+                        <td>192.168.10.1</td>
+                        <td>255.255.255.0</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr style="height:30px;">
+                        <td>G0/1</td>
+                        <td>192.168.11.1</td>
+                        <td>255.255.255.0</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr style="height:30px;">
+                        <td>S0/0/0 (DCE)</td>
+                        <td>209.165.200.225</td>
+                        <td>255.255.255.252</td>
+                        <td>N/A</td>
+                    </tr>
+                     <tr style="height:30px;">
+                        <td rowspan="3">R2</td>
+                        <td>G0/0</td>
+                        <td>10.1.1.1</td>
+                        <td>255.255.255.0</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr style="height:30px;">
+                        <td>G0/1</td>
+                        <td>10.1.2.1</td>
+                        <td>255.255.255.0</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr style="height:30px;">
+                        <td>S0/0/0 (DCE)</td>
+                        <td>209.165.200.226</td>
+                        <td>255.255.255.252</td>
+                        <td>N/A</td>
+                    </tr>
+                        <tr style="height:30px;">
+                        <td>PC1</td>
+                        <td>NIC</td>
+                        <td>192.168.10.10</td>
+                        <td>255.255.255.0</td>
+                        <td>192.168.10.1</td>
+                    </tr>
+                    <tr style="height:30px;">
+                         <td>PC2</td>
+                        <td>NIC</td>
+                        <td>192.168.11.10</td>
+                        <td>255.255.255.0</td>
+                        <td>192.168.11.1</td>
+                    </tr>
+                   <tr style="height:30px;">
+                         <td>PC3</td>
+                        <td>NIC</td>
+                        <td>10.1.1.10</td>
+                        <td>255.255.255.0</td>
+                        <td>10.1.1.1</td>
+                    </tr>
+                    <tr style="height:30px;">
+                         <td>PC4</td>
+                        <td>NIC</td>
+                        <td>10.1.2.10</td>
+                        <td>255.255.255.0</td>
+                        <td>10.1.2.1</td>
+                    </tr>
+                    </table>
+                </div>
+                    <p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép các thiết bị trong mô hình kết nối với nhau</p>
+                    <p>Mở file <b>Lab 5b.pka</b> và làm theo hướng dẫn sau đây:</p>
+                    <h4 style="color: #d8593a; font-weight: bold;"><b>2.1	Cấu hình địa chỉ IP cho router R1</b></h4> 
                 </div>
 
                 <div id="tab3" class="tabcontent">
