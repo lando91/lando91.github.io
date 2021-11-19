@@ -61,7 +61,7 @@
                     <b style="color: green;">&#8195;◆ Cấu hình phần Internet connection</b><br/>
                     <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;">
                     <b><u>Thực hiện các bước sau:</u></b><br />
-                     &#8195;- <b>Bước 1:</b> Chọn <b>WRS2</b><b>GUI</b> tab<br />
+                     &#8195;- <b>Bước 1:</b> Chọn <b>WRS2</b> > <b>GUI</b> tab<br />
                      &#8195;- <b>Bước 2:</b> Chọn phần <b>Internet Connection type</b> thành <b>Static IP</b><br />
                      &#8195;- <b>Bước 3:</b> Cấu hình phần địa chỉ IP với thông số sau:
                      <ul>
@@ -206,7 +206,44 @@
                 </div>
                     <p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép các thiết bị trong mô hình kết nối với nhau</p>
                     <p>Mở file <b>Lab 5b.pka</b> và làm theo hướng dẫn sau đây:</p>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>2.1	Cấu hình địa chỉ IP cho router R1</b></h4> 
+                    <h4 style="color: #d8593a; font-weight: bold;"><b>2.1	Cấu hình địa chỉ IP cho các router</b></h4>
+                    <p>Trong mô hình mạng trên, Router 1, 2 chưa được cấu hình hoàn chỉnh. Vì vậy, tiến hành thực hiện cấu hình trên các Router</p>
+                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;">
+                    <b><u>Thực hiện các bước sau:</u></b><br />
+                     &#8195;- <b>Bước 1:</b> Chọn <b>R1</b><b>CLI</b> tab<br />
+                     &#8195;- <b>Bước 2:</b> Nhập password <b style="color:red;">cisco</b> để đăng nhập
+                        <p>
+                            User Access Verification<br/>
+                            Password: <b style="color:red;">cisco</b><br/>
+                            R1>
+                        </p>
+                     &#8195;- <b>Bước 3:</b> Gõ lệnh <b>enable</b> và nhập password <b style="color:red;">class</b>
+                       <p>
+                           R1><b>enable</b><br/>
+                           Password: <b style="color:red;">class</b><br/>
+                           R1#
+                        </p>
+                     &#8195;- <b>Bước 4:</b> Gõ lệnh <b>config t</b> để cấu hình các interface của Router 1
+                       <p>
+                           R1#<b>config t</b><br/>
+                           R1(config)#
+                        </p>
+                     &#8195;- <b>Bước 5:</b> Gõ các lệnh sau để cấu hình địa chỉ cho interface gigabitethernet 0/0 (địa chỉ được cấu hình là địa chỉ đã được xác định trong bảng địa chỉ)
+                        <p>
+                           R1(config)# interface gigabitethernet 0/0<br/>
+                           R1(config-if)# ip address 192.168.10.1 255.255.255.0<br/>
+                           R1(config-if)# no shutdown
+                        </p>
+                     &#8195;- <b>Bước 6:</b> Quan sát thông báo để biết đã cấu hình thành công Interface G0/0 hay chưa. Nếu đã thành công, gõ lệnh <b>exit</b> để thoát khỏi phần cấu hình của Interface G0/0
+                        <p>
+                           R1(config-if)# exit
+                        </p>
+                      &#8195;- <b>Bước 7:</b> Thực hiện lại Bước 5 để cấu hình địa chỉ cho các interface còn lại là G0/1 của R1, G0/0, G0/1 của R2 với các thông tin trong bảng địa chỉ
+                      &#8195;- <b>Bước 8:</b> Sau khi cấu hình xong, lưu lại cấu hình với câu lệnh <b>copy run start</b>
+                        <p>
+                           R1# copy run start
+                        </p>
+                    </div>
                 </div>
 
                 <div id="tab3" class="tabcontent">
