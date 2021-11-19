@@ -1,1 +1,242 @@
 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Nhập môn Mạng máy tính - Lab 5 - Cấu hình thiết bị mạng</title>
+        <link rel="icon" type="image/png" href="https://nc.uit.edu.vn/wp-content/uploads/2014/12/logo_mmt-nth.png" />
+        <meta name="description" content="Nhập môn Mạng máy tính - Lab 5 - Cấu hình thiết bị mạng" />
+        <meta name="keywords" content="UIT, IT005, Lab5" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="pushmenu-push" id="page">
+        <div class="dialog" style="width: 78%; margin: 5% auto; text-align: center;">
+            <h2 style="color: #d8593a;">Môn học: Nhập môn Mạng máy tính - IT005</h2>
+            <h1 style="color: #3a6db5;">Lab 5 - Cấu hình thiết bị mạng</h1>
+            <h2>(Configuring Network Devices)</h2>
+            <h3>GVHD: ThS. Đỗ Thị Hương Lan</h3>
+            <h2 style="color: #d8593a; text-align: left;">A. Tổng quan</h2>
+            <div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
+                <h3 style="color: #1f3864;">1. Mục tiêu</h3>
+                <ul>
+                    <li><p>Sinh viên có thể cấu hình thiết bị mạng không dây</p></li>
+                    <li><p>Sinh viên có thể cấu hình thiết bị định tuyến (Router)</p></li>
+                    <li><p>Sinh viên áp dụng chia địa chỉ IP trong mô hình mạng</p></li>
+                </ul>
+                <h3 style="color: #1f3864;">2. Kiến thức nền tảng</h3>
+                <ul>
+                    <li><p>Kiến thức về các thiết bị mạng và địa chỉ IP</p></li>
+                </ul>
+                <h3 style="color: #1f3864;">3. Môi trường & công cụ</h3>
+                <ul>
+                   <li><p>Một máy tính có kết nối Internet sử dụng hệ điều hành Windows/Linux.</p></li>                  
+                   <li><p>Phần mềm <b>Packet Tracer</b>: Sinh viên có thể tải về miễn phí phiên bản mới nhất theo hướng dẫn tại link sau <br/> <a href="https://www.netacad.com/courses/packet-tracer">https://www.netacad.com/courses/packet-tracer</a></p></li>
+                </ul>
+               <br/>
+               <div style="text-align: center; width: 100%;">
+               <img src="packettracer.png"/>
+              </div>
+            </div>
+            <h2 style="color: #d8593a; text-align: left;">B. Thực hành</h2>
+            <div class="tab">
+                <button class="tablinks active" onclick="openTab(event, 'tab1')">1. Cấu hình thiết bị mạng không dây</button>
+                <button class="tablinks" onclick="openTab(event, 'tab2')">2. Cấu hình Router</button>
+                <button class="tablinks" onclick="openTab(event, 'tab3')">3. Bài toán chia mạng và cấu hình mô hình</button>
+            </div>
+            <div class="dialogBox" style="text-align: left; line-height: 1.5;">
+                <div id="tab1" class="tabcontent" style="display: block;">
+                    <h3 style="color: #1f3864;">1. Cấu hình thiết bị mạng không dây</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
+                        Sinh viên thực hiện việc cấu hình thiết bị mạng không dây từ một mô hình mạng cho trước
+                    </div>
+                    <p><b>Mô hình mạng dưới đây bao gồm các thiết bị định tuyến, chuyển mạch, thiết bị không dây và các thiết bị đầu cuối (các PC)</p>
+                    <div style="text-align: center;">
+                        <img src="task01.png" style="max-width: 80%; margin: 0 auto;">
+                    </div>
+                    <p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép PC3 kết nối vào hệ thống sẵn có thông qua kết nối với thiết bị không dây Wireless Router</p>
+                    <p>Mở file <b>Lab 5a.pka</b> và làm theo hướng dẫn sau đây:</p>
+                    <h4 style="color: #d8593a; font-weight: bold;"><b>1.1 Kết nối thiết bị mạng không dây vào mô hình</b></h4>  
+                    <p>Sử dụng <b>cáp thẳng (Copper Straight-through)</b> để kết nối từ cổng Internet của wireless router đến cổng Fa0/7 của switch</p>
+                    <br />
+                    <h4 style="color: #d8593a; font-weight: bold;"><b>1.2	Cấu hình cơ bản cho Wireless Router</b></h4>  
+                    <b>- Cấu hình phần Internet connection</b><br/>
+                     &#8195;• <b>Bước 1:</b> Chọn <b>WRS2</b><b>GUI</b> tab<br />
+                     &#8195;• <b>Bước 2:</b> Chọn phần <b>Internet Connection type</b> thành <b>Static IP</b><br />
+                     &#8195;• <b>Bước 3:</b> Cấu hình phần địa chỉ IP với thông số sau: <br/>
+                     <ul>
+                       <li>Internet IP address: 172.17.88.25</li>
+                       <li>Subnet mask: 255.255.255.0</li>
+                       <li>Default gateway: 172.17.88.1 </li>
+                      </ul>
+                    <b>- Cấu hình phần Network Setup</b><br/>
+                     &#8195;• <b>Bước 1:</b>Kéo xuống phần <b>Network Setup</b><br />
+                     &#8195;• <b>Bước 2:</b> Điền Router IP là <b>172.17.40.1</b> và subnet mask là <b>255.255.255.0</b><br />
+                     &#8195;• <b>Bước 3:</b> Chọn <b>Enabled</b> cho phần DHCP server<br/>
+                     &#8195;• <b>Bước 4:</b> Click <b>Save Settings</b><br/>
+                     <h4 style="color: #d8593a; font-weight: bold;"><b>1.3	Cấu hình truy cập và bảo mật cho Wireless Router</b></h4>
+                     &#8195;• <b>Bước 1:</b> Chọn tab <b>Wireless</b> ở phía trên cùng<br />
+                     &#8195;• <b>Bước 2:</b> Chuyển <b>Network Mode</b> thành <b>Wireless-N Only</b> và đổi tên của mạng không dây SSID thành <b>WRS_LAN</b><br />
+                     &#8195;• <b>Bước 3:</b> Tắt <b>SSID Broadcast</b> (chọn Disabled) và click <b>Save Settings</b><br/>
+                     &#8195;• <b>Bước 4:</b> Chọn tab Wireless Security . Thay Security Mode từ Disabled thành WPA2 Personal. WEP, WPA, WPA2,…<br/>
+                     &#8195;• <b>Bước 5:</b> Sử dụng mật khẩu cisco123 (phần passphrase)</b><br/>
+                     &#8195;• <b>Bước 6:</b> Click <b>Save Settings</b><br/>
+                </div>
+  
+                <div id="tab2" class="tabcontent">
+                    <h3 style="color: #1f3864;">2. Bắt và phân tích các gói tin từ Ping</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
+                        Sinh viên sẽ quan sát các gói tin ICMP được tạo ra khi thực hiện lệnh Ping 
+                    </div>
+                   <p><b>ping (Packet InterNet Groper)</b> là 1 chương trình chạy trên dòng lệnh dùng để kiểm tra 2 thiết bị trong mạng có thể kết nối với nhau hay không. Ping còn được dùng để đo thời gian trễ của gói tin trong mạng</p>
+                   <p>Chương trình ping ở Host nguồn gửi một gói tin ICMP Echo Request tới địa chỉ IP đích. Nếu Host đích còn hoạt động và có kể kết nối đến thì Host đích sẽ trả lời bằng cách gửi một gói tin ICMP Echo Reply trở lại Host nguồn. Cả 2 loại gói tin được dùng 
+                     trong quá trình Ping này đều là các gói tin dùng <b>giao thức ICMP</b></p>
+                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;">
+                        <b><u>Thực hiện các bước sau:</u></b><br />
+                        &#8195;• <b>Bước 1:</b> Mở chương trình Command Prompt (CMD) trong Windows<br />
+                        &#8195;• <b>Bước 2:</b> Mở phần mềm Wireshark và bắt đầu bắt gói tin trên card mạng đang sử dụng kết nối Internet<br />
+                        &#8195;• <b>Bước 3:</b> Trong Command Prompt, thực hiện lệnh với cú pháp như sau: <b>ping </b> <b style="color: red;">hostname</b>
+                        <p style="text-align:center;">Vd: <b>ping</b> <b style="color: red;"> gaia.cs.umass.edu</b></p>
+                        &#8195;• <b>Bước 4:</b>Thay đổi kích thước thành 2000
+                        <p style="text-align:center;">Vd: <b>ping</b> <b style="color: red;">-l 2000 gaia.cs.umass.edu</b></p>
+                        &#8195;&#8195;<p>Lưu ý: dùng tham số <b>-l</b> để thay đổi kích thước. Nếu không dùng, kích thước mặc định là 32 bytes</p>
+                        &#8195;• <b>Bước 5:</b>Kết thúc quá trình Ping<br />
+                        &#8195;• <b>Bước 6:</b> Dừng bắt gói tin và lưu lại dưới định dạng <b>MSSV-Ping.pcapng</b><br />
+                        &#8195;• <b>Bước 7:</b> Chụp lại màn hình kết quả Ping và chèn vào báo<br />
+                    </div>
+                    <br />
+                    <p>Mở file <b>MSSV-Ping.pcapng</b> và nhập "icmp" vào cửa sổ display-filter để hiển thị các thông điệp cần theo dõi</p>
+                    <p style="color: #d8593a; font-weight: bold;">Trả lời các câu hỏi sau kèm theo hình ảnh minh chứng kết quả từ Wireshark:</p>
+
+                    <ol style="line-height: 2;" start="7">
+                        <li>
+                            <b>Địa chỉ IP</b> máy bạn là gì?  <b>Địa chỉ IP</b> của Host đích là gì?
+                        </li>
+                        <li>
+                          Chọn gói tin ICMP Echo Request đầu tiên gửi đi. IP datagram này có <b>phân mảnh</b> không?  <br />
+                            <i>Gợi ý: Xem tại phần Internet Protocol</i>
+                        </li>
+                        <li>
+                          Chọn gói tin ICMP Echo Request sau khi đã thay đổi kích thước gói tin thành 2000. IP datagram này có <b>phân mảnh</b> không?  <br />
+                            <i>Gợi ý: Xem tại phần Internet Protocol</i>
+                        </li>
+                        <li>
+                            Có bao nhiêu <b>fragment</b> được tạo ra từ datagram gốc trên, định vị những fragment phân mảnh?<br />
+                          <i>Gợi ý: Xem tại phần Internet Protocol </i>
+                        </li>
+                    </ol>
+                </div>
+
+                <div id="tab3" class="tabcontent">
+                    <h3 style="color: #1f3864;">3. Tìm hiểu về địa chỉ IP</h3>
+                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
+                        Sinh viên tìm hiểu về Địa chỉ IP và sử dụng các công cụ để quan sát về địa chỉ IP
+                    </div>
+                    <p style="line-height: 2;">
+                       <b>Địa chỉ IP</b> là địa chỉ logic được sử dụng trong giao thức IP của lớp Internet/Network <br/>
+                        Địa chỉ IPv4 gồm <b style="color: red;">32 bit nhị phân</b>, chia làm 4 octet. Địa chỉ IPv4 được chia làm 5 lớp A,B,C,D,E có sự khác nhau về số octet đóng vai trò làm NetID và HostID<br/>
+                        <u>Một số cách thể hiện thường thấy:</u> <br/>
+                        - Dạng thập phân: 172.16.30.56<br/>
+                        - Dạng nhị phân: 10101100 00010000 00011110 00111000<br/>
+                        <b>Subnet mask</b> gồm 32 bit nhị phân, thể hiện mặt nạ mạng, đi kèm một địa chỉ IP. 
+                        Một số Subnet mask chuẩn: <br/>
+                        - 255.0.0.0 (Lớp A)<br/>
+                        - 255.255.255.0 (Lớp C)<br/>
+                    </p>
+                    <div style="text-align: center;">
+                        <img src="ip.png" style="max-width: 80%; margin: 0 auto;">
+                    </div>
+                    <br/>
+                    <div style="text-align: center;">
+                        <img src="class.png" style="max-width: 70%; margin: 0 auto;">
+                    </div>
+                    <p style="line-height: 2;">
+                    Phân loại theo phạm vi hoạt động:<br/>
+                        - <b>Private IP:</b> sử dụng trong mạng LAN, có thể sử dụng lặp lại ở các mạng LAN khác nhau
+                    <ul>
+                        <li>Lớp A: Từ 10.0.0.0 --> 10.255.255.255 </li>
+                        <li>Lớp B: Từ 172.16.0.0 --> 172.31.255.255</li>
+                        <li>Lớp C: Từ 192.168.0.0 --> 192.168.255.255</li>
+                    </ul>
+                     - <b>Loopback IP:</b> khối địa chỉ cho các mục đích loopback 
+                    <ul>
+                        <li>Dải địa chỉ 127.0.0.1 --> 127.255.255.254</li>
+                    </ul>
+                     - <b>Public IP:</b> sử dụng trong mạng WAN (A,B,C), dùng để định tuyến trên Internet
+                    </p>
+                    <br/>
+                     <ol style="line-height: 2;" start="11">
+                        <li>
+                            Xác định Địa chỉ IP (Local) máy bạn là gì? Subnet mask là gì? <br />
+                            <i>Gợi ý: Gõ lệnh <b>ipconfig</b> và chọn interface đang dùng để truy cập Internet</i>
+                        </li>
+                         <li><b>Địa chỉ IP</b> Local máy bạn thuộc Class nào?</li>
+                        <li>
+                            <b>Địa chỉ IP Public</b> máy bạn là gì? Cho biết cách tìm địa chỉ IP Public?<br />
+                        </li>
+                        <li>Địa chỉ IP của các host ở các Phần 1 và 2 là gì? Theo bạn địa chỉ IP này là Public hay Local? Vì sao?</li>
+                        <li>Xác định các địa chỉ IP ở Phần 1 và 2 thuộc Class nào??</li>
+                        <li>
+                            Cho các địa chỉ sau đây: Hãy xác định <b>Class</b> và cho biết có thể sử dụng làm địa chỉ để <b style="color: red;">giao tiếp trên Internet</b> hay không?
+                            <ul>
+                                <li>192.168.1.1</li>
+                                <li>172.15.1.20</li>
+                                <li>224.255.255.2</li>
+                                <li>127.0.0.1</li>
+                                <li>188.258.221.176</li>
+                                <li>10.0.0.1</li>
+                            </ul>
+                            <u>Lưu ý:</u> <b>Chỉ địa chỉ IP Public mới có thể giao tiếp trên Internet</b>
+                        </li>
+                    </ol>
+                   
+                </div>
+                <br />
+            </div>
+            <h2 style="color: #d8593a; text-align: left;">C. Yêu cầu và Đánh giá</h2>
+            <div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
+                <h3 style="color: #1f3864;">1. Yêu cầu</h3>
+                <ul style="line-height: 2;">
+                    <li><p>Sinh viên tìm hiểu và thực hành theo hướng dẫn. Thực hiện báo cáo theo <b>hình thức nhóm</b> và nộp bài tại Website môn học</p></li>
+                    <li>
+                        <p>Nhóm sinh viên báo cáo kết quả thực hiện và nộp bài gồm:</p>
+                        <ul>
+                            <li>
+                                Báo cáo chi tiết (<i>lưu ý xuất thành file <b style="background: yellow;">.PDF</b></i>), trình bày kết quả thực hành: các bảng chia IP, hình chụp kết quả kiểm tra sau khi thực hiện xong từng task và giải thích các vấn đề kèm theo
+                            </li>
+                            <li>
+                                3 tập tin *.pka đã thực hiện
+                            </li>
+                            <li>Nếu có nhiều file, tạo <b>thư mục cùng tên với tên</b> file báo cáo, và đưa tất cả các file ở trên vào Thư mục</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div style="width: 430px; margin: 15px auto; border: 1.5px solid red; line-height: 1; padding: 15px 15px; text-align: center; background: #ffff91;">
+                    Đặt tên file báo cáo/thư mục theo định dạng như mẫu: <br />
+                    <p style="font-size: 20px;"><b>NhomXX_MSSV_HoTenNhomTruong_LabX</b></p>
+                    <i style="font-size: 18px;">Ví dụ: Nhom01_18521007_NguyenVanA_Lab5</i><br />
+                </div>
+                <h3 style="color: #1f3864;">2. Đánh giá</h3>
+                <p>Sinh viên tìm hiểu và tự thực hiện được bài thực hành, trả lời đầy đủ các yêu cầu đặt ra, trình bày báo cáo chi tiết, rõ ràng theo mẫu báo cáo đã được cung cấp</p>
+            </div>
+        </div>
+        <div style="text-align: center; width: 100%;">
+            <img src=".././footer.png" />
+        </div>
+        <script>
+            function openTab(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </body>
+    
+</html>
