@@ -112,7 +112,10 @@
                         <p style="text-align: center; font-style: italic;">Kết quả chi tiết khi chưa thực hiện cấu hình</p>
                     </div>
                 <div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;">
-                    <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5a_NhomXX.pka</b>
+                     <u><b>Yêu cầu:</b></u> Lưu file với tên <b>Lab 5a_NhomXX.pka</b> (kèm User Profile). Chụp hình các kết quả đưa vào báo cáo những nội dung sau đây:
+                    - Hình chụp Overall Feedback<br/>
+                    - Hình chụp Assessment Items<br/>
+                    - Mô hình mạng<br/>
                 </div>
                 </div>
   
@@ -256,8 +259,12 @@
                     <h4 style="color: #d8593a; font-weight: bold;"><b>2.3	Kiểm tra kết quả thực hành</b></h4>
                     <p>Thực hiện tương tự phần 1.6</p>
                    <div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;">
-                    <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5b_NhomXX.pka</b>
-                </div>
+                   <u><b>Yêu cầu:</b></u> Lưu file với tên <b>Lab 5b_NhomXX.pka</b> (kèm User Profile). Chụp hình các kết quả đưa vào báo cáo những nội dung sau đây:
+                        - Hình chụp Overall Feedback
+                        - Hình chụp Assessment Items
+                        - Màn hình Ping (PC1 --> PC4, R2 --> PC2)
+                        - Mô hình mạng             
+                   </div>
                 </div>
 
                 <div id="tab3" class="tabcontent">
@@ -273,12 +280,11 @@
                     <p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép các thiết bị trong mô hình kết nối với nhau</p>
                     <p>Mở file <b>Lab 5b.pka</b> và làm theo hướng dẫn bên dưới</p>
                     <h4 style="color: #d8593a; font-weight: bold;"><b>3.1   Chia mạng con và phân bổ IP</b></h4>
-                    <p>Cho mô hình mạng trên và mạng 192.168.100.0/24. Thực hiện việc chia mạng để phục vụ cho yêu cầu bài toán (chú ý số lượng mạng con và số lượng host trong các mạng con</p>
+                    <p>Cho mô hình mạng trên và mạng <b>192.168.100.0/24</b>. Thực hiện việc chia mạng để phục vụ cho yêu cầu bài toán (chú ý số lượng mạng con và số lượng host trong các mạng con)</p>
                     <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;">
                     <b><u>Thực hiện các bước sau:</u></b><br />
-                     &#8195;- <b>Bước 1:</b> Xác định số lượng mạng con trên mô hình đã cho<br />
-                     &#8195;- <b>Bước 2:</b> Thực hiện việc chia mạng từ mạng đã cho (192.168.100.0/24). Liệt kê các thông số gồm địa chỉ mạng, dãy địa chỉ host, địa chỉ broadcast của các mạng con đó và điền vào bảng sau<br/>
-                    <p><b style="color: green;">Bảng địa chỉ IP</b></p>
+                     &#8195;- <b>Bước 1:</b> Xác định <b>số lượng mạng con</b> trên mô hình đã cho<br />
+                     &#8195;- <b>Bước 2:</b> Thực hiện việc chia mạng từ mạng đã cho (192.168.100.0/24). Liệt kê các thông số gồm <b>địa chỉ mạng, dãy địa chỉ host, địa chỉ broadcast</b> của các mạng con đó và điền vào bảng sau<br/>
                     <div style="max-width:80%; margin: 10px auto;">
                     <table>
                       <tr style="font-weight:bold;">
@@ -348,11 +354,11 @@
                     </div>
                      &#8195;- <b>Bước 3:</b> Sau khi chia mạng con, gán các mạng con vào từng mạng trong mô hình như sau<br/>
                       <ul>
-                       <li>Gán Subnet 0 cho mạng LAN kết nối đến GigabitEthernet 0/0 interface của R1</li>
-                       <li>Gán Subnet 1 cho mạng LAN kết nối đến GigabitEthernet 0/1 interface của R1</li>
-                       <li>Gán Subnet 2 cho mạng LAN kết nối đến GigabitEthernet 0/0 interface of R2</li>
-                       <li>Gán Subnet 3 cho mạng LAN kết nối đến GigabitEthernet 0/1 interface of R2</li>
-                       <li>Gán Subnet 4 cho kết nối giữa R1 to R2</li>
+                       <li>Gán <b>Subnet 0</b> cho mạng LAN kết nối đến GigabitEthernet 0/0 interface của R1</li>
+                       <li>Gán <b>Subnet 1</b> cho mạng LAN kết nối đến GigabitEthernet 0/1 interface của R1</li>
+                       <li>Gán <b>Subnet 2</b> cho mạng LAN kết nối đến GigabitEthernet 0/0 interface of R2</li>
+                       <li>Gán <b>Subnet 3</b> cho mạng LAN kết nối đến GigabitEthernet 0/1 interface of R2</li>
+                       <li>Gán <b>Subnet 4</b> cho kết nối giữa R1 to R2</li>
                       </ul>
                       &#8195;- <b>Bước 4:</b> Sau khi gán mạng con, hoàn thành bảng địa chỉ sau:
                       <div style="max-width:80%; margin: 10px auto;">
@@ -460,20 +466,25 @@
                     </tr>    
                     </table>
                 </div>
-                        <p><b><u>Lưu ý:</u></b><p>
-                         <ul>
+                <p><b><u>Lưu ý:</u></b><p>
+                   <ul>
                        <li>Sử dụng địa chỉ đầu tiên của mạng con cho Interfaces GigabitEthernet của R1, R2</li>
                        <li>Với kết nối giữa R1 và R2, sử dụng địa chỉ đầu tiên của mạng con cho Interface S0/0/0 của R1 và địa chỉ cuối cùng cho Interface S0/0/0 của R2</li>
                        <li>Sử dụng địa chỉ thứ 2 của mạng con cho các Switch</li>
                        <li>Sử dụng địa chỉ cuối cùng của mạng con cho các PC</li>
-                      </ul>
+                    </ul>
                  </div>
                  <h4 style="color: #d8593a; font-weight: bold;"><b>3.2	Cấu hình thiết bị</b></h4>
                  <p>Từ bảng thông tin ở trên, thực hiện cấu hình IP phù hợp cho các các thiết bị R1, S3 và PC4</p>
                  <h4 style="color: #d8593a; font-weight: bold;"><b>3.3	Kiểm tra kết quả thực hành</b></h4>
                  <p>Thực hiện tương tự phần 1.6</p>
                    <div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;">
-                    <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5c_NhomXX.pka</b>
+                    <u><b>Yêu cầu:</b></u> Lưu file với tên <b>Lab 5c_NhomXX.pka</b> (kèm User Profile). Chụp hình các kết quả đưa vào báo cáo những nội dung sau đây: 
+                        - Bảng chia mạng con<br/>
+                        - Bảng cấu hình địa chỉ<br/>
+                        - Hình chụp Overall Feedback<br/>
+                        - Hình chụp Assessment Items<br/>
+                        - Mô hình mạng
                 </div>
                  <br />
                  </div>
