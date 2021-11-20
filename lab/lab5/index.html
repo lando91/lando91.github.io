@@ -1,527 +1,494 @@
-<html lang="en">    
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Nhập môn Mạng máy tính - Lab 5 - Cấu hình thiết bị mạng</title>
-        <link rel="icon" type="image/png" href="https://nc.uit.edu.vn/wp-content/uploads/2014/12/logo_mmt-nth.png" />
-        <meta name="description" content="Nhập môn Mạng máy tính - Lab 5 - Cấu hình thiết bị mạng" />
-        <meta name="keywords" content="UIT, IT005, Lab5" />
-        <link rel="stylesheet" href="style.css" />
-    </head>  
-    <body class="pushmenu-push" id="page">
-        <div class="dialog" style="width: 78%; margin: 5% auto; text-align: center;">
-            <h2 style="color: #d8593a;">Môn học: Nhập môn Mạng máy tính - IT005</h2>
-            <h1 style="color: #3a6db5;">Lab 5 - Cấu hình thiết bị mạng</h1>
-            <h2>(Configuring Network Devices)</h2>
-            <h3>GVHD: ThS. Đỗ Thị Hương Lan</h3>
-            <h2 style="color: #d8593a; text-align: left;">A. Tổng quan</h2>
-            <div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
-                <h3 style="color: #1f3864;">1. Mục tiêu</h3>
-                <ul>
-                    <li><p>Sinh viên có thể cấu hình thiết bị mạng không dây</p></li>
-                    <li><p>Sinh viên có thể cấu hình thiết bị định tuyến (Router)</p></li>
-                    <li><p>Sinh viên áp dụng chia địa chỉ IP trong mô hình mạng</p></li>
-                </ul>
-                <h3 style="color: #1f3864;">2. Kiến thức nền tảng</h3>
-                <ul>
-                    <li><p>Kiến thức về các thiết bị mạng và địa chỉ IP</p></li>
-                </ul>
-                <h3 style="color: #1f3864;">3. Môi trường & công cụ</h3>
-                <ul>
-                   <li><p>Một máy tính có kết nối Internet sử dụng hệ điều hành Windows/Linux.</p></li>                  
-                   <li><p>Phần mềm <b>Packet Tracer</b>: Sinh viên có thể tải về miễn phí phiên bản mới nhất theo hướng dẫn tại link sau <br/> <a href="https://www.netacad.com/courses/packet-tracer">https://www.netacad.com/courses/packet-tracer</a></p></li>
-                </ul>
-               <br/>
-               <div style="text-align: center; width: 100%;">
-               <img src="packettracer.png" style="max-width: 80%; margin: 0 auto;"/>
-              </div>
-                <p style="text-align: center; font-style: italic;">Giao diện chính của phần mềm Packet Tracer</p>
-            </div>
-            <h2 style="color: #d8593a; text-align: left;">B. Thực hành</h2>
-            <div class="tab">
-                <button class="tablinks active" onclick="openTab(event, 'tab1')">1. Cấu hình thiết bị mạng không dây</button>
-                <button class="tablinks" onclick="openTab(event, 'tab2')">2. Cấu hình Router</button>
-                <button class="tablinks" onclick="openTab(event, 'tab3')">3. Bài toán chia mạng và cấu hình mô hình</button>
-            </div>
-            <div class="dialogBox" style="text-align: left; line-height: 1.5;">
-                <div id="tab1" class="tabcontent" style="display: block;">
-                    <h3 style="color: #1f3864;">1. Cấu hình thiết bị mạng không dây</h3>
-                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
-                        Sinh viên thực hiện việc cấu hình thiết bị mạng không dây từ một mô hình mạng cho trước
-                    </div>
-                    <p>Mô hình mạng dưới đây bao gồm các thiết bị định tuyến, chuyển mạch, thiết bị không dây và các thiết bị đầu cuối (các PC)</p>
-                    <div style="text-align: center;">
-                        <img src="task01.png" style="max-width: 80%; margin: 0 auto;">
-                    </div>
-                    <p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép PC3 kết nối vào hệ thống sẵn có thông qua kết nối với thiết bị không dây Wireless Router</p>
-                    <p>Mở file <b>Lab 5a.pka</b> và làm theo hướng dẫn sau đây:</p>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>1.1 Kết nối thiết bị mạng không dây vào mô hình</b></h4>  
-                    <p>Sử dụng <b>cáp thẳng (Copper Straight-through)</b> để kết nối từ cổng Internet của wireless router đến cổng Fa0/7 của switch</p>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>1.2	Cấu hình cơ bản cho Wireless Router</b></h4>  
-                    <b style="color: green;">&#8195;◆ Cấu hình phần Internet connection</b><br/>
-                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;">
-                    <b><u>Thực hiện các bước sau:</u></b><br />
-                     &#8195;- <b>Bước 1:</b> Chọn <b>WRS2</b> > <b>GUI</b> tab<br />
-                     &#8195;- <b>Bước 2:</b> Chọn phần <b>Internet Connection type</b> thành <b>Static IP</b><br />
-                     &#8195;- <b>Bước 3:</b> Cấu hình phần địa chỉ IP với thông số sau:
-                     <ul>
-                       <li>Internet IP address: 172.17.88.25</li>
-                       <li>Subnet mask: 255.255.255.0</li>
-                       <li>Default gateway: 172.17.88.1 </li>
-                      </ul>
-                    </div>
-                    <b style="color: green;">&#8195;◆ Cấu hình phần Network Setup</b><br/>
-                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;">
-                    <b><u>Thực hiện các bước sau:</u></b><br />
-                     &#8195;- <b>Bước 1:</b>Kéo xuống phần <b>Network Setup</b><br />
-                     &#8195;- <b>Bước 2:</b> Điền Router IP là <b>172.17.40.1</b> và subnet mask là <b>255.255.255.0</b><br />
-                     &#8195;- <b>Bước 3:</b> Chọn <b>Enabled</b> cho phần DHCP server<br/>
-                     &#8195;- <b>Bước 4:</b> Click <b>Save Settings</b><br/>
-                        </div>
-                     <h4 style="color: #d8593a; font-weight: bold;"><b>1.3	Cấu hình truy cập và bảo mật cho Wireless Router</b></h4>
-                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;">
-                    <b><u>Thực hiện các bước sau:</u></b><br />
-                     &#8195;- <b>Bước 1:</b> Chọn tab <b>Wireless</b> ở phía trên cùng<br />
-                     &#8195;- <b>Bước 2:</b> Chuyển <b>Network Mode</b> thành <b>Wireless-N Only</b> và đổi tên của mạng không dây SSID thành <b>WRS_LAN</b><br />
-                     &#8195;- <b>Bước 3:</b> Tắt <b>SSID Broadcast</b> (chọn Disabled) và click <b>Save Settings</b><br/>
-                     &#8195;- <b>Bước 4:</b> Chọn tab Wireless Security . Thay Security Mode từ Disabled thành WPA2 Personal. WEP, WPA, WPA2,…<br/>
-                     &#8195;- <b>Bước 5:</b> Sử dụng mật khẩu <b style="color:red;">cisco123</b> (phần passphrase)</b><br/>
-                     &#8195;- <b>Bước 6:</b> Click <b>Save Settings</b><br/>
-                    </div>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>1.4 Cấu hình Wireless Client</b></h4>
-                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;">
-                    <b><u>Thực hiện các bước sau:</u></b><br />
-                     &#8195;- <b>Bước 1:</b> Click <b>PC3 > Desktop > PC Wireless</b><br />
-                     &#8195;- <b>Bước 2:</b> Click <b>Profiles</b> tab. Click <b>New</b>. Đăt tên Wireless Access<br />
-                     &#8195;- <b>Bước 3:</b> Trong màn hình tiếp theo, click <b>Advanced Setup</b>. Gõ <b>WRS_LAN</b> trong phần Wireless Network Name. Click <b>Next</b><br/>
-                     &#8195;- <b>Bước 4:</b> Chọn <b>Obtain network settings automatically</b> (DHCP) và click <b>Next</b><br/>
-                     &#8195;- <b>Bước 5:</b> Trong phần <b>Wireless Security</b>, chọn <b>WPA2-Personal</b> và <b>click Next</b><br/>
-                     &#8195;- <b>Bước 6:</b> Gõ passphrase là <b style="color:red;">cisco123</b> và click <b>Next</b><br/>
-                     &#8195;- <b>Bước 7:</b> Click <b>Save</b> và click <b>Connect to Network</b></br/>
-                    </div>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>1.5 Kiểm tra kết nối</b></h4>
-                    <p>Xem phần <b>Signal Strength</b> và <b>Link Quality</b> để biết thông tin link kết nối. Click <b>More Information</b> để xem chi tiết cấu hình địa chỉ IP</p>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>1.6 Kiểm tra kết quả thực hành</b></h4>
-                    <p>Sau khi hoàn thành, sinh viên chuyển sang cửa sổ <b style="color:red;">PT Activity</b> và nhấn <b>Check Results</b> để xem kết quả</p>
-                    <div style="text-align: center; width: 100%;">
-                        <img src="PTActivity1.png" style="max-width: 80%; margin: 0 auto;"/>
-                        <p style="text-align: center; font-style: italic;">Cửa sổ PT Activity</p>
-                        <img src="Result1.png" style="max-width: 60%; margin: 0 auto;"/>
-                        <p style="text-align: center; font-style: italic;">Kết quả tổng quát khi chưa thực hiện cấu hình</p>
-                        <img src="ResultDetail1.png" style="max-width: 60%; margin: 0 auto;"/>
-                        <p style="text-align: center; font-style: italic;">Kết quả chi tiết khi chưa thực hiện cấu hình</p>
-                    </div>
-                <div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;">
-                    <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5a_NhomXX.pka</b>
-                </div>
-                </div>
-  
-                <div id="tab2" class="tabcontent">
-                    <h3 style="color: #1f3864;">2. Cấu hình Router</h3>
-                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
-                         Sinh viên thực hiện việc cấu hình các thiết bị trong một mô hình mạng cho trước
-                    </div>
-                    <p>Mô hình mạng dưới đây bao gồm các thiết bị định tuyến, các thiết bị chuyển mạch và các thiết bị đầu cuối (các PC)</p>
-                    <div style="text-align: center;">
-                        <img src="Network5B.PNG" style="max-width: 80%; margin: 0 auto;">
-                        <p style="text-align: center; font-style: italic;">Mô hình mạng thực hành Cấu hình địa chỉ IP trên Router</p>
-                    </div>
-                    <p><b style="color: green;">Bảng địa chỉ IP</b></p>
-                    <div style="max-width:80%; margin: 10px auto;">
-                    <table>
-                      <tr style="font-weight:bold;">
-                        <td>Device</td>
-                        <td>Interface</td>
-                        <td>IP Address</td>
-                        <td>Subnet Mask</td>
-                        <td>Default Gateway</td>
-                        </tr>
-                    <tr style="height:30px;">
-                        <td rowspan="3">R1</td>
-                        <td>G0/0</td>
-                        <td>192.168.10.1</td>
-                        <td>255.255.255.0</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>G0/1</td>
-                        <td>192.168.11.1</td>
-                        <td>255.255.255.0</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>S0/0/0 (DCE)</td>
-                        <td>209.165.200.225</td>
-                        <td>255.255.255.252</td>
-                        <td>N/A</td>
-                    </tr>
-                     <tr style="height:30px;">
-                        <td rowspan="3">R2</td>
-                        <td>G0/0</td>
-                        <td>10.1.1.1</td>
-                        <td>255.255.255.0</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>G0/1</td>
-                        <td>10.1.2.1</td>
-                        <td>255.255.255.0</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>S0/0/0 (DCE)</td>
-                        <td>209.165.200.226</td>
-                        <td>255.255.255.252</td>
-                        <td>N/A</td>
-                    </tr>
-                        <tr style="height:30px;">
-                        <td>PC1</td>
-                        <td>NIC</td>
-                        <td>192.168.10.10</td>
-                        <td>255.255.255.0</td>
-                        <td>192.168.10.1</td>
-                    </tr>
-                    <tr style="height:30px;">
-                         <td>PC2</td>
-                        <td>NIC</td>
-                        <td>192.168.11.10</td>
-                        <td>255.255.255.0</td>
-                        <td>192.168.11.1</td>
-                    </tr>
-                   <tr style="height:30px;">
-                         <td>PC3</td>
-                        <td>NIC</td>
-                        <td>10.1.1.10</td>
-                        <td>255.255.255.0</td>
-                        <td>10.1.1.1</td>
-                    </tr>
-                    <tr style="height:30px;">
-                         <td>PC4</td>
-                        <td>NIC</td>
-                        <td>10.1.2.10</td>
-                        <td>255.255.255.0</td>
-                        <td>10.1.2.1</td>
-                    </tr>
-                    </table>
-                </div>
-                    <p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép các thiết bị trong mô hình kết nối với nhau</p>
-                    <p>Mở file <b>Lab 5b.pka</b> và làm theo hướng dẫn sau đây:</p>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>2.1	Cấu hình địa chỉ IP cho các router</b></h4>
-                    <p>Trong mô hình mạng trên, Router 1, 2 chưa được cấu hình hoàn chỉnh. Vì vậy, tiến hành thực hiện cấu hình trên các Router</p>
-                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;">
-                    <b><u>Thực hiện các bước sau:</u></b><br />
-                     &#8195;- <b>Bước 1:</b> Chọn <b>R1</b> > <b>CLI</b> tab<br />
-                     &#8195;- <b>Bước 2:</b> Nhập password <b style="color:red;">cisco</b> để đăng nhập
-                        <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                            User Access Verification<br/>
-                            Password: <b style="color:red;">cisco</b><br/>
-                            R1>
-                        </p>
-                     &#8195;- <b>Bước 3:</b> Gõ lệnh <b>enable</b> và nhập password <b style="color:red;">class</b>
-                       <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                           R1><b>enable</b><br/>
-                           Password: <b style="color:red;">class</b><br/>
-                           R1#
-                        </p>
-                     &#8195;- <b>Bước 4:</b> Gõ lệnh <b>config t</b> để cấu hình các interface của Router 1
-                       <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                           R1#<b>config t</b><br/>
-                           R1(config)#
-                        </p>
-                     &#8195;- <b>Bước 5:</b> Gõ các lệnh sau để cấu hình địa chỉ cho interface gigabitethernet 0/0 (địa chỉ được cấu hình là địa chỉ đã được xác định trong bảng địa chỉ)
-                        <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                           R1(config)#interface gigabitethernet 0/0<br/>
-                           R1(config-if)#ip address 192.168.10.1 255.255.255.0<br/>
-                           R1(config-if)#no shutdown
-                        </p>
-                     &#8195;- <b>Bước 6:</b> Quan sát thông báo để biết đã cấu hình thành công Interface G0/0 hay chưa. Nếu đã thành công, gõ lệnh <b>exit</b> để thoát khỏi phần cấu hình của Interface G0/0
-                        <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                           R1(config-if)#exit
-                        </p>
-                      &#8195;- <b>Bước 7:</b> Thực hiện lại Bước 5, 6 để cấu hình địa chỉ cho interface còn lại là G0/1 của R1 với các thông tin trong bảng địa chỉ<br/>
-                      &#8195;- <b>Bước 8:</b> Sau khi cấu hình xong, lưu lại cấu hình với câu lệnh <b>copy run start</b>. <b>Lưu ý:</b> dùng lệnh exit để thoát và thực hiện lệnh ở mode R1#
-                        <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                           R1#copy run start
-                        </p>
-                      &#8195;- <b>Bước 9:</b> Thực hiện tương tự các bước ở trên để cấu hình cho các Interface G0/0, G0/1 của R2</b>
-                    </div>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>2.2	Kiểm tra cấu hình</b></h4>
-                    <p>Kiểm tra kết nối bằng cách ping từ PC1 -> PC4, R2 ->PC2 và chụp lại kết quả kiểm tra, đưa vào báo cáo.</p>
-                    <p>Sử dụng các câu lệnh show để xem các cấu hình của Router 1 và 2 (chụp hình nội dung các câu lệnh show sau), ví dụ</p>
-                    <p style="background: #E2EFD9; padding: 15px; font-family: Consolas;">
-                      R1#show run<br/>
-                      R1#show ip interface brief<br/>
-                      R1#show ip route
-                    </p>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>2.3	Kiểm tra kết quả thực hành</b></h4>
-                    <p>Thực hiện tương tự phần 1.6</p>
-                   <div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;">
-                    <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5b_NhomXX.pka</b>
-                </div>
-                </div>
+<html lang="en">
 
-                <div id="tab3" class="tabcontent">
-                    <h3 style="color: #1f3864;">3. Bài toán chia mạng và cấu hình mô hình</h3>
-                    <div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;">
-                        Sinh viên thực hiện việc chia mạng con, phân bổ địa chỉ IP và cấu hình các thiết bị trong một mô hình mạng cho trước
-                    </div>
-                     <p>Mô hình mạng dưới đây bao gồm các thiết bị định tuyến, các thiết bị chuyển mạch và các thiết bị đầu cuối (các PC)</p>
-                    <div style="text-align: center;">
-                        <img src="Network5C.PNG" style="max-width: 80%; margin: 0 auto;">
-                        <p style="text-align: center; font-style: italic;">Mô hình mạng thực hành Áp dụng chia địa chỉ IP</p>
-                    </div>
-                    <p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép các thiết bị trong mô hình kết nối với nhau</p>
-                    <p>Mở file <b>Lab 5b.pka</b> và làm theo hướng dẫn bên dưới</p>
-                    <h4 style="color: #d8593a; font-weight: bold;"><b>3.1   Chia mạng con và phân bổ IP</b></h4>
-                    <p>Cho mô hình mạng trên và mạng 192.168.100.0/24. Thực hiện việc chia mạng để phục vụ cho yêu cầu bài toán (chú ý số lượng mạng con và số lượng host trong các mạng con</p>
-                    <div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;">
-                    <b><u>Thực hiện các bước sau:</u></b><br />
-                     &#8195;- <b>Bước 1:</b> Xác định số lượng mạng con trên mô hình đã cho<br />
-                     &#8195;- <b>Bước 2:</b> Thực hiện việc chia mạng từ mạng đã cho (192.168.100.0/24). Liệt kê các thông số gồm địa chỉ mạng, dãy địa chỉ host, địa chỉ broadcast của các mạng con đó và điền vào bảng sau<br/>
-                    <p><b style="color: green;">Bảng địa chỉ IP</b></p>
-                    <div style="max-width:80%; margin: 10px auto;">
-                    <table>
-                      <tr style="font-weight:bold;">
-                        <td>STT</td>
-                        <td>Địa chỉ mạng</td>
-                        <td>Địa chỉ đầu</td>
-                        <td>Địa chỉ cuối</td>
-                        <td>Địa chỉ broadcast</td>
-                        </tr>
-                     <tr style="height:30px;">
-                        <td>0</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                     <tr style="height:30px;">
-                        <td>3</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>4</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>5</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                        <tr style="height:30px;">
-                        <td>6</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>7</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </table>
-                    </div>
-                     &#8195;- <b>Bước 3:</b> Sau khi chia mạng con, gán các mạng con vào từng mạng trong mô hình như sau<br/>
-                      <ul>
-                       <li>Gán Subnet 0 cho mạng LAN kết nối đến GigabitEthernet 0/0 interface của R1</li>
-                       <li>Gán Subnet 1 cho mạng LAN kết nối đến GigabitEthernet 0/1 interface của R1</li>
-                       <li>Gán Subnet 2 cho mạng LAN kết nối đến GigabitEthernet 0/0 interface of R2</li>
-                       <li>Gán Subnet 3 cho mạng LAN kết nối đến GigabitEthernet 0/1 interface of R2</li>
-                       <li>Gán Subnet 4 cho kết nối giữa R1 to R2</li>
-                      </ul>
-                      &#8195;- <b>Bước 4:</b> Sau khi gán mạng con, hoàn thành bảng địa chỉ sau:
-                      <div style="max-width:80%; margin: 10px auto;">
-                    <table>
-                      <tr style="font-weight:bold;">
-                        <td>Device</td>
-                        <td>Interface</td>
-                        <td>IP Address</td>
-                        <td>Subnet Mask</td>
-                        <td>Default Gateway</td>
-                        </tr>
-                    <tr style="height:30px;">
-                        <td rowspan="3">R1</td>
-                        <td>G0/0</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>G0/1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>S0/0/0</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                     <tr style="height:30px;">
-                        <td rowspan="3">R2</td>
-                        <td>G0/0</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>G0/1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>S0/0/0</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                     <tr style="height:30px;">
-                        <td>S1</td>
-                        <td>VLAN 1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>S2</td>
-                        <td>VLAN 1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>S3</td>
-                        <td>VLAN 1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>S4</td>
-                        <td>VLAN 1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="height:30px;">
-                        <td>PC1</td>
-                        <td>NIC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                     <tr style="height:30px;">
-                        <td>PC2</td>
-                        <td>NIC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                     <tr style="height:30px;">
-                        <td>PC3</td>
-                        <td>NIC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                     <tr style="height:30px;">
-                        <td>PC4</td>
-                        <td>NIC</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>    
-                    </table>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Nhập môn Mạng máy tính - Lab 5 - Cấu hình thiết bị mạng</title>
+	<link rel="icon" type="image/png" href="https://nc.uit.edu.vn/wp-content/uploads/2014/12/logo_mmt-nth.png" />
+	<meta name="description" content="Nhập môn Mạng máy tính - Lab 5 - Cấu hình thiết bị mạng" />
+	<meta name="keywords" content="UIT, IT005, Lab5" />
+	<link rel="stylesheet" href="style.css" /> </head>
+
+<body class="pushmenu-push" id="page">
+	<div class="dialog" style="width: 78%; margin: 5% auto; text-align: center;">
+		<h2 style="color: #d8593a;">Môn học: Nhập môn Mạng máy tính - IT005</h2>
+		<h1 style="color: #3a6db5;">Lab 5 - Cấu hình thiết bị mạng</h1>
+		<h2>(Configuring Network Devices)</h2>
+		<h3>GVHD: ThS. Đỗ Thị Hương Lan</h3>
+		<h2 style="color: #d8593a; text-align: left;">A. Tổng quan</h2>
+		<div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
+			<h3 style="color: #1f3864;">1. Mục tiêu</h3>
+			<ul>
+				<li>
+					<p>Sinh viên có thể cấu hình thiết bị mạng không dây</p>
+				</li>
+				<li>
+					<p>Sinh viên có thể cấu hình thiết bị định tuyến (Router)</p>
+				</li>
+				<li>
+					<p>Sinh viên áp dụng chia địa chỉ IP trong mô hình mạng</p>
+				</li>
+			</ul>
+			<h3 style="color: #1f3864;">2. Kiến thức nền tảng</h3>
+			<ul>
+				<li>
+					<p>Kiến thức về các thiết bị mạng và địa chỉ IP</p>
+				</li>
+			</ul>
+			<h3 style="color: #1f3864;">3. Môi trường & công cụ</h3>
+			<ul>
+				<li>
+					<p>Một máy tính có kết nối Internet sử dụng hệ điều hành Windows/Linux.</p>
+				</li>
+				<li>
+					<p>Phần mềm <b>Packet Tracer</b>: Sinh viên có thể tải về miễn phí phiên bản mới nhất theo hướng dẫn tại link sau
+						<br/> <a href="https://www.netacad.com/courses/packet-tracer">https://www.netacad.com/courses/packet-tracer</a></p>
+				</li>
+			</ul>
+			<br/>
+			<div style="text-align: center; width: 100%;"> <img src="packettracer.png" style="max-width: 80%; margin: 0 auto;" /> </div>
+			<p style="text-align: center; font-style: italic;">Giao diện chính của phần mềm Packet Tracer</p>
+		</div>
+		<h2 style="color: #d8593a; text-align: left;">B. Thực hành</h2>
+		<div class="tab">
+			<button class="tablinks active" onclick="openTab(event, 'tab1')">1. Cấu hình thiết bị mạng không dây</button>
+			<button class="tablinks" onclick="openTab(event, 'tab2')">2. Cấu hình Router</button>
+			<button class="tablinks" onclick="openTab(event, 'tab3')">3. Bài toán chia mạng và cấu hình mô hình</button>
+		</div>
+		<div class="dialogBox" style="text-align: left; line-height: 1.5;">
+			<div id="tab1" class="tabcontent" style="display: block;">
+				<h3 style="color: #1f3864;">1. Cấu hình thiết bị mạng không dây</h3>
+				<div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;"> Sinh viên thực hiện việc cấu hình thiết bị mạng không dây từ một mô hình mạng cho trước </div>
+				<p>Mô hình mạng dưới đây bao gồm các thiết bị định tuyến, chuyển mạch, thiết bị không dây và các thiết bị đầu cuối (các PC)</p>
+				<div style="text-align: center;"> <img src="task01.png" style="max-width: 80%; margin: 0 auto;"> </div>
+				<p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép PC3 kết nối vào hệ thống sẵn có thông qua kết nối với thiết bị không dây Wireless Router</p>
+				<p>Mở file <b>Lab 5a.pka</b> và làm theo hướng dẫn sau đây:</p>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>1.1 Kết nối thiết bị mạng không dây vào mô hình</b></h4>
+				<p>Sử dụng <b>cáp thẳng (Copper Straight-through)</b> để kết nối từ cổng Internet của wireless router đến cổng Fa0/7 của switch</p>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>1.2	Cấu hình cơ bản cho Wireless Router</b></h4> <b style="color: green;">&#8195;◆ Cấu hình phần Internet connection</b>
+				<br/>
+				<div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;"> <b><u>Thực hiện các bước sau:</u></b>
+					<br /> &#8195;- <b>Bước 1:</b> Chọn <b>WRS2</b> > <b>GUI</b> tab
+					<br /> &#8195;- <b>Bước 2:</b> Chọn phần <b>Internet Connection type</b> thành <b>Static IP</b>
+					<br /> &#8195;- <b>Bước 3:</b> Cấu hình phần địa chỉ IP với thông số sau:
+					<ul>
+						<li>Internet IP address: 172.17.88.25</li>
+						<li>Subnet mask: 255.255.255.0</li>
+						<li>Default gateway: 172.17.88.1 </li>
+					</ul>
+				</div> <b style="color: green;">&#8195;◆ Cấu hình phần Network Setup</b>
+				<br/>
+				<div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;"> <b><u>Thực hiện các bước sau:</u></b>
+					<br /> &#8195;- <b>Bước 1:</b>Kéo xuống phần <b>Network Setup</b>
+					<br /> &#8195;- <b>Bước 2:</b> Điền Router IP là <b>172.17.40.1</b> và subnet mask là <b>255.255.255.0</b>
+					<br /> &#8195;- <b>Bước 3:</b> Chọn <b>Enabled</b> cho phần DHCP server
+					<br/> &#8195;- <b>Bước 4:</b> Click <b>Save Settings</b>
+					<br/> </div>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>1.3	Cấu hình truy cập và bảo mật cho Wireless Router</b></h4>
+				<div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;"> <b><u>Thực hiện các bước sau:</u></b>
+					<br /> &#8195;- <b>Bước 1:</b> Chọn tab <b>Wireless</b> ở phía trên cùng
+					<br /> &#8195;- <b>Bước 2:</b> Chuyển <b>Network Mode</b> thành <b>Wireless-N Only</b> và đổi tên của mạng không dây SSID thành <b>WRS_LAN</b>
+					<br /> &#8195;- <b>Bước 3:</b> Tắt <b>SSID Broadcast</b> (chọn Disabled) và click <b>Save Settings</b>
+					<br/> &#8195;- <b>Bước 4:</b> Chọn tab Wireless Security . Thay Security Mode từ Disabled thành WPA2 Personal. WEP, WPA, WPA2,…
+					<br/> &#8195;- <b>Bước 5:</b> Sử dụng mật khẩu <b style="color:red;">cisco123</b> (phần passphrase)</b>
+					<br/> &#8195;- <b>Bước 6:</b> Click <b>Save Settings</b>
+					<br/> </div>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>1.4 Cấu hình Wireless Client</b></h4>
+				<div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;"> <b><u>Thực hiện các bước sau:</u></b>
+					<br /> &#8195;- <b>Bước 1:</b> Click <b>PC3 > Desktop > PC Wireless</b>
+					<br /> &#8195;- <b>Bước 2:</b> Click <b>Profiles</b> tab. Click <b>New</b>. Đăt tên Wireless Access
+					<br /> &#8195;- <b>Bước 3:</b> Trong màn hình tiếp theo, click <b>Advanced Setup</b>. Gõ <b>WRS_LAN</b> trong phần Wireless Network Name. Click <b>Next</b>
+					<br/> &#8195;- <b>Bước 4:</b> Chọn <b>Obtain network settings automatically</b> (DHCP) và click <b>Next</b>
+					<br/> &#8195;- <b>Bước 5:</b> Trong phần <b>Wireless Security</b>, chọn <b>WPA2-Personal</b> và <b>click Next</b>
+					<br/> &#8195;- <b>Bước 6:</b> Gõ passphrase là <b style="color:red;">cisco123</b> và click <b>Next</b>
+					<br/> &#8195;- <b>Bước 7:</b> Click <b>Save</b> và click <b>Connect to Network</b>
+					</br/> </div>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>1.5 Kiểm tra kết nối</b></h4>
+				<p>Xem phần <b>Signal Strength</b> và <b>Link Quality</b> để biết thông tin link kết nối. Click <b>More Information</b> để xem chi tiết cấu hình địa chỉ IP</p>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>1.6 Kiểm tra kết quả thực hành</b></h4>
+				<p>Sau khi hoàn thành, sinh viên chuyển sang cửa sổ <b style="color:red;">PT Activity</b> và nhấn <b>Check Results</b> để xem kết quả</p>
+				<div style="text-align: center; width: 100%;"> <img src="PTActivity1.png" style="max-width: 80%; margin: 0 auto;" />
+					<p style="text-align: center; font-style: italic;">Cửa sổ PT Activity</p> <img src="Result1.png" style="max-width: 60%; margin: 0 auto;" />
+					<p style="text-align: center; font-style: italic;">Kết quả tổng quát khi chưa thực hiện cấu hình</p> <img src="ResultDetail1.png" style="max-width: 60%; margin: 0 auto;" />
+					<p style="text-align: center; font-style: italic;">Kết quả chi tiết khi chưa thực hiện cấu hình</p>
+				</div>
+				<div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;"> <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5a_NhomXX.pka</b> </div>
+			</div>
+			<div id="tab2" class="tabcontent">
+				<h3 style="color: #1f3864;">2. Cấu hình Router</h3>
+				<div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;"> Sinh viên thực hiện việc cấu hình các thiết bị trong một mô hình mạng cho trước </div>
+				<p>Mô hình mạng dưới đây bao gồm các thiết bị định tuyến, các thiết bị chuyển mạch và các thiết bị đầu cuối (các PC)</p>
+				<div style="text-align: center;"> <img src="Network5B.PNG" style="max-width: 80%; margin: 0 auto;">
+					<p style="text-align: center; font-style: italic;">Mô hình mạng thực hành Cấu hình địa chỉ IP trên Router</p>
+				</div>
+				<p><b style="color: green;">Bảng địa chỉ IP</b></p>
+				<div style="max-width:80%; margin: 10px auto;">
+					<table>
+						<tr style="font-weight:bold;">
+							<td>Device</td>
+							<td>Interface</td>
+							<td>IP Address</td>
+							<td>Subnet Mask</td>
+							<td>Default Gateway</td>
+						</tr>
+						<tr style="height:30px;">
+							<td rowspan="3">R1</td>
+							<td>G0/0</td>
+							<td>192.168.10.1</td>
+							<td>255.255.255.0</td>
+							<td>N/A</td>
+						</tr>
+						<tr style="height:30px;">
+							<td>G0/1</td>
+							<td>192.168.11.1</td>
+							<td>255.255.255.0</td>
+							<td>N/A</td>
+						</tr>
+						<tr style="height:30px;">
+							<td>S0/0/0 (DCE)</td>
+							<td>209.165.200.225</td>
+							<td>255.255.255.252</td>
+							<td>N/A</td>
+						</tr>
+						<tr style="height:30px;">
+							<td rowspan="3">R2</td>
+							<td>G0/0</td>
+							<td>10.1.1.1</td>
+							<td>255.255.255.0</td>
+							<td>N/A</td>
+						</tr>
+						<tr style="height:30px;">
+							<td>G0/1</td>
+							<td>10.1.2.1</td>
+							<td>255.255.255.0</td>
+							<td>N/A</td>
+						</tr>
+						<tr style="height:30px;">
+							<td>S0/0/0 (DCE)</td>
+							<td>209.165.200.226</td>
+							<td>255.255.255.252</td>
+							<td>N/A</td>
+						</tr>
+						<tr style="height:30px;">
+							<td>PC1</td>
+							<td>NIC</td>
+							<td>192.168.10.10</td>
+							<td>255.255.255.0</td>
+							<td>192.168.10.1</td>
+						</tr>
+						<tr style="height:30px;">
+							<td>PC2</td>
+							<td>NIC</td>
+							<td>192.168.11.10</td>
+							<td>255.255.255.0</td>
+							<td>192.168.11.1</td>
+						</tr>
+						<tr style="height:30px;">
+							<td>PC3</td>
+							<td>NIC</td>
+							<td>10.1.1.10</td>
+							<td>255.255.255.0</td>
+							<td>10.1.1.1</td>
+						</tr>
+						<tr style="height:30px;">
+							<td>PC4</td>
+							<td>NIC</td>
+							<td>10.1.2.10</td>
+							<td>255.255.255.0</td>
+							<td>10.1.2.1</td>
+						</tr>
+					</table>
+				</div>
+				<p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép các thiết bị trong mô hình kết nối với nhau</p>
+				<p>Mở file <b>Lab 5b.pka</b> và làm theo hướng dẫn sau đây:</p>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>2.1	Cấu hình địa chỉ IP cho các router</b></h4>
+				<p>Trong mô hình mạng trên, Router 1, 2 chưa được cấu hình hoàn chỉnh. Vì vậy, tiến hành thực hiện cấu hình trên các Router</p>
+				<div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;"> <b><u>Thực hiện các bước sau:</u></b>
+					<br /> &#8195;- <b>Bước 1:</b> Chọn <b>R1</b> > <b>CLI</b> tab
+					<br /> &#8195;- <b>Bước 2:</b> Nhập password <b style="color:red;">cisco</b> để đăng nhập
+					<p style="background: #E2EFD9; padding: 15px; font-family: Consolas;"> User Access Verification
+						<br/> Password: <b style="color:red;">cisco</b>
+						<br/> R1> </p> &#8195;- <b>Bước 3:</b> Gõ lệnh <b>enable</b> và nhập password <b style="color:red;">class</b>
+					<p style="background: #E2EFD9; padding: 15px; font-family: Consolas;"> R1><b>enable</b>
+						<br/> Password: <b style="color:red;">class</b>
+						<br/> R1# </p> &#8195;- <b>Bước 4:</b> Gõ lệnh <b>config t</b> để cấu hình các interface của Router 1
+					<p style="background: #E2EFD9; padding: 15px; font-family: Consolas;"> R1#<b>config t</b>
+						<br/> R1(config)# </p> &#8195;- <b>Bước 5:</b> Gõ các lệnh sau để cấu hình địa chỉ cho interface gigabitethernet 0/0 (địa chỉ được cấu hình là địa chỉ đã được xác định trong bảng địa chỉ)
+					<p style="background: #E2EFD9; padding: 15px; font-family: Consolas;"> R1(config)#interface gigabitethernet 0/0
+						<br/> R1(config-if)#ip address 192.168.10.1 255.255.255.0
+						<br/> R1(config-if)#no shutdown </p> &#8195;- <b>Bước 6:</b> Quan sát thông báo để biết đã cấu hình thành công Interface G0/0 hay chưa. Nếu đã thành công, gõ lệnh <b>exit</b> để thoát khỏi phần cấu hình của Interface G0/0
+					<p style="background: #E2EFD9; padding: 15px; font-family: Consolas;"> R1(config-if)#exit </p> &#8195;- <b>Bước 7:</b> Thực hiện lại Bước 5, 6 để cấu hình địa chỉ cho interface còn lại là G0/1 của R1 với các thông tin trong bảng địa chỉ
+					<br/> &#8195;- <b>Bước 8:</b> Sau khi cấu hình xong, lưu lại cấu hình với câu lệnh <b>copy run start</b>. <b>Lưu ý:</b> dùng lệnh exit để thoát và thực hiện lệnh ở mode R1#
+					<p style="background: #E2EFD9; padding: 15px; font-family: Consolas;"> R1#copy run start </p> &#8195;- <b>Bước 9:</b> Thực hiện tương tự các bước ở trên để cấu hình cho các <b>Interface G0/0, G0/1</b> của R2 </div>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>2.2	Kiểm tra cấu hình</b></h4>
+				<p>Kiểm tra kết nối bằng cách ping từ PC1 -> PC4, R2 ->PC2 và chụp lại kết quả kiểm tra, đưa vào báo cáo.</p>
+				<p>Sử dụng các câu lệnh show để xem các cấu hình của Router 1 và 2 (chụp hình nội dung các câu lệnh show sau), ví dụ</p>
+				<p style="background: #E2EFD9; padding: 15px; font-family: Consolas;"> R1#show run
+					<br/> R1#show ip interface brief
+					<br/> R1#show ip route </p>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>2.3	Kiểm tra kết quả thực hành</b></h4>
+				<p>Thực hiện tương tự phần 1.6</p>
+				<div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;"> <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5b_NhomXX.pka</b> </div>
+			</div>
+			<div id="tab3" class="tabcontent">
+				<h3 style="color: #1f3864;">3. Bài toán chia mạng và cấu hình mô hình</h3>
+				<div style="border: 1px solid #538135; padding: 10px 15px; color: green; font-weight: bold;"> Sinh viên thực hiện việc chia mạng con, phân bổ địa chỉ IP và cấu hình các thiết bị trong một mô hình mạng cho trước </div>
+				<p>Mô hình mạng dưới đây bao gồm các thiết bị định tuyến, các thiết bị chuyển mạch và các thiết bị đầu cuối (các PC)</p>
+				<div style="text-align: center;"> <img src="Network5C.PNG" style="max-width: 80%; margin: 0 auto;">
+					<p style="text-align: center; font-style: italic;">Mô hình mạng thực hành Áp dụng chia địa chỉ IP</p>
+				</div>
+				<p>Sinh viên hãy thực hiện các bước sau đây để cấu hình cho phép các thiết bị trong mô hình kết nối với nhau</p>
+				<p>Mở file <b>Lab 5b.pka</b> và làm theo hướng dẫn bên dưới</p>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>3.1   Chia mạng con và phân bổ IP</b></h4>
+				<p>Cho mô hình mạng trên và mạng 192.168.100.0/24. Thực hiện việc chia mạng để phục vụ cho yêu cầu bài toán (chú ý số lượng mạng con và số lượng host trong các mạng con</p>
+				<div style="line-height: 2; border: 1px solid #538135; padding: 10px 15px;margin: 15px;"> <b><u>Thực hiện các bước sau:</u></b>
+					<br /> 
+                    &#8195;- <b>Bước 1:</b> Xác định số lượng mạng con trên mô hình đã cho
+					<br /> 
+                    &#8195;- <b>Bước 2:</b> Thực hiện việc chia mạng từ mạng đã cho (192.168.100.0/24). Liệt kê các thông số gồm địa chỉ mạng, dãy địa chỉ host, địa chỉ broadcast của các mạng con đó và điền vào bảng sau
+					<br/>
+					<p><b style="color: green;">Bảng địa chỉ IP</b></p>
+					<div style="max-width:80%; margin: 10px auto;">
+						<table>
+							<tr style="font-weight:bold;">
+								<td>STT</td>
+								<td>Địa chỉ mạng</td>
+								<td>Địa chỉ đầu</td>
+								<td>Địa chỉ cuối</td>
+								<td>Địa chỉ broadcast</td>
+							</tr>
+							<tr style="height:30px;">
+								<td>0</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>2</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>3</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>4</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>5</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>6</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>7</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div> 
+                    &#8195;- <b>Bước 3:</b> Sau khi chia mạng con, gán các mạng con vào từng mạng trong mô hình như sau
+					<br/>
+					<ul>
+						<li>Gán Subnet 0 cho mạng LAN kết nối đến GigabitEthernet 0/0 interface của R1</li>
+						<li>Gán Subnet 1 cho mạng LAN kết nối đến GigabitEthernet 0/1 interface của R1</li>
+						<li>Gán Subnet 2 cho mạng LAN kết nối đến GigabitEthernet 0/0 interface of R2</li>
+						<li>Gán Subnet 3 cho mạng LAN kết nối đến GigabitEthernet 0/1 interface of R2</li>
+						<li>Gán Subnet 4 cho kết nối giữa R1 to R2</li>
+					</ul> 
+                    &#8195;- <b>Bước 4:</b> Sau khi gán mạng con, hoàn thành bảng địa chỉ sau:
+					<div style="max-width:80%; margin: 10px auto;">
+						<table>
+							<tr style="font-weight:bold;">
+								<td>Device</td>
+								<td>Interface</td>
+								<td>IP Address</td>
+								<td>Subnet Mask</td>
+								<td>Default Gateway</td>
+							</tr>
+							<tr style="height:30px;">
+								<td rowspan="3">R1</td>
+								<td>G0/0</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>G0/1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>S0/0/0</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td rowspan="3">R2</td>
+								<td>G0/0</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>G0/1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>S0/0/0</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>S1</td>
+								<td>VLAN 1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>S2</td>
+								<td>VLAN 1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>S3</td>
+								<td>VLAN 1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>S4</td>
+								<td>VLAN 1</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>PC1</td>
+								<td>NIC</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>PC2</td>
+								<td>NIC</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>PC3</td>
+								<td>NIC</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr style="height:30px;">
+								<td>PC4</td>
+								<td>NIC</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<p><b><u>Lưu ý:</u></b>
+						<p>
+							<ul>
+								<li>Sử dụng địa chỉ đầu tiên của mạng con cho Interfaces GigabitEthernet của R1, R2</li>
+								<li>Với kết nối giữa R1 và R2, sử dụng địa chỉ đầu tiên của mạng con cho Interface S0/0/0 của R1 và địa chỉ cuối cùng cho Interface S0/0/0 của R2</li>
+								<li>Sử dụng địa chỉ thứ 2 của mạng con cho các Switch</li>
+								<li>Sử dụng địa chỉ cuối cùng của mạng con cho các PC</li>
+							</ul>
+				</div>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>3.2	Cấu hình thiết bị</b></h4>
+				<p>Từ bảng thông tin ở trên, thực hiện cấu hình IP phù hợp cho các các thiết bị R1, S3 và PC4</p>
+				<h4 style="color: #d8593a; font-weight: bold;"><b>3.3	Kiểm tra kết quả thực hành</b></h4>
+				<p>Thực hiện tương tự phần 1.6</p>
+				<div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;"> 
+                    <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5c_NhomXX.pka</b> 
                 </div>
-                        <p><b><u>Lưu ý:</u></b><p>
-                         <ul>
-                       <li>Sử dụng địa chỉ đầu tiên của mạng con cho Interfaces GigabitEthernet của R1, R2</li>
-                       <li>Với kết nối giữa R1 và R2, sử dụng địa chỉ đầu tiên của mạng con cho Interface S0/0/0 của R1 và địa chỉ cuối cùng cho Interface S0/0/0 của R2</li>
-                       <li>Sử dụng địa chỉ thứ 2 của mạng con cho các Switch</li>
-                       <li>Sử dụng địa chỉ cuối cùng của mạng con cho các PC</li>
-                      </ul>
-                 </div>
-                 <h4 style="color: #d8593a; font-weight: bold;"><b>3.2	Cấu hình thiết bị</b></h4>
-                 <p>Từ bảng thông tin ở trên, thực hiện cấu hình IP phù hợp cho các các thiết bị R1, S3 và PC4</p>
-                 <h4 style="color: #d8593a; font-weight: bold;"><b>3.3	Kiểm tra kết quả thực hành</b></h4>
-                 <p>Thực hiện tương tự phần 1.6</p>
-                   <div style="line-height: 2; border: 1.5px solid #d8593a; color: #d8593a; padding: 10px 15px;margin: 15px;font-size: large;">
-                    <u><b>Yêu cầu:</b></u> chụp hình kết quả kiểm tra (tổng quát và chi tiết) đưa vào báo cáo. Lưu file với tên <b>Lab 5c_NhomXX.pka</b>
-                </div>
-                 <br />
-            </div>
-            <h2 style="color: #d8593a; text-align: left;">C. Yêu cầu và Đánh giá</h2>
-            <div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
-                <h3 style="color: #1f3864;">1. Yêu cầu</h3>
-                <ul style="line-height: 2;">
-                    <li><p>Sinh viên tìm hiểu và thực hành theo hướng dẫn. Thực hiện báo cáo theo <b>hình thức nhóm</b> và nộp bài tại Website môn học</p></li>
-                    <li>
-                        <p>Nhóm sinh viên báo cáo kết quả thực hiện và nộp bài gồm:</p>
-                        <ul>
-                            <li>
-                                Báo cáo chi tiết (<i>lưu ý xuất thành file <b style="background: yellow;">.PDF</b></i>), trình bày kết quả thực hành: các bảng chia IP, hình chụp kết quả kiểm tra sau khi thực hiện xong từng task và giải thích các vấn đề kèm theo
-                            </li>
-                            <li>
-                                3 tập tin *.pka đã thực hiện
-                            </li>
-                            <li>Nếu có nhiều file, tạo <b>thư mục cùng tên với tên</b> file báo cáo, và đưa tất cả các file ở trên vào Thư mục</li>
-                        </ul>
-                    </li>
-                </ul>
-                <div style="width: 430px; margin: 15px auto; border: 1.5px solid red; line-height: 1; padding: 15px 15px; text-align: center; background: #ffff91;">
-                    Đặt tên file báo cáo/thư mục theo định dạng như mẫu: <br />
-                    <p style="font-size: 20px;"><b>NhomXX_MSSV_HoTenNhomTruong_LabX</b></p>
-                    <i style="font-size: 18px;">Ví dụ: Nhom01_18521007_NguyenVanA_Lab5</i><br />
-                </div>
-                <h3 style="color: #1f3864;">2. Đánh giá</h3>
-                <p>Sinh viên tìm hiểu và tự thực hiện được bài thực hành, trả lời đầy đủ các yêu cầu đặt ra, trình bày báo cáo chi tiết, rõ ràng theo mẫu báo cáo đã được cung cấp</p>
-            </div>
+				<br /> 
         </div>
-        <div style="text-align: center; width: 100%;">
-            <img src=".././footer.png" />
-        </div>
-    
-        <script>
-            function openTab(evt, cityName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
-        </script>
-    </body>  
+		</div>
+		<h2 style="color: #d8593a; text-align: left;">C. Yêu cầu và Đánh giá</h2>
+		<div class="dialogBox" style="text-align: left; line-height: 1.5; padding-left: 15px;">
+			<h3 style="color: #1f3864;">1. Yêu cầu</h3>
+			<ul style="line-height: 2;">
+				<li>
+					<p>Sinh viên tìm hiểu và thực hành theo hướng dẫn. Thực hiện báo cáo theo <b>hình thức nhóm</b> và nộp bài tại Website môn học</p>
+				</li>
+				<li>
+					<p>Nhóm sinh viên báo cáo kết quả thực hiện và nộp bài gồm:</p>
+					<ul>
+						<li> Báo cáo chi tiết (<i>lưu ý xuất thành file <b style="background: yellow;">.PDF</b></i>), trình bày kết quả thực hành: các bảng chia IP, hình chụp kết quả kiểm tra sau khi thực hiện xong từng task và giải thích các vấn đề kèm theo </li>
+						<li> 3 tập tin *.pka đã thực hiện </li>
+						<li>Nếu có nhiều file, tạo <b>thư mục cùng tên với tên</b> file báo cáo, và đưa tất cả các file ở trên vào Thư mục</li>
+					</ul>
+				</li>
+			</ul>
+			<div style="width: 430px; margin: 15px auto; border: 1.5px solid red; line-height: 1; padding: 15px 15px; text-align: center; background: #ffff91;"> Đặt tên file báo cáo/thư mục theo định dạng như mẫu:
+				<br />
+				<p style="font-size: 20px;"><b>NhomXX_MSSV_HoTenNhomTruong_LabX</b></p> <i style="font-size: 18px;">Ví dụ: Nhom01_18521007_NguyenVanA_Lab5</i>
+				<br /> </div>
+			<h3 style="color: #1f3864;">2. Đánh giá</h3>
+			<p>Sinh viên tìm hiểu và tự thực hiện được bài thực hành, trả lời đầy đủ các yêu cầu đặt ra, trình bày báo cáo chi tiết, rõ ràng theo mẫu báo cáo đã được cung cấp</p>
+		</div>
+	</div>
+	<div style="text-align: center; width: 100%;"> <img src=".././footer.png" /> </div>
+	<script>
+	function openTab(evt, cityName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for(i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for(i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(cityName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+	</script>
+</body>
+
 </html>
