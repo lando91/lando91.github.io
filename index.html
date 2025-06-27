@@ -1,46 +1,94 @@
-<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>UIT - IT005 - HTTP Cookies</title>
-        <meta name="description" content="IT005" />
-        <meta name="keywords" content="IT005" />
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="style.css">
-    </head>
-
-    <body class="pushmenu-push" id="page">
-        <div class="dialog" style="width: 60%; margin: 10% auto; text-align: center;">
-            <div class="dialogBox">
-                <h4>Chào bạn!</h4>
-                <h3>IT005 - HTTP Protocol - Cookies</h3>
-                <img src="logo186x150.png" alt="Trường Đại học Công nghệ Thông tin" role="presentation" />
-                <div style="color: blue;">Bạn đang làm bài tập về Cookies của Môn học</div>
-                <br />
-                <div id="stidcard">
-                    <input type="text" id="stid" placeholder="Nhập Mã số SV của bạn" />
-                    <br />
-                    <br/>
-                    <input type="button" id="btnsubmit" value="Submit" onclick="myFunction()" />
-                    <br />
-                </div>
-                <br />
-                <br />
-                <div id="stidcookiesinput" class="hide">
-                    <input id="testresult" type="text" placeholder="Nhập cookies của bạn" />
-                    <br />
-                    <br />
-                    <input type="button" id="btnresult" value="Submit" onclick="testFunction()" />
-                    <input id="mssvit005" type="hidden">
-                </div>
-                <div id="total" class="hide" style="color:red;font-size:16px;">
-                </div>
-                <br />
-                <br/>
-                <i>Chúc bạn hoàn thành bài tập thành công!</i>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nhập môn Mạng máy tính - Thực hành</title>
+    <link rel="icon" type="image/png" href="https://nc.uit.edu.vn/wp-content/uploads/2014/12/logo_mmt-nth.png">
+    <meta name="description" content="Nhập môn Mạng máy tính" />
+    <meta name="keywords" content="IT005, UIT, Lab, LanDo" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  </head>
+	
+  <body class="pushmenu-push" id="page">
+    <div class="dialog" style="width: 78%; margin: 5% auto; text-align: center;">
+      <h2 style="color: #d8593a;">Môn học: Nhập môn Mạng máy tính - IT005
+      </h2>
+      <h1 style="color: #3a6db5;">THỰC HÀNH</h1>
+     <h2>GVHD: ThS. Đỗ Thị Hương Lan</h2>
+	    <br/>
+	    <br/>
+      <div class="row" style="margin:30px auto;">
+        <div class="col-md-4">
+          <div class="lab-box">
+            <div class="lab-tag">1</div>
+            <div class="lab-img ratio4-3"><a href="/lab/lab1/"><img src="Wireshark.png"/></a></div>
+            <div class="lab-caption">
+	      <p>Bài thực hành số 1</p>
+              <h4><a href="/lab/lab1/">Làm quen với Wireshark</h4></a>
+              <h5>Wireshark Getting Started</h5>
             </div>
+          </div>
         </div>
-    </body>
+        <div class="col-md-4">
+          <div class="lab-box">
+            <div class="lab-tag">2</div>
+            <div class="lab-img ratio4-3"><a href="/lab/lab2/"><img src="http.png"/></a></div>
+            <div class="lab-caption">
+              <p>Bài thực hành số 2</p>
+	      <h4><a href="/lab/lab2/">Phân tích giao thức HTTP</a></h4>
+              <h5>Sniffing HTTP Traffic with Wireshark</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+        <div class="lab-box">
+	    <div class="lab-tag">3</div>
+            <div class="lab-img ratio4-3"><a href="/lab/lab3/"><img src="tcp-udp.jpg"/></a></div>
+            <div class="lab-caption">
+              <p>Bài thực hành số 3</p>
+	      <h4><a href="/lab/lab3/">Phân tích giao thức TCP&UDP</a></h4>
+              <h5>TCP/UDP Protocol</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+	<div class="lab-box">
+	    <div class="lab-tag">4</div>
+            <div class="lab-img ratio4-3"><a href="/lab/lab4/"><img src="ip.jpg"/></a></div>
+            <div class="lab-caption">
+              <p>Bài thực hành số 4</p>
+	      <h4><a href="/lab/lab4/">Các giao thức tầng Mạng và IP</a></h4>
+              <h5>Network Layer and IP</h5>
+            </div>
+          </div>
+	</div>
+        <div class="col-md-4">
+		<div class="lab-box">
+	    <div class="lab-tag">5</div>
+            <div class="lab-img ratio4-3"><a href="/lab/lab5/"><img src="pc.PNG"/></a></div>
+            <div class="lab-caption">
+              <p>Bài thực hành số 5</p>
+	      <h4><a href="/lab/lab5/">Cấu hình thiết bị mạng</a></h4>
+              <h5>Configuring Network Devices</h5>
+            </div>
+          </div>
+	</div>
+        <div class="col-md-4">
+	      <div class="lab-box">
+	    <div class="lab-tag">6</div>
+            <div class="lab-img ratio4-3"><a href="/lab/lab6/"><img src="pass.jpg"/></a></div>
+            <div class="lab-caption">
+              <p>Bài thực hành số 6</p>
+	      <h4><a href="/lab/lab6/">Dò tìm mật khẩu Wifi</a></h4>
+              <h5>Scanning WPA/WPA2 password</h5>
+            </div>
+          </div>
+	      </div>
+      </div>
+    </div>
+	  <div style="text-align:center; width:100%;">
+	  	<img src="footer.png"/>
+	  </div>
+  </body>
 </html>
